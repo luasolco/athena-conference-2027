@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLM73FC4');</script>
+<!-- End Google Tag Manager -->
 <title>ATHENA International Conference & Awards Celebration 2027 | Lead What's Next</title>
 <meta name="description" content="Three days of leadership, connection, and recognition. January 28-30, 2027, Hilton Los Angeles, Universal City. Secure your seat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +21,10 @@
   @import url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5.0.0/700.css');
 
   :root{
-    --navy:#0C2E40;--navy-deep:#0C2E40;--gold:#A4853E;--gold-soft:#A4853E;
-    --orange:#FF8200;--orange-soft:#FF8200;
-    --sand:#FEFFF8;--cream:#FEFFF8;--ink:#0C2E40;--muted:#706D6D;
-    --line:rgba(164,133,62,.3);--shadow:0 20px 60px rgba(12,46,64,.18);
+    --navy:#0C2E40;--navy-deep:#0C2E40;--gold:#A4853E;--gold-soft:#C89C46;
+    --orange:#FF8200;--orange-soft:#FF9A3F;
+    --sand:#FEFFF8;--cream:#FEFFF8;--ink:#0C2E40;--muted:#3A4F5C;
+    --line:rgba(12,46,64,.18);--shadow:0 20px 60px rgba(12,46,64,.18);
     --font-display:"Source Serif 4","Source Serif Pro",Georgia,serif;
     --font-heading:"Poppins",system-ui,sans-serif;
     --font-body:"Open Sauce One","Poppins",system-ui,sans-serif;
@@ -41,9 +48,11 @@
   a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
   .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
   .eyebrow{font-family:var(--font-label);font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+  .hero .eyebrow,.tickets .eyebrow,.final .eyebrow,.sponsors-head .eyebrow,.testi .eyebrow,.speakers .eyebrow,.reasons .eyebrow,.faq .eyebrow,.section-trusted .eyebrow{color:var(--gold-soft)}
   section{padding:clamp(72px,8vw,96px) 0}.center{text-align:center}.lead{max-width:640px;margin:0 auto}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-label);font-weight:600;font-size:16px;line-height:22px;letter-spacing:0;padding:15px 32px;border-radius:2px;cursor:pointer;transition:.25s;border:1px solid transparent;text-transform:uppercase}
   .btn-primary{background:var(--gold);color:var(--navy-deep)}.btn-primary:hover{background:var(--gold-soft);transform:translateY(-2px)}
+  .navlinks .btn,.hero .btn-primary,.final .btn-primary,.sticky-cta .btn-primary{background:var(--gold);color:var(--navy-deep)}
   .btn-outline{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}.btn-outline:hover{border-color:var(--gold);color:var(--gold-soft)}
   .btn-dark{background:var(--navy);color:#fff;text-transform:uppercase}.btn-dark:hover{background:var(--navy-deep);transform:translateY(-2px)}
   .imgph{position:relative;background:linear-gradient(135deg,rgba(12,46,64,.92),#0C2E40);border:1px solid var(--line);border-radius:4px;min-height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -58,7 +67,7 @@
   .navlinks a{color:var(--cream);font-family:var(--font-label);font-size:14px;line-height:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
   .navlinks a:hover{color:#fff}
   .navlinks a:first-child{text-decoration:underline;text-underline-offset:.24em;text-decoration-thickness:2px}
-  .navlinks .btn{padding:12px 20px;min-height:42px;background:var(--gold);border-color:var(--gold);color:#fff;font-size:.84rem;letter-spacing:.07em;margin-left:8px}
+  .navlinks .btn{padding:12px 20px;min-height:42px;background:var(--gold);border-color:var(--gold);color:var(--navy-deep);font-size:.84rem;letter-spacing:.07em;margin-left:8px}
   .navlinks .btn:hover{background:var(--gold-soft);border-color:var(--gold-soft);opacity:.94;transform:none}
   @media(max-width:1280px){
     nav .wrap{height:76px;padding:0 20px}
@@ -78,27 +87,54 @@
 
   /* HERO */
   .hero{position:relative;background:var(--navy-deep);color:#fff;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:var(--navy-deep)}
-  .hero-bg::before{content:"";position:absolute;top:0;right:0;bottom:0;width:min(70vw,980px);background-image:url("https://athenaintlmedia.blob.core.windows.net/images/conference-2027/ATHENA-Hero.png");background-size:cover;background-position:right center;background-repeat:no-repeat;opacity:1}
-  .hero-bg::after{content:none}
+  .hero-bg{position:absolute;inset:0;background:var(--navy-deep);overflow:hidden}
+  .hero-bg::before,.hero-bg::after{content:none}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,46,64,.94) 0%,rgba(12,46,64,.84) 34%,rgba(12,46,64,.54) 62%,rgba(12,46,64,.28) 100%);z-index:1}
   .hero .wrap{position:relative;z-index:2;min-height:66vh;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:76px 24px 72px 0;text-align:left}
-  .hero-copy{width:min(100%,720px);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;margin-top:0;margin-right:auto;margin-left:-8px}
-  .hero .eyebrow{margin-bottom:26px;font-family:var(--font-label);font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;color:var(--gold);text-transform:uppercase}
+  .hero-copy{width:min(100%,720px);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;margin-top:0;margin-right:auto;margin-left:0;min-width:0}
+  .hero .eyebrow{margin:0 0 18px;font-family:var(--font-label);font-size:clamp(10px,1vw,14px);line-height:1.45;font-weight:600;letter-spacing:.06em;color:var(--gold);text-transform:uppercase;overflow-wrap:break-word}
   .hero h1{font-family:var(--font-heading);font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.1;color:#fff;margin-bottom:12px;max-width:15ch;letter-spacing:.03em;font-weight:700;text-transform:uppercase}
-  .hero h1 .line-break{display:block;position:relative;z-index:0;width:max-content;padding:0 .08em}
+  .hero h1 .line-break{display:block;position:relative;z-index:0;width:max-content;max-width:100%;padding:0 .08em}
   .hero h1 .line-break::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.44em;background:var(--gold);z-index:-1}
   .hero h2{font-family:"Source Serif Pro","Source Serif 4",Georgia,serif;font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.3;color:#fff;margin:0 0 14px;letter-spacing:0;font-weight:600;text-transform:none}
   .hero-accent{width:min(26vw,280px);height:8px;background:var(--gold);margin:2px 0 28px 0}
   .hero .sub{font-family:var(--font-body);font-size:clamp(1rem,1.25vw,1.25rem);line-height:1.5;color:#fff;max-width:28rem;font-style:normal;letter-spacing:-.01em;margin:0 0 12px}
   .hero-cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;justify-content:flex-start}
-  .hero .btn-primary{background:var(--gold);color:#fff;min-width:210px;min-height:62px;padding:18px 30px;border-radius:0;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;justify-content:center}
+  .hero .btn-primary{background:var(--gold);color:var(--navy-deep);min-width:210px;min-height:62px;padding:18px 30px;border-radius:0;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;justify-content:center}
   .hero .btn-primary:hover{background:var(--gold-soft);opacity:.92}
-  .hero .btn-outline{display:inline-flex;background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;min-width:210px;min-height:62px;padding:18px 30px;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase}
-  .hero .btn-outline:hover{border-color:#fff;color:#fff}
+  .hero .btn-outline{display:inline-flex;background:rgba(12,46,64,.46);border:1px solid rgba(254,255,248,.72);color:#fff;min-width:210px;min-height:62px;padding:18px 30px;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase}
+  .hero .btn-outline:hover{border-color:var(--gold);background:rgba(12,46,64,.62);color:#fff}
   .hero .countdown,.trust{display:none}
+  @media(min-width:1101px){
+    .hero{display:grid;grid-template-columns:45% 55%;grid-template-rows:calc(55vw * 875 / 1313);align-items:stretch;min-height:0;background:var(--navy-deep);color:#fff;overflow:hidden}
+    .hero-bg{position:relative;inset:auto;grid-column:2;grid-row:1;height:100%;min-width:0;overflow:hidden;margin:0;padding:0}
+    .hero-img{position:relative;display:block;width:100%;height:auto;min-height:100%;object-fit:contain;object-position:right center;background:var(--navy-deep)}
+    .hero-overlay{display:none}
+    .hero .wrap{grid-column:1;grid-row:1;z-index:2;min-height:100%;width:100%;max-width:none;margin:0;padding:32px 36px 40px;align-items:center;justify-content:center;text-align:left;background:transparent}
+    .hero-copy{width:100%;max-width:520px;margin:0;min-width:0}
+    .hero .eyebrow{margin-top:0;padding-top:0}
+    .hero h1{font-size:clamp(1.85rem,3.6vw,3.5rem);max-width:100%;overflow-wrap:break-word}
+    .hero h2{font-size:clamp(1.1rem,1.8vw,1.7rem);color:#fff}
+    .hero .sub{color:#fff;max-width:36ch}
+    .hero-cta{flex-direction:row;align-items:stretch;gap:10px;flex-wrap:nowrap;width:100%}
+    .hero .btn-primary,.hero .btn-outline{flex:1 1 0;width:auto;min-width:0;padding-left:12px;padding-right:12px}
+    .hero .btn-outline{border-color:rgba(254,255,248,.72);color:#fff;background:rgba(12,46,64,.46)}
+    .hero .btn-outline:hover{border-color:var(--gold);background:rgba(12,46,64,.62);color:#fff}
+  }
+  @media(min-width:761px) and (max-width:1100px){
+    .hero{position:relative;display:block;min-height:680px;background:var(--navy-deep)}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;margin:0;padding:0}
+    .hero-img{position:absolute;inset:0;display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center center}
+    .hero-overlay{display:block;background:rgba(12,46,64,.76)}
+    .hero .wrap{position:relative;z-index:2;min-height:680px;width:100%;max-width:none;margin:0;padding:48px 32px 56px;align-items:flex-start;justify-content:center;text-align:left;background:transparent}
+    .hero-copy{width:100%;max-width:620px;margin:0;min-width:0}
+    .hero .eyebrow{padding-top:0}
+    .hero-cta{flex-direction:row;align-items:center}
+  }
   @media(max-width:760px){
-    .hero-bg::before{width:100%;background-position:center top}
-    .hero-bg::after{content:"";position:absolute;inset:0;background:rgba(12,46,64,.78);z-index:1}
+    .hero-img{object-position:center top}
+    .hero-overlay{background:rgba(12,46,64,.82)}
     .hero .wrap{align-items:center;padding:56px 20px 52px;text-align:center}
     .hero-copy{align-items:center;width:min(100%,38rem);margin-right:0;margin-left:0}
     .hero .eyebrow{margin-bottom:22px}
@@ -106,8 +142,8 @@
     .hero h1 .line-break{margin:0 auto}
     .hero-accent{height:8px;width:min(60vw,320px);margin:2px auto 24px}
     .hero .sub{font-size:1.05rem;max-width:28rem}
-    .hero .btn-primary,.hero .btn-outline{min-width:min(320px,100%);min-height:68px;padding:20px 24px;font-size:.95rem}
-    .hero-cta{justify-content:center}
+    .hero .btn-primary,.hero .btn-outline{flex:1 1 0;min-width:0;min-height:60px;padding:16px 8px;font-size:.78rem;letter-spacing:.04em}
+    .hero-cta{justify-content:center;align-items:stretch;flex-wrap:nowrap;width:100%;gap:8px}
   }
 
   /* SPONSORS */
@@ -118,23 +154,26 @@
   .sponsors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
   .sponsor-item{display:flex;align-items:center;justify-content:center;min-height:74px;padding:4px 8px;text-align:center}
   .sponsor-item img{max-width:100%;max-height:56px;width:auto;height:auto;object-fit:contain;display:block}
-  .sponsor-item-text{font-family:var(--sans);font-size:1rem;line-height:1.35;font-weight:600;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
+  .sponsor-item-text{height:100px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--sans);line-height:1;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
+  .sponsor-item-text .luasol-name{font-size:1.25rem;font-weight:700}
+  .sponsor-item-text .luasol-collective{margin-top:4px;font-size:.78rem;font-weight:600;letter-spacing:.08em}
   @media(max-width:860px){.sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
   @media(max-width:520px){.sponsors-grid{grid-template-columns:1fr}}
 
   /* STATS */
-  .stats-band{background:var(--gold);color:#fff;padding:52px 0}
-  .stats-note{margin:0 auto 12px;padding:0 24px;text-align:center;font-family:var(--font-label);font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff}
-  .stats-intro{max-width:900px;margin:0 auto 24px;padding:0 24px;text-align:center;font-family:var(--sans);font-size:clamp(1.05rem,1.7vw,1.35rem);font-weight:600;line-height:1.5;letter-spacing:-.015em;color:rgba(254,255,248,.96)}
+  .stats-band{background:#E9D7A3;color:var(--navy);padding:52px 0}
+  .stats-note{margin:0 auto 12px;padding:0 24px;text-align:center;font-family:var(--font-label);font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+  .stats-intro{max-width:900px;margin:0 auto 24px;padding:0 24px;text-align:center;font-family:var(--sans);font-size:clamp(1.05rem,1.7vw,1.35rem);font-weight:600;line-height:1.5;letter-spacing:-.015em;color:var(--navy)}
   .stats-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
   .stats-band b{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3rem);display:block;line-height:1}
-  .stats-band span{font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(254,255,248,.9)}
+  .stats-band span{font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
   @media(max-width:720px){.stats-intro{font-size:1.02rem;margin-bottom:20px}.stats-band .wrap{grid-template-columns:repeat(2,1fr);gap:32px}}
 
   /* TESTIMONIALS */
   .testi{background:var(--sand)}
-  .testi-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:40px 0 10px;scrollbar-width:none}
+  .testi-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:40px 0 10px;scrollbar-width:none;tabindex:0}
   .testi-track{scroll-behavior:smooth}
+  .testi-track:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:10px}
   .testi-track::-webkit-scrollbar{display:none}
   .tcard{flex:0 0 340px;scroll-snap-align:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px}
   .tcard p{font-family:var(--serif);font-style:italic;font-size:.98rem;line-height:1.45;color:var(--ink)}
@@ -151,7 +190,7 @@
   /* TICKETS (comparação) */
   .tickets{background:var(--navy-deep);color:#fff}
   .tickets h2{color:#fff}.tickets .sub{color:rgba(254,255,248,.78);margin-top:14px}
-  .tickets .sub.ticket-note{font-size:.92rem;line-height:1.4;max-width:760px;opacity:.86}
+  .tickets .sub.ticket-note{font-size:.92rem;line-height:1.4;max-width:760px;margin:14px auto 0;opacity:.86;text-align:center}
   .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;align-items:stretch}
   .tier{background:#fff;color:var(--ink);border-radius:8px;padding:36px 30px;display:flex;flex-direction:column;position:relative}
   .tier.featured{transform:scale(1.04);border:2px solid var(--gold);box-shadow:0 30px 70px rgba(0,0,0,.35)}
@@ -229,10 +268,12 @@
   @media(max-width:680px){.spk-dots{display:flex}}
   .modal{position:fixed;inset:0;background:rgba(8,16,31,.8);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
   .modal.open{display:flex}
-  .modal-box{background:var(--cream);border-radius:10px;max-width:560px;width:100%;max-height:85vh;overflow:auto;padding:40px;position:relative}
+  .modal-box{background:var(--cream);border-radius:10px;max-width:720px;width:100%;max-height:85vh;overflow:auto;padding:40px;position:relative}
   .modal-box .x{position:absolute;top:18px;right:22px;font-size:1.6rem;color:var(--muted);cursor:pointer;background:none;border:none}
   .modal-box .role{color:var(--gold);font-weight:600;font-size:.85rem;letter-spacing:.04em;margin:6px 0 16px}
   .modal-box h3{color:var(--ink);font-family:var(--font-display);font-size:1.75rem;line-height:1.2;letter-spacing:-.03em;font-weight:600}
+  .modal-box #mBio{color:var(--muted);font-family:var(--font-body);font-size:1rem;line-height:1.6;margin:0}
+  @media(max-width:600px){.modal{padding:16px}.modal-box{padding:28px 24px}.modal-box h3{font-size:1.5rem}.modal-box #mBio{font-size:.98rem;line-height:1.55}}
 
   /* REASONS */
   .reasons .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
@@ -248,7 +289,7 @@
   .rcard:nth-child(2) .ic img{object-position:center 40%}
   .rcard:nth-child(3) .ic img{object-position:center 36%}
   .rcard:nth-child(4) .ic img{object-position:center 44%}
-  .rcard:nth-child(5) .ic img{object-position:center 38%}
+  .rcard:nth-child(5) .ic img{object-position:center top}
   .rcard:nth-child(6) .ic img{object-position:center 42%}
   @media(max-width:1100px){.rcard .ic{height:190px}}
   @media(max-width:820px){.reasons .grid6{grid-template-columns:1fr}.rcard .ic img{object-position:center top!important}}
@@ -347,9 +388,12 @@
   .sponsors .sponsors-subline{margin-top:12px}
   .sponsors .trusted-logos-wrap{padding-bottom:clamp(20px,3vw,30px)}
   .sponsors .trusted-logos-row{margin-bottom:0}
+  .sponsors .trusted-logo--michigan{width:360px!important;height:auto!important;max-width:360px!important;max-height:none!important}
+  .sponsors .trusted-logo--buchanan{background:#1F4278;padding:12px 18px;border-radius:4px;box-sizing:border-box}
+  @media(max-width:760px){.sponsors .trusted-logo--michigan{width:260px!important;max-width:260px!important}}
 
   /* FINAL */
-  .final{background:linear-gradient(rgba(12,46,64,.34),rgba(12,46,64,.34)),url("https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/Athena-2027-Conference-Hilton-Universal-City.png") center 82%/cover no-repeat;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .final{background:linear-gradient(rgba(12,46,64,.34),rgba(12,46,64,.34)),url("https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/Athena-2027-Conference-Hilton-Universal-City.png") center 82%/cover no-repeat;color:#fff;text-align:center;position:relative;overflow:hidden}
   .final::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(164,133,62,.08),transparent 55%)}
   .final .wrap{position:relative;z-index:2}
   .final h2{color:#fff;max-width:none;margin:0 auto;white-space:nowrap}
@@ -361,7 +405,8 @@
   .final .countdown span{font-family:var(--font-label);font-size:1.1rem;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:600;margin-top:8px;display:block}
   .final .sign{margin-top:36px;font-family:var(--serif);font-style:italic;color:var(--gold-soft)}
   .final .btn-primary{min-width:210px;min-height:62px;padding:18px 30px;font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-  .final .btn-outline{background:rgba(254,255,248,.18);border:1px solid rgba(254,255,248,.3);min-width:210px;min-height:62px;padding:18px 30px;font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .final .btn-outline{background:rgba(12,46,64,.58);border:1px solid rgba(254,255,248,.72);color:#fff;min-width:210px;min-height:62px;padding:18px 30px;font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .final .btn-outline:hover{background:rgba(12,46,64,.74);border-color:var(--gold);color:#fff}
   @media(max-width:900px){.final h2{white-space:normal}}
 
   footer{background:var(--navy);color:rgba(254,255,248,.62);padding:32px 0 28px;font-size:.84rem}
@@ -376,19 +421,20 @@
   .footer-social a:hover{color:rgba(254,255,248,.78)}
   .footer-copy{font-family:var(--font-body);font-size:.8rem;line-height:1.35;color:rgba(254,255,248,.52);margin-top:0}
 
-  .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);border-top:1px solid var(--line);padding:12px 16px;display:none;z-index:60;gap:12px;align-items:center;justify-content:space-between}
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);padding:12px 16px;display:none;z-index:60;gap:12px;align-items:center;justify-content:space-between}
   .sticky-cta b{color:#fff;font-family:var(--serif);font-size:1.1rem}
   .sticky-cta small{display:block;color:var(--gold-soft);font-size:.9rem}
-  @media(max-width:820px){.sticky-cta{display:none}}
+  @media(max-width:820px){.sticky-cta{display:flex}body{padding-bottom:72px}}
 </style>
 </head>
 <body>
+<main id="main-content">
 
 <!-- ===== NAV ===== -->
 <nav>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="ATHENA International home">
-      <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/brandbook/A-Logo-White.svg" alt="ATHENA International">
+      <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/brandbook/A-Logo-White.svg" alt="ATHENA International">
     </a>
     <div class="navlinks">
       <a href="#tickets">Tickets</a>
@@ -403,7 +449,20 @@
 
 <!-- ===== 01 HERO ===== -->
 <header class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <img
+      src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/hero-people.png"
+      alt=""
+      aria-hidden="true"
+      width="3840"
+      height="2160"
+      class="hero-img"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
+    <div class="hero-overlay"></div>
+  </div>
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow">January 28–30, 2027 · Hilton Universal City, California</span>
@@ -462,18 +521,19 @@
     <div class="center">
       <span class="eyebrow">Secure your seat</span>
       <h2>Choose your ATHENA 2027 experience</h2>
-      <p class="sub lead">General admission, VIP Experience access, and Celebration-only attendance.</p>
+      <p class="sub lead">General Admission, VIP Experience access, and Celebration-only attendance.</p>
+      <p class="sub ticket-note"><strong>ATHENA uses Zeffy for secure, no-fee event registration.</strong> Zeffy may add an optional tip at checkout. To remove it, select <strong>Custom Tip</strong> and enter <strong>$0</strong>. Any tip paid goes directly to Zeffy and cannot be refunded by ATHENA.</p>
     </div>
     <div class="tier-grid">
       <div class="tier">
-        <h3>General</h3>
+        <h3>General Admission</h3>
         <div class="price">$545<small>$695</small></div>
         <p class="per per-highlight">Early Bird pricing is limited and will sell out</p>
         <ul>
           <li class="yes">Three days conference in Los Angeles</li>
           <li class="yes">Breakfasts, lunches and receptions</li>
           <li class="yes">The ATHENA Awards Celebration</li>
-          <li class="yes">Visionary keynotes &amp; plenaries</li>
+          <li class="yes">Visionary keynotes &amp; panels</li>
           <li class="yes">Expert-led sessions</li>
           <li class="yes">Interactive workshops</li>
           <li class="yes">Curated wellness experiences</li>
@@ -482,7 +542,7 @@
           <li class="yes no-divider">Access to ATHENA Leadership Mini Labs with President &amp; CEO Traci Costa</li>
           <li class="hotel-offer"><span class="hotel-offer-label">Stay Where It Happens</span><span class="hotel-offer-title">Discounted rate at Hilton Universal City</span><span class="hotel-offer-meta">Book anytime from January 25 to February 2, 2027 ($239 + tax / night)</span></li>
         </ul>
-        <a href="#" class="btn btn-dark" zeffy-form-link="https://www.zeffy.com/embed/ticketing/athena-2027-conference-in-los-angeles?modal=true">Get General Access</a>
+        <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-conference-in-los-angeles" class="btn btn-dark">Get General Admission</a>
       </div>
       <div class="tier featured">
         <span class="badge">Most Wanted · 50 seats only</span>
@@ -490,29 +550,28 @@
         <div class="price">$795<small>$995</small></div>
         <p class="per per-highlight">Early Bird pricing is limited and will sell out</p>
         <ul>
-          <li class="yes"><strong>Includes General &amp; Celebrate, plus:</strong></li>
+          <li class="yes"><strong>Includes General Admission &amp; Celebrate, plus:</strong></li>
           <li class="yes">Exclusive VIP Reception with ATHENA Award Recipients</li>
           <li class="yes">Book signing with Award Recipient Ruthie Bolton</li>
           <li class="yes">ATHENA Awards Celebration with reserved seating</li>
           <li class="yes no-divider">VIP Concierge &amp; Lounges</li>
           <li class="hotel-offer"><span class="hotel-offer-label">Stay Where It Happens</span><span class="hotel-offer-title">Discounted rate at Hilton Universal City</span><span class="hotel-offer-meta">Book anytime from January 25 to February 2, 2027 ($239 + tax / night)</span></li>
         </ul>
-        <a href="#" class="btn btn-primary" zeffy-form-link="https://www.zeffy.com/embed/ticketing/athena-2027-vip-conference-in-los-angeles?modal=true">Claim VIP</a>
+        <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-vip-conference-in-los-angeles" class="btn btn-primary">Claim VIP</a>
         <p class="tier-footnote tier-footnote--vip"><span class="vip-availability-count"><strong>27</strong> of 50 seats remaining</span></p>
       </div>
       <div class="tier">
         <h3>Celebrate</h3>
         <div class="price">$95</div>
-        <p class="per">Awards evening only</p>
         <ul>
           <li class="yes">The Awards Celebration</li>
-          <li class="yes">Evening networking</li>
-          <li class="no">General &amp; VIP Experience</li>
+          <li class="yes">Post-event networking</li>
+          <li class="no">General Admission &amp; VIP Experience</li>
         </ul>
-        <a href="#" class="btn btn-dark" zeffy-form-link="https://www.zeffy.com/embed/ticketing/athena-2027-national-and-global-awards-ceremony?modal=true">Join the Celebration</a>
+        <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-national-and-global-awards-ceremony" class="btn btn-dark">Join the Celebration</a>
       </div>
     </div>
-    <div class="group-line"><strong style="color:#fff">Looking for group passes? </strong>Group passes make ATHENA 2027 Conference a shared experience. Perfect for colleagues, friends, and communities who want to attend together, learn together, and connect along the way. <a href="#venue">Talk to us →</a></div>
+    <div class="group-line"><strong style="color:#fff">Looking for group passes? </strong>Group passes make ATHENA 2027 Conference a shared experience. Perfect for colleagues, friends, and communities who want to attend together, learn together, and connect along the way. <a href="mailto:communications@athenainternational.org">Talk to us →</a></div>
   </div>
 </section>
 
@@ -524,9 +583,9 @@
       <h2>More than a conference—it’s a catalyst.</h2>
     </div>
     <div class="bonus-grid">
-      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/cards/ATHENA Community.png" alt="ATHENA Community"></div><h3>The ATHENA Community</h3><p>Continued access to the ATHENA network after the event, peer support and connection that lasts.</p></div>
-      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/cards/Leadership Toolkit.png" alt="Leadership Toolkit"></div><h3>Leadership Toolkit</h3><p>Frameworks, prompts, and session takeaways you can apply the Monday after.</p></div>
-      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/cards/Award Celebration.png" alt="Award Celebration"></div><h3>The Awards Celebration</h3><p>A seat at the ceremony honoring the women moving their communities forward, the heart of three days.</p></div>
+      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/cards/ATHENA Community.png" alt="ATHENA Community"></div><h3>The ATHENA Community</h3><p>Continued access to the ATHENA network after the event, peer support and connection that lasts.</p></div>
+      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/cards/Leadership Toolkit.png" alt="Leadership Toolkit"></div><h3>Leadership Toolkit</h3><p>Frameworks, prompts, and session takeaways you can apply the Monday after.</p></div>
+      <div class="bcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/cards/Award Celebration.png" alt="Award Celebration"></div><h3>The Awards Celebration</h3><p>A seat at the ceremony honoring the women moving their communities forward, the heart of three days.</p></div>
     </div>
     <p class="annotation-note">Programming inclusions are tied to your ticket type and may be refined as final conference details are released.</p>
   </div>
@@ -542,18 +601,18 @@
     </div>
 
     <div class="spk-grid">
-      <div class="spk" data-name="Ruthie Bolton" data-role="Global award recipient, Olympic gold medalist, and author" data-bio="Two-time Olympic gold medalist and ATHENA Global Award Recipient whose story anchors the spirit of the conference."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/ruthie-b.png" alt="Ruthie Bolton"></div><div class="info"><h3>Ruthie Bolton</h3><p class="role">Global award recipient, Olympic gold medalist, and author</p><p class="talk-kicker">Keynote</p><p class="talk-title">Resilience, Authenticity, and Courage in Action</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Bobby Hoffman" data-role="Keynote speaker and leadership facilitator" data-bio="Motivational speaker and workshop facilitator focused on practical leadership under pressure."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/bobby-h.png" alt="Bobby Hoffman"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Co-MC, keynote speaker and leadership facilitator</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Momentum without Burnout</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Deb Hart" data-role="Co-MC and wellness instructor" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/deb-h.png" alt="Deb Hart"></div><div class="info"><h3>Deb Hart</h3><p class="role">Co-MC and wellness instructor</p><p class="talk-kicker">Workshop</p><p class="talk-title">Reset and Rise: Wellness Rituals for High-Impact Leaders</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Karol Pelletier" data-role="Global CHRO and leadership strategist" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/karol-p.png" alt="Karol Pelletier"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Global CHRO and leadership strategist</p><p class="talk-kicker">Keynote</p><p class="talk-title">Leadership Isn’t a Title: How to Influence at Any Level</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Margaret Dimond, PhD" data-role="Regional health system president" data-bio="Healthcare executive with deep operational leadership across quality, patient experience, and organizational performance."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/margaret-d.png" alt="Margaret Dimond, PhD"></div><div class="info"><h3>Margaret Dimond, PhD</h3><p class="role">Regional health system president</p><p class="talk-kicker">Keynote</p><p class="talk-title">The Courage to Lead Now: Building Trust, Stability, and Hope in Complex Times</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Moacir Antonelli Ponti" data-role="AI Strategy and Research Leader · Mercado Livre · USP" data-bio="Moacir A. Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of Sao Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/moacir-a.png" alt="Moacir Antonelli Ponti"></div><div class="info"><h3>Moacir Antonelli Ponti</h3><p class="role">Book author, AI strategy and research leader</p><p class="talk-kicker">Keynote</p><p class="talk-title">Human-Centered AI Leadership for Real-World Impact</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Dat Tran" data-role="Founder, Stress Fit Labs LLC" data-bio="Stress coach and ally with 17+ years helping leaders and organizations stay ahead of the competition and thrive through periods of high-pressure transformation. Former Microsoft global strategist who burned out in 2022 and created the Stress Fit System after refusing to let stress win. His specialty: 'Stress Fitness: Navigating Change in the High-Stress Era of AI.'"><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/dat-t.png" alt="Dat Tran"></div><div class="info"><h3>Dat Tran</h3><p class="role">Founder, Stress Fit Labs LLC</p><p class="talk-kicker">Workshop</p><p class="talk-title">Stress Fitness: Navigating Change in the High-Stress Era of AI</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Karen Bird" data-role="First Nation CEO and community builder" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/karen-b.png" alt="Karen Bird"></div><div class="info"><h3>Karen Bird</h3><p class="role">First Nation CEO and community builder</p><p class="talk-kicker">Keynote</p><p class="talk-title">Circles, Stories, and Shared Leadership</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Nicole Noll-Williams" data-role="Airport authority president and systems leader" data-bio="Aviation executive with 25+ years leading complex systems, high-stakes operations, and strategic growth."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/nicole-n.png" alt="Nicole Noll-Williams"></div><div class="info"><h3>Nicole Noll-Williams</h3><p class="role">Airport authority president and systems leader</p><p class="talk-kicker">Workshop</p><p class="talk-title">Leading Through Turbulence: Courage, Clarity, and Calm Under Pressure</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Traci Costa" data-role="President and CEO, ATHENA International" data-bio="President and CEO of ATHENA International, connecting mission, leadership development, and measurable community outcomes."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/traci-c.png" alt="Traci Costa"></div><div class="info"><h3>Traci Costa</h3><p class="role">President and CEO, ATHENA International</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Leadership Ecosystems That Scale Impact</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Michelle Massey" data-role="Board treasurer and community executive" data-bio="Board treasurer and community outreach executive focused on partnerships, talent pathways, and women’s leadership access."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/michelle-m.png" alt="Michelle Massey"></div><div class="info"><h3>Michelle Massey</h3><p class="role">Board treasurer and community executive</p><p class="talk-kicker">Workshop</p><p class="talk-title">Partnerships That Open Doors for Women Leaders</p><p class="more">Read bio +</p></div></div>
-      <div class="spk" data-name="Michele Reister" data-role="Fractional CMO and micro-lab facilitator" data-bio="Fractional CMO and go-to-market advisor focused on confidence, visibility, and commercial momentum."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/speakers/michelle-r.png" alt="Michele Reister"></div><div class="info"><h3>Michele Reister</h3><p class="role">Fractional CMO and micro-lab facilitator</p><p class="talk-kicker">Workshop</p><p class="talk-title">Visibility With Ease: Niche, Narrative, and Nourishing Community</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Ruthie Bolton" data-role="Global Award Recipient | Two-Time Olympic Gold Medalist | Author" data-bio="Two-time Olympic gold medalist and ATHENA Global Award Recipient whose story anchors the spirit of the conference."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/ruthie-b.png" alt="Ruthie Bolton"></div><div class="info"><h3>Ruthie Bolton</h3><p class="role">Global Award Recipient | Two-Time Olympic Gold Medalist | Author</p><p class="talk-kicker">Keynote</p><p class="talk-title">Resilience, Authenticity, and Courage in Action</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Bobby Hoffman" data-role="Motivational Speaker, Thought Partner Services" data-bio="Motivational speaker and workshop facilitator focused on practical leadership under pressure."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/bobby-h.png" alt="Bobby Hoffman"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Motivational Speaker, Thought Partner Services</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Momentum without Burnout</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Deb Hart" data-role="Trauma Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/deb-h.png" alt="Deb Hart"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma Sensitive Yoga Certified | iRest Meditation Teacher</p><p class="talk-kicker">Workshop</p><p class="talk-title">Reset and Rise: Wellness Rituals for High-Impact Leaders</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Karol Pelletier" data-role="Chief Human Resources Officer" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/karol-p.png" alt="Karol Pelletier"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Chief Human Resources Officer</p><p class="talk-kicker">Keynote</p><p class="talk-title">Leadership Isn’t a Title: How to Influence at Any Level</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Dr. Margaret Dimond" data-role="Regional President, UM Health-West & Sparrow Health System" data-bio="Healthcare executive with deep operational leadership across quality, patient experience, and organizational performance."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/margaret-d.png" alt="Dr. Margaret Dimond"></div><div class="info"><h3>Dr. Margaret Dimond</h3><p class="role">Regional President, UM Health-West & Sparrow Health System</p><p class="talk-kicker">Keynote</p><p class="talk-title">The Courage to Lead Now: Building Trust, Stability, and Hope in Complex Times</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Dr. Moacir Antonelli Ponti" data-role="Author | AI/ML Expert | 2% Most Influential Scientists Worldwide" data-bio="Dr. Moacir Antonelli Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of Sao Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/moacir-a.png" alt="Dr. Moacir Antonelli Ponti"></div><div class="info"><h3>Dr. Moacir Antonelli Ponti</h3><p class="role">Author | AI/ML Expert | 2% Most Influential Scientists Worldwide</p><p class="talk-kicker">Keynote</p><p class="talk-title">Human-Centered AI Leadership for Real-World Impact</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Dat Tran" data-role="Founder, Stress Fit Labs LLC | Coach &amp; Speaker" data-bio="Dat Tran is a stress coach, inspirational speaker, and the founder of Stress Fit Labs LLC, a company that helps leaders thrive in high-pressure environments with confidence, courage, and composure. With more than 17 years of experience in tech, Dat is known for creating sessions that are transformative, simple, and immediately practical. He brings a grounded, real approach to every stage, blending neuroscience, human behavioral psychology, and levity to help people build the capacity to navigate change and uncertainty with resiliency. A former Microsoft global strategist who burned out in 2022 and refused to let stress win, Dat's transformation became the blueprint hundreds of Fortune 100 leaders now use to stay competitive and succeed in the age of AI. His message is built on a powerful truth: stress is not your enemy. It is evidence that you are built for something great."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/dat-t.png" alt="Dat Tran"></div><div class="info"><h3>Dat Tran</h3><p class="role">Founder, Stress Fit Labs LLC | Coach &amp; Speaker</p><p class="talk-kicker">Workshop</p><p class="talk-title">Stress Fitness: Navigating Change in the AI Era with Confidence</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Karen Bird" data-role="CEO, Batchewana First Nation | President & Founder, Nakehndan" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/karen-b.png" alt="Karen Bird"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | President & Founder, Nakehndan</p><p class="talk-kicker">Keynote</p><p class="talk-title">Circles, Stories, and Shared Leadership</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Nicole Noll-Williams" data-role="President and CEO, Capital Region Airport Authority" data-bio="Aviation executive with 25+ years leading complex systems, high-stakes operations, and strategic growth."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/nicole-n.png" alt="Nicole Noll-Williams"></div><div class="info"><h3>Nicole Noll-Williams</h3><p class="role">President and CEO, Capital Region Airport Authority</p><p class="talk-kicker">Workshop</p><p class="talk-title">Leading Through Turbulence: Courage, Clarity, and Calm Under Pressure</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Traci Costa" data-role="President and CEO, ATHENA International" data-bio="President and CEO of ATHENA International, connecting mission, leadership development, and measurable community outcomes."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/traci-c.png" alt="Traci Costa"></div><div class="info"><h3>Traci Costa</h3><p class="role">President and CEO, ATHENA International</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Leadership Ecosystems That Scale Impact</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Michelle Massey" data-role="Board Treasurer and Community Executive" data-bio="Board treasurer and community outreach executive focused on partnerships, talent pathways, and women’s leadership access."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/michelle-m.png" alt="Michelle Massey"></div><div class="info"><h3>Michelle Massey</h3><p class="role">Board Treasurer and Community Executive</p><p class="talk-kicker">Workshop</p><p class="talk-title">Partnerships That Open Doors for Women Leaders</p><p class="more">Read bio +</p></div></div>
+      <div class="spk" data-name="Michele Reister" data-role="Vice President Marketing" data-bio="Fractional CMO and go-to-market advisor focused on confidence, visibility, and commercial momentum."><div class="imgph"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/speakers/michelle-r.png" alt="Michele Reister"></div><div class="info"><h3>Michele Reister</h3><p class="role">Vice President Marketing</p><p class="talk-kicker">Workshop</p><p class="talk-title">Visibility With Ease: Niche, Narrative, and Nourishing Community</p><p class="more">Read bio +</p></div></div>
     </div>
     <div class="spk-expand">
       <button class="btn" id="spkToggle">See all speakers</button>
@@ -571,12 +630,12 @@
       <h2>Six reasons to invest in yourself</h2>
     </div>
     <div class="grid6">
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-michelle-plenary.png" alt="Plenary session at ATHENA conference"></div><h3>Plenaries &amp; Keynotes</h3><p>Visionary speakers. Real conversations. Practical insight you can apply immediately.</p></div>
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-curated-labs.png" alt="Curated lab session participants"></div><h3>Curated Labs</h3><p>Interactive, skills-based sessions for professionals, youth, entrepreneurs and ecosystem builders.</p></div>
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-wellness-and-integration.png" alt="Wellness and integration moment"></div><h3>Wellness &amp; Integration</h3><p>Morning wellness and leadership development that honors the whole human.</p></div>
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-network.png" alt="Networking connection at ATHENA"></div><h3>Connection That Matters</h3><p>Dinner pods, networking lounges, and storytelling pop-ins designed to turn introductions into strategic, long-term leadership relationships.</p></div>
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-celebration.png" alt="Celebration of leadership confidence"></div><h3>Confidence &amp; Identity</h3><p>Walk out with a stronger sense of who you are as a leader and the presence to prove it.</p></div>
-      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/fotos/six-pannel.png" alt="Panel discussion for courageous decisions"></div><h3>Courageous Decisions</h3><p>Learn to lead with clarity in high-stakes moments, making confident decisions when pressure is high and outcomes matter most.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/2025-conference_Keynote-MM.webp" alt="Keynote and panel session at ATHENA conference"></div><h3>Keynotes &amp; Panels</h3><p>Build influence without a title, make calm decisions under pressure, and lead with trust, hope, and courage.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/six-curated-labs.png" alt="Hands-On Micro-Lab participants"></div><h3>Hands-On Micro-Labs</h3><p>Practice digital credibility, sustainable productivity, and practical self-advocacy in small-group sessions.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/six-wellness-and-integration.png" alt="Wellness session and integration moment"></div><h3>Wellness Sessions</h3><p>Protect your energy, build resilience, and lead for the long term without sacrificing your peace.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/2025-conference_Dinner-pod.webp" alt="Networking connection at ATHENA"></div><h3>Connection That Matters</h3><p>Dinner pods, networking lounges, and storytelling pop-ins designed to turn introductions into strategic, long-term leadership relationships.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/athena-award.webp" alt="Celebration of leadership confidence"></div><h3>Confidence &amp; Identity</h3><p>Strengthen your voice, shape the digital signals that build trust, and show up as the leader your expertise already makes you.</p></div>
+      <div class="rcard"><div class="ic"><img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/fotos/2025-conference_Panel-Bored.webp" alt="Panel discussion for courageous decisions"></div><h3>Courageous Decisions</h3><p>Prepare teams before disruption hits, make hard calls with accountability and humanity, and stay steady when everyone looks to you.</p></div>
     </div>
   </div>
 </section>
@@ -606,7 +665,7 @@
       <p class="venue-note center"><strong>After you purchase your ticket, you will receive an email with the Hilton promotion and booking details for the ATHENA room block at Hilton Universal City.</strong></p>
     </div>
     <div class="venue-gallery" aria-label="Universal City and nearby attractions">
-      <img src="https://images.squarespace-cdn.com/content/v1/656fcf7ecf6e3a7f8704bc58/fb81023d-64a0-49da-b25a-e2b9d84005b8/Athena-International-2027-Conference-attractions.png?format=2500w" alt="Athena International 2027 nearby attractions collage">
+      <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/external/Athena-International-2027-Conference-attractions.png" alt="Athena International 2027 nearby attractions collage">
     </div>
   </div>
 </section>
@@ -624,13 +683,13 @@
       <div class="faq-item"><button class="faq-q">What tracks are available?<span class="plus">+</span></button><div class="faq-a"><p><strong>Designed for Every Stage of Leadership</strong></p><ul><li><strong>Impact &amp; Influence</strong> - Professionals</li><li><strong>Impact &amp; Influence</strong> - Youth</li><li><strong>Building Leadership Ecosystems</strong></li><li><strong>Entrepreneurship &amp; Business Growth</strong></li></ul><p>ATHENA's multi-track experience allows you to customize your journey while staying connected to the broader community.</p></div></div>
       <div class="faq-item"><button class="faq-q">What's included in my ticket?<span class="plus">+</span></button><div class="faq-a"><p>For GA and VIP, all three days include keynotes, micro-labs, and curated networking. General Admission and VIP Experience also include the Awards Celebration. The Celebrate ticket is for a few hours of the event during the awards presentation. For a detailed comparison, <a href="#tickets">&uarr; Go to Tickets: compare each option line by line</a>.</p></div></div>
       <div class="faq-item"><button class="faq-q">What's the difference between General Admission and VIP Experience?<span class="plus">+</span></button><div class="faq-a"><p>VIP Experience includes everything in General Admission, plus priority seating, exclusive access, and elevated experiences. VIP is limited to 50 seats.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Can I bring my team?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Group tables and corporate rates are available. Reach out using the chat button and we'll build your package.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Is there student pricing?<span class="plus">+</span></button><div class="faq-a"><p>Yes, and it is capped. High School is $145 and Higher Education is $295. Reach out to us with official proof of student status, and we will share the discount while capacity lasts.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I bring my team?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Group tables and corporate rates are available. <a href="mailto:communications@athenainternational.org">Contact us</a> and we'll build your package.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Is there student pricing?<span class="plus">+</span></button><div class="faq-a"><p>Yes, and it is capped. High School is $145 and Higher Education is $295. <a href="mailto:communications@athenainternational.org">Contact us</a> with official proof of student status, and we will share the discount while capacity lasts.</p></div></div>
       <div class="faq-item"><button class="faq-q">How do I get there?<span class="plus">+</span></button><div class="faq-a"><p>Hilton Universal City is the host hotel, with easy access from Burbank, Van Nuys, and LAX. Parking and valet are available on site, and the venue keeps you close to sessions, dining, and nearby entertainment.</p></div></div>
-      <div class="faq-item"><button class="faq-q">What should I expect during the 3 days?<span class="plus">+</span></button><div class="faq-a"><p>ATHENA 2027 brings together plenaries, keynotes, Micro-Labs, wellness moments, networking, and the ATHENA Awards Celebration. It is built to help you grow your leadership, your connections, and your momentum.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What should I expect during the 3 days?<span class="plus">+</span></button><div class="faq-a"><p>ATHENA 2027 brings together keynotes, panels, Hands-On Micro-Labs, Wellness Sessions, networking, and the ATHENA Awards Celebration. It is built to help you grow your leadership, your connections, and your momentum.</p></div></div>
       <div class="faq-item"><button class="faq-q">Can I book the conference hotel at a discounted rate?<span class="plus">+</span></button><div class="faq-a"><p>Yes. A limited ATHENA room block is available at Hilton Universal City. After registration, you will receive the booking details by email so you can secure the discounted rate while inventory lasts.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Can my organization sponsor or partner with ATHENA 2027?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Sponsorship opportunities are available for organizations that want to align with ATHENA's leadership community. For sponsor inquiries, contact using the bot.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How do I pay?<span class="plus">+</span></button><div class="faq-a"><p>Secure online checkout is available during registration, with major payment methods accepted. If you need group, nonprofit, or corporate options not listed in Zeffy, contact using the bot.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can my organization sponsor or partner with ATHENA 2027?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Sponsorship opportunities are available for organizations that want to align with ATHENA's leadership community. For sponsor inquiries, <a href="mailto:communications@athenainternational.org">contact the ATHENA team</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How do I pay?<span class="plus">+</span></button><div class="faq-a"><p>Secure online checkout is available during registration, with major payment methods accepted. If you need group, nonprofit, or corporate options not listed in Zeffy, <a href="mailto:communications@athenainternational.org">contact the ATHENA team</a>.</p></div></div>
       <div class="faq-item"><button class="faq-q">What is the optional Zeffy contribution at checkout?<span class="plus">+</span></button><div class="faq-a"><p>ATHENA uses Zeffy to manage event registration because the checkout experience is simple, secure, and fast for attendees.</p><p>Zeffy supports nonprofits by allowing organizations like ATHENA International, a 501(c)(3), to process registrations without transaction fees charged to the organization.</p><p>At checkout, Zeffy may prefill an optional contribution to support their nonprofit platform. This contribution is optional and is not required to complete your ATHENA ticket purchase.</p><ul><li>To remove it, click <strong>Custom Tip</strong>.</li><li>Enter <strong>$0</strong>.</li><li>Confirm your total before submitting payment.</li></ul><p>If you choose to pay the tip, that amount is paid to Zeffy. ATHENA cannot reverse or refund that specific contribution.</p></div></div>
       <div class="faq-item"><button class="faq-q">What's your refund policy?<span class="plus">+</span></button><div class="faq-a"><p>Early Bird pricing is limited by time and quantity. All ticket sales are final, and substitutions may be permitted.</p></div></div>
       <div class="faq-item"><button class="faq-q">Where should I stay?<span class="plus">+</span></button><div class="faq-a"><p>Hilton Universal City is the host hotel. After you purchase your ticket, you will receive an email with the Hilton promotion and booking details for the discounted ATHENA room block.</p></div></div>
@@ -649,36 +708,36 @@
       <div class="trusted-logos-row">
         <div class="trusted-logos-track">
           <div class="trusted-logos">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Microsoft.svg" alt="Microsoft" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Snowflake.svg" alt="Snowflake" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-AmericaFCU.svg" alt="America FCU" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Anecdotes.svg" alt="Anecdotes" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-techsmith-corporation.svg" alt="TechSmith" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-manercosterisan.svg" alt="Maner Costerisan" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Nakehndan.png" alt="Nakehndan" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Batchewana.png" alt="Batchewana" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-nasa.svg" alt="NASA" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/Powerlink.png" alt="Powerlink" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/communities-in-schools.png" alt="Communities in Schools" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/joliet-chamber.jpg" alt="Joliet Chamber of Commerce" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/wit-network.png" alt="The WIT Network" class="trusted-logo trusted-logo--wit">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/mind-wire.png" alt="MindWire" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Microsoft.svg" alt="Microsoft" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Snowflake.svg" alt="Snowflake" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-AmericaFCU.svg" alt="America FCU" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Anecdotes.svg" alt="Anecdotes" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-techsmith-corporation.svg" alt="TechSmith" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-manercosterisan.svg" alt="Maner Costerisan" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Nakehndan.png" alt="Nakehndan" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Batchewana.png" alt="Batchewana" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-nasa.svg" alt="NASA" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/Powerlink.png" alt="Powerlink" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/communities-in-schools.png" alt="Communities in Schools" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/joliet-chamber.jpg" alt="Joliet Chamber of Commerce" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/wit-network.png" alt="The WIT Network" class="trusted-logo trusted-logo--wit">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/mind-wire.png" alt="MindWire" class="trusted-logo">
           </div>
           <div class="trusted-logos" aria-hidden="true">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Microsoft.svg" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Snowflake.svg" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-AmericaFCU.svg" alt="" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Anecdotes.svg" alt="" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-techsmith-corporation.svg" alt="" class="trusted-logo trusted-logo--large">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-manercosterisan.svg" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Nakehndan.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-Batchewana.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/logos/logo-nasa.svg" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/Powerlink.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/communities-in-schools.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/joliet-chamber.jpg" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/wit-network.png" alt="" class="trusted-logo trusted-logo--wit">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/mind-wire.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Microsoft.svg" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Snowflake.svg" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-AmericaFCU.svg" alt="" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Anecdotes.svg" alt="" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-techsmith-corporation.svg" alt="" class="trusted-logo trusted-logo--large">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-manercosterisan.svg" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Nakehndan.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-Batchewana.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/logos/logo-nasa.svg" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/Powerlink.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/communities-in-schools.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/joliet-chamber.jpg" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/wit-network.png" alt="" class="trusted-logo trusted-logo--wit">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/mind-wire.png" alt="" class="trusted-logo">
           </div>
         </div>
       </div>
@@ -697,18 +756,20 @@
       <div class="trusted-logos-row">
         <div class="trusted-logos-track" style="animation-duration:35s">
           <div class="trusted-logos">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/techsmith.png" alt="TechSmith" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/um-health.png" alt="University of Michigan Health" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/sublime.png" alt="Sublime Communications" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/predictive-index.svg" alt="Predictive Index" class="trusted-logo">
-            <span class="sponsor-item-text" style="height:100px;display:inline-flex;align-items:center;flex-shrink:0">LUASOL Collective</span>
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/Buchanan.webp" alt="Buchanan" class="trusted-logo trusted-logo--buchanan">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/TechSmith.png" alt="TechSmith" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/University-of-Michigan-Health.svg" alt="University of Michigan Health" class="trusted-logo trusted-logo--michigan">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/sublime.png" alt="Sublime Communications" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/predictive-index.svg" alt="Predictive Index" class="trusted-logo">
+            <span class="sponsor-item-text"><span class="luasol-name">LUASOL</span><span class="luasol-collective">Collective</span></span>
           </div>
           <div class="trusted-logos" aria-hidden="true">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/techsmith.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/um-health.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/sublime.png" alt="" class="trusted-logo">
-            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/sponsors/predictive-index.svg" alt="" class="trusted-logo">
-            <span class="sponsor-item-text" style="height:100px;display:inline-flex;align-items:center;flex-shrink:0" aria-hidden="true">LUASOL Collective</span>
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/Buchanan.webp" alt="" class="trusted-logo trusted-logo--buchanan">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/TechSmith.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/University-of-Michigan-Health.svg" alt="" class="trusted-logo trusted-logo--michigan">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/sublime.png" alt="" class="trusted-logo">
+            <img src="https://athenaintlmedia.blob.core.windows.net/images/conference-2027/index-A-assets/sponsors/predictive-index.svg" alt="" class="trusted-logo">
+            <span class="sponsor-item-text" aria-hidden="true"><span class="luasol-name">LUASOL</span><span class="luasol-collective">Collective</span></span>
           </div>
         </div>
               <p class="sponsors-subline">ATHENA sponsorship offers more than visibility, it’s alignment with a mission-driven, influential leadership community.</p>
@@ -730,7 +791,7 @@
     </div>
     <div class="hero-cta">
       <a href="#tickets" class="btn btn-primary">Get Tickets</a>
-      <a href="#faq" class="btn btn-outline">Group, NGO, and Corporate Support</a>
+      <a href="mailto:communications@athenainternational.org" class="btn btn-outline">Group, NGO, and Corporate Support</a>
     </div>
   </div>
 </section>
@@ -764,8 +825,8 @@
 
 <!-- ===== STICKY MOBILE CTA ===== -->
 <div class="sticky-cta">
-  <div><b>$545</b><small>Early-bird · VIP 50 seats</small></div>
-  <a href="#tickets" class="btn btn-primary">Get Tickets</a>
+  <div><b>Starting from $95</b><small>Early bird pricing ends soon</small></div>
+  <a href="#tickets" class="btn btn-primary">Compare tickets</a>
 </div>
 
 <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
@@ -807,12 +868,73 @@
   });
 
   // Speaker modal
+    const speakerBios={
+    "Ruthie Bolton":`Ruthie Bolton is a former American professional basketball player who competed at the collegiate, Olympic, and professional levels. She played college basketball at Auburn University and represented the United States in international competition, winning gold medals at the 1996 and 2000 Olympic Games. She also helped the United States win the 1998 FIBA World Championship and was named USA Basketball Female Athlete of the Year in 1991.
+
+Bolton played eight seasons in the WNBA from 1997 through 2004, all with the Sacramento Monarchs. She was a two-time WNBA All-Star, an All-WNBA First Team selection, and one of the franchise's marquee players. She was inducted into the Women's Basketball Hall of Fame in 2011.
+
+Beyond basketball, Bolton has served as a coach, mentor, and sports envoy for the U.S. Department of State, leading basketball clinics for youth and women internationally. She is a published author of From Pain to Peace and The Ride of a Lifetime, and continues to work with young people through leadership and basketball programs. She is also an ATHENA Global Award Recipient.`,
+    "Traci Costa":`Costa is a bold and values-driven leader in the global movement to advance women's leadership. As President and CEO of ATHENA International since 2021, Traci leads with clarity, compassion, and a deep commitment to igniting the potential of all individuals to lead authentically and purposefully.
+
+  Traci first joined the ATHENA community as a passionate advocate for women and girls, earning the ATHENA Leadership Award in 2018. Her dedication led her to serve on the ATHENA International Board of Directors, where she helped guide the organization's strategic growth before being appointed to the helm.
+
+  Prior to ATHENA, Traci served as the founding director of a women's leadership institute, where she created and launched transformative leadership programs that impacted more than 1,500 women and girls in less than three years. She also brings extensive experience in philanthropy and nonprofit development, including major fundraising initiatives and community engagement strategies for the Arizona Community Foundation.
+
+  Traci's leadership journey began as a former NCAA Division I volleyball athlete at California State University, Fresno, where she earned a full athletic scholarship. She later became the founding head volleyball coach at a Division I university in Nashville, Tennessee. Her experiences across athletics, education, fundraising, and executive leadership inform her vision for a more balanced, inclusive, and conscious model of leadership worldwide.`,
+    "Karol Pelletier":`Karol Pelletier is a strategic Chief Human Resources Officer and senior people executive with more than 25 years of experience leading enterprise people strategy, culture transformation, and organizational design across global, highly matrixed organizations. She is a trusted advisor to CEOs, executive teams, and boards, known for aligning talent and operating models to business strategy and delivering measurable performance and financial impact.
+
+  Karol has deep expertise in scaling organizations through growth, transformation, and complexity, including private equity-backed environments, global enterprises, and M&A integration. Her leadership spans workforce strategy, total rewards, executive coaching, succession planning, HR technology, and DEI, with a consistent focus on building high-performance cultures that accelerate business outcomes.
+
+  She most recently served as Chief Human Resources Officer at Culture Partners, where she led enterprise-wide people strategy for a PE-backed consulting firm. Prior to that, she spent more than a decade at Hormel Foods Corporation in progressive HR and culture leadership roles, directing global culture transformation across 20,000+ employees and leading complex M&A integration initiatives. Earlier in her career, she led HR strategy across 40+ countries, overseeing global talent, employee relations, and compliance in complex regulatory environments.
+
+  Karol is recognized for simplifying complexity, driving operational excellence, and building people strategies that enable profitable growth. She brings a strong business mindset, global perspective, and collaborative leadership style to every organization she serves.`,
+    "Dr. Margaret Dimond":`Dr. Margaret Dimond is an innovative and experienced healthcare leader. Dr. Margaret joined Sparrow in May 2023 as President of Lansing-based Sparrow Hospital and was promoted to Regional President of UM Health-West and Sparrow Health System on September 1, 2023.
+
+  Dr. Dimond has deep roots in Michigan and an extensive background in all facets of hospital operations, including acute care, ambulatory, and physician group experience. She has a proven track record of success leading caregivers toward common goals while maintaining a focus on caregiver and patient satisfaction, improved quality metrics, and financial performance. She is well respected throughout healthcare and has distinguished herself as an advocate for female leaders. She was part of the founding team of the Michigan State University Women's Leadership Institute.
+
+  Margaret has held numerous important executive positions in healthcare in Michigan, including President of E. W. Sparrow Hospital; President and CEO of McLaren Oakland Hospital in Pontiac; President and CEO of Ascension Crittenton Hospital in Rochester; President and CEO of Karmanos Cancer Hospital; President and CEO of McLaren Medical Group; Vice President and Chief Operating Officer of the Henry Ford Hospital Warren campus; and Vice President of Ambulatory Services for Henry Ford Hospital in Detroit. She also served as Assistant Dean for the Michigan State University College in East Lansing. Most recently, Margaret served as Chief Administrative Officer for Naples Physician Group/Naples Heart Institute, a division of Naples Community Health Care. Margaret received her doctorate in Philosophy from MSU, while earning a master's degree in Public Administration from the University of Michigan, a master's in Social Work from Boston College, and a bachelor's degree from St. Mary's College, Notre Dame, Indiana.`,
+    "Dr. Moacir Antonelli Ponti":`Dr. Moacir A. Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of Sao Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution.
+
+  His main research fields are machine learning and representation learning, with applications across audio, speech, image, and tabular data. His highlighted work includes YourTTS, a model for zero-shot multi-speaker text-to-speech and voice conversion, and Sketchformer, a transformer-based representation for sketched structures.
+
+  Dr. Moacir is a recipient of the Google Latin America Research Award and has been a CNPq Productivity Fellow since 2018. His previous experience includes an academic visit to the Centre for Vision, Speech and Signal Processing at the University of Surrey, UK, and an Assistant Professor role at the Federal University of Vicosa. He holds a PhD and an MSc from the Federal University of Sao Carlos, Brazil, and completed a PhD internship at the University of Aveiro, Portugal.
+
+  Dr. Moacir is also the co-author of Machine Learning: A Practical Approach on the Statistical Learning Theory, a book that presents statistical learning theory through practical examples, algorithms, and source code.`,
+    "Dat Tran":`Dat Tran is a stress coach, inspirational speaker, and the founder of Stress Fit Labs LLC, a company that helps leaders thrive in high-pressure environments with confidence, courage, and composure. With more than 17 years of experience in tech, Dat is known for creating sessions that are transformative, simple, and immediately practical. He brings a grounded, real approach to every stage, blending neuroscience, human behavioral psychology, and levity to help people build the capacity to navigate change and uncertainty with resiliency. A former Microsoft global strategist who burned out in 2022 and refused to let stress win, Dat's transformation became the blueprint hundreds of Fortune 100 leaders now use to stay competitive and succeed in the age of AI. His message is built on a powerful truth: stress is not your enemy. It is evidence that you are built for something great.`,
+    "Nicole Noll-Williams":`Nicole Noll-Williams brings more than 25 years of aviation industry experience to her leadership role at the Capital Region Airport Authority, with expertise spanning air service development, airline management, and contract management. She previously served nearly three years as Mid-Michigan Regional Director for U.S. Senator Gary C. Peters and, prior to that, as Director of Marketing and Passenger Development for the Airport Authority. In that role, she led development, marketing, advertising, and public relations efforts that helped secure direct flights to Washington, D.C., Cancun, Puerto Vallarta, Punta Cana, and Montego Bay. Earlier in her career, Nicole was Director of Sales for Spartan Travel, where she supported organizations in developing travel policies and negotiated contracts for entities such as the State of Michigan, Michigan State University, and major insurance and manufacturing companies.
+
+  Nicole began her aviation career with United Airlines/United Express as a Customer Service Representative and advanced through roles including Regional Sales Manager for Michigan, Wisconsin, and Minnesota, and Airline Station Manager overseeing daily airport operations. Nicole is actively engaged in the aviation and regional development community, serving on the Airports Council International-North America U.S. Policy Council Committee, the Michigan Association of Airport Executives Legislative Committee, and as a regional advisor to the ACI World Governing Board. She is a Certified Member of the American Association of Airport Executives and serves on multiple regional boards, including the Lansing Economic Area Partnership, the Michigan State University Mobility Advisory Council, the Lansing Community College Foundation Board, and the Dr. Martin Luther King Jr. Commission of Mid-Michigan.
+
+  A recipient of the ATHENA Award, Nicole is recognized for professional excellence, community leadership, and her mentorship of women. She also received the Lansing Community College Distinguished Alumni Award. Nicole is married to Keith Williams and is the proud mother of two daughters, McKenzie Perry and Brooklyn Noll.`,
+    "Bobby Hoffman":`Bobby Hoffman is a motivational speaker, workshop facilitator, and the co-founder of Thought Partner Services, a people-first consultancy that helps leaders and teams strengthen culture, communication, and service through confidence, clarity, and kindness. With a career rooted in media, storytelling, and community connection, Bobby is known for creating rooms that feel grounded, real, and energizing, where people leave with practical tools they can use immediately.
+
+  He brings a warm, relatable style to every stage and training, blending humor, heart, and real-world strategies that help people navigate tough conversations, lead with emotional intelligence, and create better experiences for the people they serve. Bobby is also a host at FOX 47 and the creator of Good Neighbors, a weekly series that highlights everyday people making a difference across Michigan.
+
+  Bobby's work is built on a simple belief: leadership is personal, service is human, and kindness works.`,
+    "Deb Hart":`Deb Hart has been a radio and TV personality since 1990, most recently as the co-host of Morning Blend on WSYM FOX 47 in Lansing, Michigan. She is also a frequent event emcee and guest lecturer/instructor.
+
+  Deb is a certified ATHENA Leadership Program Facilitator, a 500-RYT yoga instructor, 300-RYT Trauma Sensitive Yoga certified, and trained to teach yoga for persons with traumatic brain injuries. She facilitated Trauma Sensitive Yoga classes for residents at the Ingham County Jail for seven years.
+
+  She is also a Level 1 iRest Meditation Teacher. Both iRest and the form of yoga she facilitates are evidence-based practices shown to reduce symptoms of chronic pain, PTSD, insomnia, anxiety, and depression. If you're trying to find her in a crowd, listen for the loud laugh and waving hands.`,
+    "Michele Reister":`Michele Reister, ATHENA Board member and ATHENA Certified Facilitator, is a seasoned fractional CMO and go-to-market advisor with more than 25 years of experience leading marketing transformation for high-growth, high-tech organizations, including companies in the AI, cybersecurity, data, and SaaS sectors.
+
+  As the Founder of Confidence GTM, Michele helps emerging and scaling companies build clear, efficient, and human-centered go-to-market engines that accelerate revenue and strengthen customer connection. She is a GTM Partners-certified GTM Operating System consultant, a graduate of the CMOx Accelerator, and a trusted advisor known for bringing clarity, alignment, and confidence to fast-moving executive teams.
+
+  Michele serves on the Board of Directors for ATHENA International and is a Certified ATHENA Leadership Institute Facilitator, where she teaches and amplifies the eight core ATHENA leadership principles. Her work sits at the intersection of AI innovation and human leadership, helping leaders embrace technological change without losing the irreplaceable human traits of empathy, authenticity, courage, and connection that define extraordinary leadership. Michele holds an MBA from the University of North Carolina at Chapel Hill. She lives in Apex, North Carolina, with her two teenagers and their goldendoodle.`,
+    "Karen Bird":`Karen Bird is Ojibwe from Batchewana First Nation in Ontario, Canada, currently serving as CEO of Batchewana First Nation. In this role, she sets the strategic and cultural tone for the organization, aligning administration with the vision of Chief and Council, the evolving needs of membership, and the cultural and spiritual heart of the Nation. She leads implementation of strategic priorities and advances initiatives that strengthen governance, community well-being, and long-term sustainability.
+
+  Celebrating more than 25 years of experience across business and finance, Karen's professional background spans commercial lending, business advisory services, housing and property management, renewable energy management, business plan development, and start-up coaching. Her work bridges economic development with community empowerment, grounded in both technical expertise and lived understanding.
+
+  Karen is the President and Founder of Nakehndan - Knowing Your Truth, a not-for-profit based in Canada. Inspired by her journey as the mother of a survivor, Karen began sharing her family's story with the intention of helping other families heal. Today, Nakehndan provides culturally infused programming and transitional housing to support sexual assault survivors and their families in healing as a unit, integrating cultural teachings, language, and community-based supports into every aspect of its work.
+
+  A respected and trailblazing leader, Karen is the proud recipient of the 2015 Influential Women of Northern Ontario's Aboriginal Leadership Award and the 2018 ATHENA Leadership Award. She serves on the Board of TakingITGlobal and made history as the first Indigenous President of the Sault Ste. Marie Chamber of Commerce. An ATHENA Certified Facilitator and proud mother of four, Karen carries her language, culture, and teachings with deep reverence. She is a powerful advocate for women in business, Indigenous inclusion, and survivors of sexual assault, lending her voice to seminars, panels, and stages across the region and beyond.`
+    };
   const modal=document.getElementById("modal");
   document.querySelectorAll(".spk[data-name]").forEach(function(s){
     s.addEventListener("click",function(){
       document.getElementById("mName").textContent=s.dataset.name;
       document.getElementById("mRole").innerHTML=s.dataset.role;
-      document.getElementById("mBio").textContent=s.dataset.bio;
+      document.getElementById("mBio").textContent=speakerBios[s.dataset.name]||s.dataset.bio;
       modal.classList.add("open");
     });
   });
@@ -945,5 +1067,6 @@
     }
   }
 </script>
+</main>
 </body>
 </html>
