@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PLM73FC4');</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      window.addEventListener('load', function () {
+        var loadGtm = function () {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PLM73FC4';
+          document.head.appendChild(script);
+        };
+        var delayedLoad = function () {
+          loadGtm();
+          window.removeEventListener('pointerdown', delayedLoad);
+          window.removeEventListener('keydown', delayedLoad);
+        };
+        window.addEventListener('pointerdown', delayedLoad, { once: true, passive: true });
+        window.addEventListener('keydown', delayedLoad, { once: true });
+      });
+    </script>
     <!-- End Google Tag Manager -->
     <title>
       ATHENA International Conference & Awards Celebration 2027 | Lead What's
@@ -18,21 +32,15 @@
       name="description"
       content="Three days of leadership, connection, and recognition. January 28-30, 2027, Hilton Los Angeles, Universal City. Secure your seat."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
+    <link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-720-pro.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high"><link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-960-pro.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high"><link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=optional" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
     />
-    <style>
-      @import url("https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5.0.0/400.css");
-      @import url("https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5.0.0/600.css");
-      @import url("https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5.0.0/700.css");
+  <style>
 
       :root {
         --navy: #0c2e40;
         --navy-deep: #0c2e40;
-        --gold: #a4853e;
+        --gold: #70591f;
         --gold-soft: #c89c46;
         --orange: #ff8200;
         --orange-soft: #ff9a3f;
@@ -126,6 +134,9 @@
         font-size: 1rem;
         line-height: 1.5;
       }
+      .faq-item.open .faq-a {
+        max-height: 1200px;
+      }
       a {
         color: inherit;
         text-decoration: none;
@@ -190,15 +201,13 @@
         text-transform: uppercase;
       }
       .btn-primary {
-        background: var(--gold);
-        color: var(--navy-deep);
+        background: var(--gold-soft); color: var(--navy-deep);
       }
       .navlinks .btn,
       .hero .btn-primary,
       .sticky-cta .btn-primary,
       .final .btn-primary {
-        background: var(--gold);
-        color: var(--navy-deep);
+        background: var(--gold-soft); color: var(--navy-deep);
       }
       .btn-primary:hover {
         background: var(--gold-soft);
@@ -353,6 +362,7 @@
         inset: 0;
         background: var(--navy-deep);
       }
+      .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: calc(100% + 200px) center; display: block; }
       .hero-bg::before {
         content: "";
         position: absolute;
@@ -360,7 +370,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-image: url("/assets/conference-2027/index-B-assets/hero-people.webp");
+        background-image: none;
         background-size: contain;
         background-position: calc(100% + 200px) center;
         background-repeat: no-repeat;
@@ -408,7 +418,7 @@
         line-height: 20px;
         font-weight: 600;
         letter-spacing: 0.08em;
-        color: var(--gold);
+        color: var(--gold-soft);
         text-transform: uppercase;
       }
       .hero h1 {
@@ -541,6 +551,9 @@
         .hero-bg::before {
           background-position: calc(64% + 200px) center;
         }
+        .hero-img {
+          object-position: calc(64% + 200px) center;
+        }
         .hero-bg::after {
           content: "";
           position: absolute;
@@ -563,6 +576,9 @@
       @media (max-width: 760px) {
         .hero-bg::before {
           background-position: center top;
+        }
+        .hero-img {
+          object-position: center top;
         }
         .hero-bg::after {
           content: "";
@@ -821,8 +837,15 @@
       }
       .spk .imgph {
         min-height: 230px;
+        height: 340px;
         border: none;
         border-radius: 0;
+      }
+      .spk .imgph img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
       }
       .spk .info {
         padding: 18px;
@@ -1283,7 +1306,7 @@
         align-items: center;
         gap: clamp(36px, 6vw, 54px);
         width: max-content;
-        animation: trusted-scroll 45s linear infinite;
+        will-change: transform; animation: trusted-scroll 45s linear infinite;
       }
       .trusted-logos-track:hover {
         animation-play-state: paused;
@@ -1547,8 +1570,7 @@
         top: -14px;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--gold);
-        color: var(--navy-deep);
+        background: var(--gold-soft); color: var(--navy-deep);
         font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 0.12em;
@@ -1825,7 +1847,6 @@
         scroll-snap-type: x mandatory;
         padding: 40px 0 10px;
         scrollbar-width: none;
-        tabindex: 0;
       }
       .testi-track {
         scroll-behavior: smooth;
@@ -2113,10 +2134,13 @@
       }
       .footer-copy {
         font-family: var(--font-body);
-        font-size: 0.8rem;
-        line-height: 1.35;
-        color: rgba(254, 255, 248, 0.52);
+        font-size: 0.82rem;
+        line-height: 1.4;
+        color: rgba(254, 255, 248, 0.56);
         margin-top: 0;
+      }
+      .footer-copy p {
+        margin: 0;
       }
 
       /* STICKY MOBILE CTA */
@@ -2160,7 +2184,7 @@
           padding-bottom: 72px;
         }
       }
-    </style>
+    .eyebrow,.strip small,.hotel-offer-label{color:var(--gold)!important}.hero .eyebrow,.tickets .eyebrow,.final .eyebrow{color:var(--gold-soft)!important}.btn-primary,.navlinks .btn,.sticky-cta .btn-primary{background:var(--gold-soft)!important;color:var(--navy-deep)!important}</style>
   </head>
   <body>
     <main id="main-content">
@@ -2168,10 +2192,10 @@
     <nav>
       <div class="wrap">
         <a class="brand" href="#top" aria-label="ATHENA International home">
-          <img
+          <img loading="lazy" decoding="async"
             src="/assets/conference-2027/index-B-assets/brandbook/A-Logo-White.svg"
             alt="ATHENA International"
-          />
+          / width="72" height="36">
         </a>
         <div class="navlinks">
           <a href="#tickets">Tickets</a>
@@ -2186,7 +2210,7 @@
 
     <!-- ===== 01 HERO ===== -->
     <header class="hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg"><picture><source media="(min-width: 761px)" srcset="/assets/conference-2027/index-B-assets/hero-people-960-pro.webp" /><img class="hero-img" src="/assets/conference-2027/index-B-assets/hero-people-720-pro.webp" alt="" aria-hidden="true" width="1313" height="875" loading="eager" fetchpriority="high" decoding="async" /></picture></div>
       <div class="wrap">
         <div class="hero-copy">
           <span class="eyebrow"
@@ -2197,7 +2221,7 @@
           <p class="sub"> Lead what's next. Join purpose-driven women leaders and allies for three immersive days of learning, connection, and celebration.
           </p>
           <p class="support">
-            Powerful keynotes, hands-on micro-labs, wellness sessions, and dinner pods for networking intentional connection. Leave with clarity, confidence, and momentum.
+            Powerful keynotes, hands-on micro-labs, wellness sessions, and dinner pods for networking and intentional connection. Leave with clarity, confidence, and momentum.
           </p>
           <div class="countdown" id="countdown">
             <div><b data-d>—</b><span>Days</span></div>
@@ -2243,11 +2267,11 @@
           </p>
         </div>
         <div class="imgph">
-          <img
-            src="/assets/conference-2027/index-B-assets/Pilares/ATHENA%20Community.webp"
+          <img loading="lazy" decoding="async"
+            src="/assets/conference-2027/index-B-assets/Pilares/ATHENA%20Community-640.webp"
             alt="ATHENA Community"
             style="width: 100%; height: 100%; object-fit: cover"
-          />
+          / width="1825" height="1179">
         </div>
       </div>
     </section>
@@ -2296,18 +2320,18 @@
         </div>
 
         <div class="spk-grid">
-          <div class="spk" data-name="Ruthie Bolton" data-role="Global Award Recipient | Two-Time Olympic Gold Medalist | Author" data-bio="Two-time Olympic gold medalist and ATHENA Global Award Recipient whose story anchors the spirit of the conference."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/ruthie-b.webp" alt="Ruthie Bolton"></div><div class="info"><h3>Ruthie Bolton</h3><p class="role">Global Award Recipient | Two-Time Olympic Gold Medalist | Author</p><p class="talk-kicker">Keynote</p><p class="talk-title">Resilience, Authenticity, and Courage in Action</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Bobby Hoffman" data-role="Motivational Speaker, Thought Partner Services" data-bio="Motivational speaker and workshop facilitator focused on practical leadership under pressure."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/bobby-h.webp" alt="Bobby Hoffman"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Motivational Speaker, Thought Partner Services</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Momentum without Burnout</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Deb Hart" data-role="Trauma Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/deb-h.webp" alt="Deb Hart"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma Sensitive Yoga Certified | iRest Meditation Teacher</p><p class="talk-kicker">Workshop</p><p class="talk-title">Reset and Rise: Wellness Rituals for High-Impact Leaders</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Karol Pelletier" data-role="Chief Human Resources Officer" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/karol-p.webp" alt="Karol Pelletier"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Chief Human Resources Officer</p><p class="talk-kicker">Keynote</p><p class="talk-title">Leadership Isn’t a Title: How to Influence at Any Level</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Dr. Margaret Dimond" data-role="Regional President, UM Health-West & Sparrow Health System" data-bio="Healthcare executive with deep operational leadership across quality, patient experience, and organizational performance."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/margaret-d.webp" alt="Dr. Margaret Dimond"></div><div class="info"><h3>Dr. Margaret Dimond</h3><p class="role">Regional President, UM Health-West & Sparrow Health System</p><p class="talk-kicker">Keynote</p><p class="talk-title">The Courage to Lead Now: Building Trust, Stability, and Hope in Complex Times</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Dr. Moacir Antonelli Ponti" data-role="Author | AI/ML Expert | 2% Most Influential Scientists Worldwide" data-bio="Dr. Moacir Antonelli Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of Sao Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/moacir-a.webp" alt="Dr. Moacir Antonelli Ponti"></div><div class="info"><h3>Dr. Moacir Antonelli Ponti</h3><p class="role">Author | AI/ML Expert | 2% Most Influential Scientists Worldwide</p><p class="talk-kicker">Keynote</p><p class="talk-title">Human-Centered AI Leadership for Real-World Impact</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Dat Tran" data-role="Founder, Stress Fit Labs LLC | Coach &amp; Speaker" data-bio="Dat Tran is a stress coach, inspirational speaker, and the founder of Stress Fit Labs LLC, a company that helps leaders thrive in high-pressure environments with confidence, courage, and composure. With more than 17 years of experience in tech, Dat is known for creating sessions that are transformative, simple, and immediately practical. He brings a grounded, real approach to every stage, blending neuroscience, human behavioral psychology, and levity to help people build the capacity to navigate change and uncertainty with resiliency. A former Microsoft global strategist who burned out in 2022 and refused to let stress win, Dat's transformation became the blueprint hundreds of Fortune 100 leaders now use to stay competitive and succeed in the age of AI. His message is built on a powerful truth: stress is not your enemy. It is evidence that you are built for something great."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/dat-t.webp" alt="Dat Tran"></div><div class="info"><h3>Dat Tran</h3><p class="role">Founder, Stress Fit Labs LLC | Coach &amp; Speaker</p><p class="talk-kicker">Workshop</p><p class="talk-title">Stress Fitness: Navigating Change in the AI Era with Confidence</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Karen Bird" data-role="CEO, Batchewana First Nation | President & Founder, Nakehndan" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/karen-b.webp" alt="Karen Bird"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | President & Founder, Nakehndan</p><p class="talk-kicker">Keynote</p><p class="talk-title">Circles, Stories, and Shared Leadership</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Nicole Noll-Williams" data-role="President and CEO, Capital Region Airport Authority" data-bio="Aviation executive with 25+ years leading complex systems, high-stakes operations, and strategic growth."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/nicole-n.webp" alt="Nicole Noll-Williams"></div><div class="info"><h3>Nicole Noll-Williams</h3><p class="role">President and CEO, Capital Region Airport Authority</p><p class="talk-kicker">Workshop</p><p class="talk-title">Leading Through Turbulence: Courage, Clarity, and Calm Under Pressure</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Traci Costa" data-role="President and CEO, ATHENA International" data-bio="President and CEO of ATHENA International, connecting mission, leadership development, and measurable community outcomes."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/traci-c.webp" alt="Traci Costa"></div><div class="info"><h3>Traci Costa</h3><p class="role">President and CEO, ATHENA International</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Leadership Ecosystems That Scale Impact</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Michelle Massey" data-role="Board Treasurer and Community Executive" data-bio="Board treasurer and community outreach executive focused on partnerships, talent pathways, and women’s leadership access."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/michelle-m.webp" alt="Michelle Massey"></div><div class="info"><h3>Michelle Massey</h3><p class="role">Board Treasurer and Community Executive</p><p class="talk-kicker">Workshop</p><p class="talk-title">Partnerships That Open Doors for Women Leaders</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Michele Reister" data-role="Vice President Marketing" data-bio="Fractional CMO and go-to-market advisor focused on confidence, visibility, and commercial momentum."><div class="imgph"><img src="/assets/conference-2027/index-B-assets/speakers/michelle-r.webp" alt="Michele Reister"></div><div class="info"><h3>Michele Reister</h3><p class="role">Vice President Marketing</p><p class="talk-kicker">Workshop</p><p class="talk-title">Visibility With Ease: Niche, Narrative, and Nourishing Community</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Ruthie Bolton" data-role="Global Award Recipient | Two-Time Olympic Gold Medalist | Author" data-bio="Two-time Olympic gold medalist and ATHENA Global Award Recipient whose story anchors the spirit of the conference."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/ruthie-b.webp" alt="Ruthie Bolton" width="1200" height="1440"></div><div class="info"><h3>Ruthie Bolton</h3><p class="role">Global Award Recipient | Two-Time Olympic Gold Medalist | Author</p><p class="talk-kicker">Keynote</p><p class="talk-title">Resilience, Authenticity, and Courage in Action</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Bobby Hoffman" data-role="Motivational Speaker, Thought Partner Services" data-bio="Motivational speaker and workshop facilitator focused on practical leadership under pressure."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/bobby-h.webp" alt="Bobby Hoffman" width="1200" height="1440"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Motivational Speaker, Thought Partner Services</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Momentum without Burnout</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Deb Hart" data-role="Trauma Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/deb-h.webp" alt="Deb Hart" width="1200" height="1440"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma Sensitive Yoga Certified | iRest Meditation Teacher</p><p class="talk-kicker">Workshop</p><p class="talk-title">Reset and Rise: Wellness Rituals for High-Impact Leaders</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Karol Pelletier" data-role="Chief Human Resources Officer" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karol-p.webp" alt="Karol Pelletier" width="1200" height="1440"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Chief Human Resources Officer</p><p class="talk-kicker">Keynote</p><p class="talk-title">Leadership Isn’t a Title: How to Influence at Any Level</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Dr. Margaret Dimond" data-role="Regional President, UM Health-West & Sparrow Health System" data-bio="Healthcare executive with deep operational leadership across quality, patient experience, and organizational performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/margaret-d.webp" alt="Dr. Margaret Dimond" width="1200" height="1440"></div><div class="info"><h3>Dr. Margaret Dimond</h3><p class="role">Regional President, UM Health-West & Sparrow Health System</p><p class="talk-kicker">Keynote</p><p class="talk-title">The Courage to Lead Now: Building Trust, Stability, and Hope in Complex Times</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Dr. Moacir Antonelli Ponti" data-role="Author | AI/ML Expert | 2% Most Influential Scientists Worldwide" data-bio="Dr. Moacir Antonelli Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of Sao Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/moacir-a.webp" alt="Dr. Moacir Antonelli Ponti" width="1200" height="1440"></div><div class="info"><h3>Dr. Moacir Antonelli Ponti</h3><p class="role">Author | AI/ML Expert | 2% Most Influential Scientists Worldwide</p><p class="talk-kicker">Keynote</p><p class="talk-title">Human-Centered AI Leadership for Real-World Impact</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Dat Tran" data-role="Founder, Stress Fit Labs LLC | Coach &amp; Speaker" data-bio="Dat Tran is a stress coach, inspirational speaker, and the founder of Stress Fit Labs LLC, a company that helps leaders thrive in high-pressure environments with confidence, courage, and composure. With more than 17 years of experience in tech, Dat is known for creating sessions that are transformative, simple, and immediately practical. He brings a grounded, real approach to every stage, blending neuroscience, human behavioral psychology, and levity to help people build the capacity to navigate change and uncertainty with resiliency. A former Microsoft global strategist who burned out in 2022 and refused to let stress win, Dat's transformation became the blueprint hundreds of Fortune 100 leaders now use to stay competitive and succeed in the age of AI. His message is built on a powerful truth: stress is not your enemy. It is evidence that you are built for something great."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/dat-t.webp" alt="Dat Tran" width="1200" height="1440"></div><div class="info"><h3>Dat Tran</h3><p class="role">Founder, Stress Fit Labs LLC | Coach &amp; Speaker</p><p class="talk-kicker">Workshop</p><p class="talk-title">Stress Fitness: Navigating Change in the AI Era with Confidence</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Karen Bird" data-role="CEO, Batchewana First Nation | President & Founder, Nakehndan" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karen-b.webp" alt="Karen Bird" width="1200" height="1440"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | President & Founder, Nakehndan</p><p class="talk-kicker">Keynote</p><p class="talk-title">Circles, Stories, and Shared Leadership</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Nicole Noll-Williams" data-role="President and CEO, Capital Region Airport Authority" data-bio="Aviation executive with 25+ years leading complex systems, high-stakes operations, and strategic growth."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/nicole-n.webp" alt="Nicole Noll-Williams" width="1200" height="1440"></div><div class="info"><h3>Nicole Noll-Williams</h3><p class="role">President and CEO, Capital Region Airport Authority</p><p class="talk-kicker">Workshop</p><p class="talk-title">Leading Through Turbulence: Courage, Clarity, and Calm Under Pressure</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Traci Costa" data-role="President and CEO, ATHENA International" data-bio="President and CEO of ATHENA International, connecting mission, leadership development, and measurable community outcomes."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/traci-c.webp" alt="Traci Costa" width="1200" height="1440"></div><div class="info"><h3>Traci Costa</h3><p class="role">President and CEO, ATHENA International</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Leadership Ecosystems That Scale Impact</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Michelle Massey" data-role="VP Community & Customer Support, TechSmith | M2 Speaks Founder" data-bio="Michelle is responsible for maximizing the impact of the customer experience and growing TechSmith’s philanthropic impact in K-12 education. Michelle joined TechSmith in 2021 and has more than 25 years of information technology industry experience. Michelle received the 2021 ATHENA Leadership Award and Downtown Lansing Inc.’s Downtown Dreamer award for her contributions to the Lansing community."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/michelle-m.webp" alt="Michelle Massey" width="1200" height="1440"></div><div class="info"><h3>Michelle Massey</h3><p class="role">VP Community & Customer Support, TechSmith | M2 Speaks Founder</p><p class="talk-kicker">Workshop</p><p class="talk-title">Partnerships That Open Doors for Women Leaders</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Michele Reister" data-role="Vice President Marketing" data-bio="Fractional CMO and go-to-market advisor focused on confidence, visibility, and commercial momentum."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/michelle-r.webp" alt="Michele Reister" width="1200" height="1440"></div><div class="info"><h3>Michele Reister</h3><p class="role">Vice President Marketing</p><p class="talk-kicker">Workshop</p><p class="talk-title">Visibility With Ease: Niche, Narrative, and Nourishing Community</p><p class="more">Read bio +</p></div></div>
         </div>
         <div class="spk-expand">
           <button class="btn" id="spkToggle">See all speakers</button>
@@ -2327,11 +2351,11 @@
         <div style="margin-top: 56px">
           <div class="exp-row">
             <div class="imgph">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Keynote%20and%20Plenares.webp"
                 alt="Keynotes"
                 style="width: 100%; height: 100%; object-fit: cover"
-              />
+              / width="1410" height="1383">
             </div>
             <div>
               <h3>Keynotes &amp; Panels</h3>
@@ -2340,11 +2364,11 @@
           </div>
           <div class="exp-row">
             <div class="imgph">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Curated%20Labs.webp"
                 alt="Curated Labs"
                 style="width: 100%; height: 100%; object-fit: cover"
-              />
+              / width="1794" height="1261">
             </div>
             <div>
               <h3>Hands-On Micro-Labs</h3>
@@ -2353,11 +2377,11 @@
           </div>
           <div class="exp-row">
             <div class="imgph">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Connection%20That%20Matters.webp"
                 alt="Connection That Matters"
                 style="width: 100%; height: 100%; object-fit: cover"
-              />
+              / width="1854" height="1113">
             </div>
             <div>
               <h3>Connection That Matters</h3>
@@ -2369,11 +2393,11 @@
           </div>
           <div class="exp-row">
             <div class="imgph">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Wellness.webp"
                 alt="Wellness"
                 style="width: 100%; height: 100%; object-fit: cover"
-              />
+              / width="1740" height="1235">
             </div>
             <div>
               <h3>Wellness Sessions</h3>
@@ -2414,10 +2438,10 @@
           </p>
           <div class="highlight">
             <div class="ruthie-inline">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/speakers/ruthie-b.webp"
                 alt="Ruthie Bolton"
-              />
+              / width="1200" height="1440">
               <div>
                 <div class="label">Featured guest</div>
                 <div class="name">Ruthie Bolton</div>
@@ -2431,11 +2455,11 @@
           </div>
         </div>
         <div class="imgph">
-          <img
+          <img loading="lazy" decoding="async"
             src="/assets/conference-2027/index-B-assets/Heros/Ruthie-Book.webp"
             alt="Ruthie Bolton book"
             style="width: 100%; height: 100%; object-fit: cover"
-          />
+          / width="2048" height="2048">
         </div>
       </div>
     </section>
@@ -2480,148 +2504,148 @@
           <div class="trusted-logos-row">
             <div class="trusted-logos-track">
               <div class="trusted-logos">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Microsoft.svg"
                   alt="Microsoft"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Snowflake.svg"
                   alt="Snowflake"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-AmericaFCU.svg"
                   alt="America FCU"
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Anecdotes.svg"
                   alt="Anecdotes"
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-techsmith-corporation.svg"
                   alt="TechSmith"
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-manercosterisan.svg"
                   alt="Maner Costerisan"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Nakehndan.webp"
                   alt="Nakehndan"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Batchewana.webp"
                   alt="Batchewana"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-nasa.svg"
                   alt="NASA"
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/Powerlink.webp"
                   alt="Powerlink"
                   class="trusted-logo"
-                />
-                <img
+                / width="199" height="100">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/communities-in-schools.webp"
                   alt="Communities in Schools"
                   class="trusted-logo"
-                />
-                <img
+                / width="406" height="126">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/joliet-chamber.webp"
                   alt="Joliet Chamber of Commerce"
                   class="trusted-logo"
-                />
-                <img
+                / width="337" height="139">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/wit-network.webp"
                   alt="The WIT Network"
                   class="trusted-logo trusted-logo--wit"
-                />
-                <img
+                / width="209" height="75">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/mind-wire.webp"
                   alt="MindWire"
                   class="trusted-logo"
-                />
+                / width="396" height="126">
               </div>
               <div class="trusted-logos" aria-hidden="true">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Microsoft.svg"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Snowflake.svg"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-AmericaFCU.svg"
                   alt=""
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Anecdotes.svg"
                   alt=""
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-techsmith-corporation.svg"
                   alt=""
                   class="trusted-logo trusted-logo--large"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-manercosterisan.svg"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Nakehndan.webp"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Batchewana.webp"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-nasa.svg"
                   alt=""
                   class="trusted-logo"
                 />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/Powerlink.webp"
                   alt=""
                   class="trusted-logo"
-                />
-                <img
+                / width="199" height="100">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/communities-in-schools.webp"
                   alt=""
                   class="trusted-logo"
-                />
-                <img
+                / width="406" height="126">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/joliet-chamber.webp"
                   alt=""
                   class="trusted-logo"
-                />
-                <img
+                / width="337" height="139">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/wit-network.webp"
                   alt=""
                   class="trusted-logo trusted-logo--wit"
-                />
-                <img
+                / width="209" height="75">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/mind-wire.webp"
                   alt=""
                   class="trusted-logo"
-                />
+                / width="396" height="126">
               </div>
             </div>
           </div>
@@ -2648,59 +2672,59 @@
           <div class="trusted-logos-row">
             <div class="trusted-logos-track" style="animation-duration: 35s">
               <div class="trusted-logos">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/Buchanan.webp"
                   alt="Buchanan"
                   class="trusted-logo trusted-logo--buchanan"
-                />
-                <img
+                / width="350" height="175">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/TechSmith.webp"
                   alt="TechSmith"
                   class="trusted-logo"
-                />
-                <img
+                / width="1200" height="630">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/University-of-Michigan-Health.svg"
                   alt="University of Michigan Health"
                   class="trusted-logo trusted-logo--michigan"
-                />
-                <img
+                / width="453.286" height="38" width="453.286" height="38">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/sublime.webp"
                   alt="Sublime Communications"
                   class="trusted-logo"
-                />
-                <img
+                / width="408" height="120">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/predictive-index.svg"
                   alt="Predictive Index"
                   class="trusted-logo"
-                />
+                / width="1600" height="900">
                 <span class="sponsor-item-text"><span class="luasol-name">LUASOL</span><span class="luasol-collective">Collective</span></span>
               </div>
               <div class="trusted-logos" aria-hidden="true">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/Buchanan.webp"
                   alt=""
                   class="trusted-logo trusted-logo--buchanan"
-                />
-                <img
+                / width="350" height="175">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/TechSmith.webp"
                   alt=""
                   class="trusted-logo"
-                />
-                <img
+                / width="1200" height="630">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/University-of-Michigan-Health.svg"
                   alt=""
                   class="trusted-logo trusted-logo--michigan"
-                />
-                <img
+                / width="453.286" height="38" width="453.286" height="38">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/sublime.webp"
                   alt=""
                   class="trusted-logo"
-                />
-                <img
+                / width="408" height="120">
+                <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/sponsors/predictive-index.svg"
                   alt=""
                   class="trusted-logo"
-                />
+                / width="1600" height="900">
                 <span class="sponsor-item-text" aria-hidden="true"><span class="luasol-name">LUASOL</span><span class="luasol-collective">Collective</span></span>
               </div>
             </div>
@@ -2868,9 +2892,11 @@
           </p>
         </div>
         <div class="venue-gallery" aria-label="Universal City and nearby attractions">
-          <img
+          <img loading="lazy" decoding="async"
             src="/assets/conference-2027/index-B-assets/external/Athena-International-2027-Conference-attractions.webp"
             alt="Athena International 2027 nearby attractions collage"
+            width="1200"
+            height="800"
           />
         </div>
       </div>
@@ -2892,11 +2918,11 @@
           >
         </div>
         <div class="imgph">
-          <img
+          <img loading="lazy" decoding="async"
             src="/assets/conference-2027/index-B-assets/fotos/2025-conference_Dinner-pod.webp"
             alt="Leadership team at a roundtable conversation"
             style="width: 100%; height: 100%; object-fit: cover"
-          />
+          / width="1920" height="1080">
         </div>
       </div>
     </section>
@@ -3187,6 +3213,8 @@
       <div class="wrap">
         <div class="footer-content">
           <p class="footer-privacy">We respect your privacy.</p>
+          <p class="footer-privacy">ATHENA International, legally incorporated as the ATHENA Foundation, is a federally recognized 501(c)(3) nonprofit organization. EIN: 38-2717362. Contributions are tax-deductible to the extent permitted by law. Mailing Address: 2425 E. Grand River Ave Ste. 1 | Lansing, MI 48912</p>
+          <p class="footer-privacy">© 2026-2027 ATHENA International, All rights reserved.</p>
           <h3 class="footer-tagline">Ignite. Amplify. Celebrate.</h3>
           <p class="footer-terms">
             <a href="https://www.athenainternational.org/terms-and-conditions"
@@ -3202,9 +3230,6 @@
             >
             <a href="https://www.facebook.com/ATHENAInternational">Facebook</a>
           </div>
-          <p class="footer-copy">
-            © 2026 ATHENA International, All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
@@ -3224,8 +3249,6 @@
       <div><b>Starting from $95</b><small>Early bird pricing ends soon</small></div>
       <a href="#tickets" class="btn btn-primary">Compare tickets</a>
     </div>
-
-    <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
     <script>
       // Countdown até 28 jan 2027, 12:00 PST
       const target = new Date("2027-01-28T12:00:00-08:00").getTime();
@@ -3256,24 +3279,24 @@
           "(prefers-reduced-motion: reduce)",
         ).matches;
 
+        let cachedCardStep = 362;
+        let cachedMaxScroll = Infinity;
+        function measureCardStep() {
+          cachedCardStep = 362;
+          cachedMaxScroll = Infinity;
+        }
         function cardStep() {
-          const card = track.querySelector(".tcard");
-          if (!card) return 0;
-          const gapValue = getComputedStyle(track).gap || "0";
-          return card.getBoundingClientRect().width + parseFloat(gapValue);
+          return cachedCardStep;
         }
 
         function rotate() {
           const step = cardStep();
           if (!step) return;
-          const maxScroll = track.scrollWidth - track.clientWidth;
-          if (track.scrollLeft + step >= maxScroll - 2) {
-            track.scrollTo({ left: 0, behavior: "smooth" });
-            return;
-          }
           track.scrollBy({ left: step, behavior: "smooth" });
         }
 
+        measureCardStep();
+        window.addEventListener("resize", measureCardStep, { passive: true });
         if (!prefersReducedMotion) {
           setInterval(rotate, 4200);
         }
@@ -3281,10 +3304,7 @@
         function moveBy(direction) {
           const step = cardStep();
           if (!step) return;
-          const maxScroll = track.scrollWidth - track.clientWidth;
-          const target = track.scrollLeft + direction * step;
-          const nextPosition = Math.max(0, Math.min(target, maxScroll));
-          track.scrollTo({ left: nextPosition, behavior: "smooth" });
+          track.scrollBy({ left: direction * step, behavior: "smooth" });
         }
 
         if (prevBtn) {
@@ -3397,11 +3417,23 @@
           })
           .join("");
         const dots = Array.from(dotsEl.querySelectorAll(".spk-dot"));
+        let updateFrame = 0;
+        let cardPositions = [];
+        function measureCardPositions() {
+          cardPositions = cards.map(function (_, index) {
+            return index * (296);
+          });
+        }
+        measureCardPositions();
+        window.addEventListener("resize", measureCardPositions, { passive: true });
         function update() {
+          if (updateFrame) return;
+          updateFrame = requestAnimationFrame(function () {
+            updateFrame = 0;
           var closest = 0,
             min = Infinity;
           cards.forEach(function (c, i) {
-            var d = Math.abs(c.offsetLeft - grid.scrollLeft);
+            var d = Math.abs(cardPositions[i] - grid.scrollLeft);
             if (d < min) {
               min = d;
               closest = i;
@@ -3415,6 +3447,7 @@
             dot.classList.toggle("active", i === closest);
             dot.style.opacity = i === closest ? "1" : dist === 1 ? ".55" : ".3";
             dot.style.width = i === closest ? "18px" : "6px";
+          });
           });
         }
         grid.addEventListener("scroll", update, { passive: true });
@@ -3461,7 +3494,6 @@
           });
           if (!open) {
             item.classList.add("open");
-            a.style.maxHeight = a.scrollHeight + "px";
           }
         });
       });
