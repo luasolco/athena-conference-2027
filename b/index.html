@@ -570,6 +570,44 @@
         }
       }
 
+      /* ===== HERO COMPACTO EM TELA VERTICAL CURTA =====
+         Objetivo: a faixa When/Where/Who aparecer sem rolagem em notebook.
+         O que determina a altura do hero e o CONTEUDO, nao o min-height:
+         em 1440x800 o hero tem 766px sendo 148px so de padding.
+         Monitor alto (acima de 980px) fica com o hero generoso original: o layout
+         solto precisa de 973px pra caber nav + hero + faixa, dai o corte em 980. */
+      @media (min-width: 761px) and (max-height: 980px) {
+        .hero .wrap {
+          min-height: 0;
+          padding-top: 40px;
+          padding-bottom: 36px;
+        }
+        .hero .eyebrow {
+          margin-bottom: 12px;
+        }
+        .hero h2 {
+          font-size: 1.5rem;
+          margin-bottom: 6px;
+        }
+        .hero h1 {
+          font-size: clamp(2.2rem, 3.4vw, 3rem);
+          margin-bottom: 14px;
+        }
+        .hero .sub {
+          font-size: 1.05rem;
+          margin-bottom: 12px;
+        }
+        .hero .support {
+          font-size: 0.98rem;
+        }
+        .hero .countdown {
+          margin-top: 16px;
+        }
+        .hero .hero-cta {
+          margin-top: 18px;
+        }
+      }
+
       @media (max-width: 760px) {
         .hero-bg::before {
           background-position: center top;
@@ -672,6 +710,35 @@
         }
         .strip .trust {
           margin-bottom: 4px;
+        }
+      }
+
+      /* Tela muito curta (notebook 1280x720 e afins): aperta mais um pouco. */
+      @media (min-width: 761px) and (max-height: 780px) {
+        .hero .wrap {
+          padding-top: 28px;
+          padding-bottom: 24px;
+        }
+        .hero h1 {
+          font-size: clamp(2rem, 3vw, 2.6rem);
+          margin-bottom: 10px;
+        }
+        .hero .support {
+          margin-top: 0;
+        }
+        .hero .countdown {
+          margin-top: 12px;
+        }
+        .hero .hero-cta {
+          margin-top: 14px;
+        }
+      }
+
+      /* Faixa mais baixa em tela vertical curta, pra caber junto com o hero.
+         Precisa vir DEPOIS da regra base do .strip, senao a base sobrescreve. */
+      @media (min-width: 761px) and (max-height: 980px) {
+        .strip {
+          padding: 18px 0;
         }
       }
 
@@ -2329,7 +2396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="spk" data-name="Karen Bird" data-role="CEO, Batchewana First Nation | President & Founder, Nakehndan" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karen-b.webp" alt="Karen Bird" width="1200" height="1440"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | President & Founder, Nakehndan</p><p class="talk-kicker">Keynote</p><p class="talk-title">Circles, Stories, and Shared Leadership</p><p class="more">Read bio +</p></div></div>
           <div class="spk" data-name="Nicole Noll-Williams" data-role="President and CEO, Capital Region Airport Authority" data-bio="Aviation executive with 25+ years leading complex systems, high-stakes operations, and strategic growth."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/nicole-n.webp" alt="Nicole Noll-Williams" width="1200" height="1440"></div><div class="info"><h3>Nicole Noll-Williams</h3><p class="role">President and CEO, Capital Region Airport Authority</p><p class="talk-kicker">Workshop</p><p class="talk-title">Leading Through Turbulence: Courage, Clarity, and Calm Under Pressure</p><p class="more">Read bio +</p></div></div>
           <div class="spk" data-name="Traci Costa" data-role="President and CEO, ATHENA International" data-bio="President and CEO of ATHENA International, connecting mission, leadership development, and measurable community outcomes."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/traci-c.webp" alt="Traci Costa" width="1200" height="1440"></div><div class="info"><h3>Traci Costa</h3><p class="role">President and CEO, ATHENA International</p><p class="talk-kicker">Keynote</p><p class="talk-title">Building Leadership Ecosystems That Scale Impact</p><p class="more">Read bio +</p></div></div>
-          <div class="spk" data-name="Michelle Massey" data-role="VP Community & Customer Support, TechSmith | M2 Speaks Founder" data-bio="Michelle is responsible for maximizing the impact of the customer experience and growing TechSmith’s philanthropic impact in K-12 education. Michelle joined TechSmith in 2021 and has more than 25 years of information technology industry experience. Michelle received the 2021 ATHENA Leadership Award and Downtown Lansing Inc.’s Downtown Dreamer award for her contributions to the Lansing community."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/michelle-m.webp" alt="Michelle Massey" width="1200" height="1440"></div><div class="info"><h3>Michelle Massey</h3><p class="role">VP Community & Customer Support, TechSmith | M2 Speaks Founder</p><p class="talk-kicker">Workshop</p><p class="talk-title">Partnerships That Open Doors for Women Leaders</p><p class="more">Read bio +</p></div></div>
+          <div class="spk" data-name="Amy Blasen" data-role="DO, FACEP" data-bio="Join us for an open and interactive discussion on the myths, misconceptions, and realities of perimenopause and menopause. Together, we will explore symptoms, treatment options, self-advocacy, and what women should expect from a provider who truly listens. Most importantly, this conversation is designed to empower, educate, and remind women that they are not alone and should never give up on seeking the help they deserve."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/amy-b.webp" alt="Amy Blasen" width="1200" height="1440"></div><div class="info"><h3>Amy Blasen</h3><p class="role">DO, FACEP</p><p class="talk-kicker">Workshop</p><p class="talk-title">Menopause 101: It’s Not “All in Your Head” or “Just Aging”</p><p class="more">Read bio +</p></div></div>
           <div class="spk" data-name="Michele Reister" data-role="Vice President Marketing" data-bio="Fractional CMO and go-to-market advisor focused on confidence, visibility, and commercial momentum."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/michelle-r.webp" alt="Michele Reister" width="1200" height="1440"></div><div class="info"><h3>Michele Reister</h3><p class="role">Vice President Marketing</p><p class="talk-kicker">Workshop</p><p class="talk-title">Visibility With Ease: Niche, Narrative, and Nourishing Community</p><p class="more">Read bio +</p></div></div>
         </div>
         <div class="spk-expand">
