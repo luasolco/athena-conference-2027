@@ -25,6 +25,20 @@ Pra publicar uma alteracao, rodar de dentro do repo `lua-sol-co`:
 
 O script valida toda referencia local de imagem e CSS antes de deixar publicar.
 
+## Onde este repo fica na maquina
+
+Clonado dentro do repo interno, em `Clients/athena-international/production/`.
+Sao **dois repositorios git separados**: o de fora (`lua-sol-co`) ignora esta pasta
+via `Clients/*/production/` no `.gitignore` dele. Commit e push feitos aqui dentro
+vao pra `luasolco/athena-conference-2027`, nunca pro repo interno.
+
+Se precisar clonar de novo do zero:
+
+```bash
+gh repo clone luasolco/athena-conference-2027 \
+  "$HOME/Lua Sol Co/Clients/athena-international/production"
+```
+
 ## Imagens
 
 Ficam em `assets/conference-2027/index-A-assets/` e `index-B-assets/` (uma copia por versao).
