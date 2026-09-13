@@ -2437,9 +2437,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="spk" data-name="Deb Hart" data-role="Trauma Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/deb-h.webp" alt="Deb Hart" width="1200" height="1440"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma Sensitive Yoga Certified | iRest Meditation Teacher</p><p class="talk-kicker">Wellness Sessions</p><p class="talk-title">Reset and Rise: Wellness Rituals for High-Impact Leaders</p><p class="more">Read bio +</p></div></div>
           <div class="spk" data-name="Carlene Kanellis" data-role="Modern Day Medicine Woman | Wellness Mentor" data-bio="Founder of Modern Day Medicine Woman, a wellness practice rooted in breathwork, ritual, and sacred sisterhood."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/carlene-k.webp" alt="Carlene Kanellis" width="1200" height="1440"></div><div class="info"><h3>Carlene Kanellis</h3><p class="role">Modern Day Medicine Woman | Wellness Mentor</p><p class="talk-kicker">Wellness Sessions</p><p class="talk-title">Modern Day Medicine</p><p class="more">Read bio +</p></div></div>
         </div>
-        <div class="spk-expand">
-          <button class="btn" id="spkToggle">See all speakers</button>
-        </div>
         <div class="spk-dots" id="spkDots"></div>
         <p class="annotation-note center speakers-note">More speakers and nearby attractions will be confirmed through January 2027.</p>
       </div>
@@ -3580,21 +3577,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const spkGrid = document.querySelector(".spk-grid");
       const spkToggle = document.getElementById("spkToggle");
       if (spkGrid && spkToggle) {
-        const total = spkGrid.querySelectorAll(".spk[data-name]").length;
-        if (total <= 12) {
-          spkGrid.classList.remove("collapsed");
-          spkToggle.parentElement.style.display = "none";
-        } else {
-          spkGrid.classList.add("collapsed");
-          spkToggle.textContent = "See all speakers (+" + (total - 12) + ")";
-          spkToggle.addEventListener("click", function () {
-            const collapsed = spkGrid.classList.toggle("collapsed");
-            spkToggle.textContent = collapsed
-              ? "See all speakers (+" + (total - 12) + ")"
-              : "Show less";
-          });
-        }
+        // Todos os palestrantes aparecem sempre. Sem "see all speakers".
+        spkGrid.classList.remove("collapsed");
+        spkToggle.parentElement.style.display = "none";
       }
+
 
       // FAQ acordeão
       document.querySelectorAll(".faq-q").forEach(function (b) {
