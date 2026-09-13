@@ -1949,12 +1949,6 @@
         line-height: 1.45;
         color: var(--ink);
       }
-      .tcard .who {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-top: 20px;
-      }
       .tcard .av {
         width: 46px;
         height: 46px;
@@ -2279,6 +2273,39 @@
         .proof .stat { padding: 14px 12px; }
         .proof .stat:nth-child(odd) { border-left: none; }
       }
+
+      /* ===== Depoimentos: correcao + redesenho ===== */
+      /* A regra global `.who { background: var(--cream) }` foi feita pra SECAO who.
+         O card de depoimento reusa a mesma classe na assinatura e herdava o creme,
+         pintando uma barra dentro do card branco. */
+
+      .tcard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(12, 46, 64, 0.1);
+        border-top: 3px solid var(--gold);
+        border-radius: 10px;
+        padding: 34px 30px 26px;
+        box-shadow: 0 12px 30px rgba(12, 46, 64, 0.08);
+      }
+      /* Aspa decorativa ancora o card e ocupa o topo, que estava vazio. */
+      .tcard::before {
+        content: "\201C";
+        position: absolute;
+        top: 8px;
+        left: 20px;
+        font-family: var(--font-display);
+        font-size: 4.6rem;
+        line-height: 1;
+        color: var(--gold);
+        opacity: 0.16;
+        pointer-events: none;
+      }
+      .tcard p { position: relative; margin: 0; padding-bottom: 14px; }
+      /* margin-top auto joga a assinatura pro rodape: o espaco sobrando vira
+         respiro entre citacao e assinatura, em vez de buraco no fim do card. */
+      .testi-track { scroll-padding-inline: 4px; padding-bottom: 24px; }
 </style>
   </head>
   <body>
@@ -3036,92 +3063,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="testi-track" role="region" aria-label="Testimonials" tabindex="0">
           <div class="tcard">
-            <p>
-              "The 2025 ATHENA conference was a thoughtful blend of expert
+            <p>The 2025 ATHENA conference was a thoughtful blend of expert
               speakers sharing their stories, meaningful networking and just
               plain fun. The relationships built there have continued to thrive
               long after the event. Grateful to be a part of the ATHENA
-              community."
-            </p>
-            <div class="who">
-              <div><b>- KB</b></div>
-            </div>
+              community.</p>
           </div>
           <div class="tcard">
-            <p>
-              "The 2025 ATHENA Leadership Conference reignited the power of the
+            <p>The 2025 ATHENA Leadership Conference reignited the power of the
               ATHENA Leadership Model and its principles. I was grateful to
               connect with an incredible network of women across ATHENA
-              communities who lead with courage, purpose, and impact."
-            </p>
-            <div class="who">
-              <div><b>- KG</b></div>
-            </div>
+              communities who lead with courage, purpose, and impact.</p>
           </div>
           <div class="tcard">
-            <p>
-              "Every keynote and workshop provided tools, nuggets and gems for
+            <p>Every keynote and workshop provided tools, nuggets and gems for
               women in leadership. The 2025 ATHENA Conference was a great
-              investment that continues to pay relationship dividends."
-            </p>
-            <div class="who">
-              <div><b>- PM</b></div>
-            </div>
+              investment that continues to pay relationship dividends.</p>
           </div>
           <div class="tcard">
-            <p>
-              "The 2025 ATHENA Conference provided the opportunity to not only
+            <p>The 2025 ATHENA Conference provided the opportunity to not only
               hear from inspiring women leaders, but to also connect with women
-              in a meaningful way."
-            </p>
-            <div class="who">
-              <div><b>- MM</b></div>
-            </div>
+              in a meaningful way.</p>
           </div>
           <div class="tcard">
-            <p>
-              "At the last ATHENA Conference in 2025 I met leaders who opened
-              real board and partnership conversations within weeks."
-            </p>
-            <div class="who">
-              <div><b>- DM</b></div>
-            </div>
+            <p>At the last ATHENA Conference in 2025 I met leaders who opened
+              real board and partnership conversations within weeks.</p>
           </div>
           <div class="tcard">
-            <p>
-              "Through engagements with ATHENA network, I refined my job craft
-              narrative and connected to the right decision-makers."
-            </p>
-            <div class="who">
-              <div><b>- MR</b></div>
-            </div>
+            <p>Through engagements with ATHENA network, I refined my job craft
+              narrative and connected to the right decision-makers.</p>
           </div>
           <div class="tcard">
-            <p>
-              "What stood out at the ATHENA 2025 Conference was the quality of
-              women leaders who truly champion each other."
-            </p>
-            <div class="who">
-              <div><b>- PN</b></div>
-            </div>
+            <p>What stood out at the ATHENA 2025 Conference was the quality of
+              women leaders who truly champion each other.</p>
           </div>
           <div class="tcard">
-            <p>
-              "The ATHENA Conference gave me practical frameworks I used
-              immediately to grow my influence and leadership impact."
-            </p>
-            <div class="who">
-              <div><b>- DC</b></div>
-            </div>
+            <p>The ATHENA Conference gave me practical frameworks I used
+              immediately to grow my influence and leadership impact.</p>
           </div>
           <div class="tcard">
-            <p>
-              "The Conference sessions were high signal and immediately useful
-              for growth and influence."
-            </p>
-            <div class="who">
-              <div><b>- EP</b></div>
-            </div>
+            <p>The Conference sessions were high signal and immediately useful
+              for growth and influence.</p>
           </div>
         </div>
         <div class="testi-controls" aria-label="Testimonials controls">
