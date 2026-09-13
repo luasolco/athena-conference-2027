@@ -2306,6 +2306,65 @@
       /* margin-top auto joga a assinatura pro rodape: o espaco sobrando vira
          respiro entre citacao e assinatura, em vez de buraco no fim do card. */
       .testi-track { scroll-padding-inline: 4px; padding-bottom: 24px; }
+
+      /* ===== Rodape reorganizado =====
+         Antes era uma coluna centrada com tudo no mesmo peso: a letra miuda juridica
+         ocupava o topo e a assinatura da marca ficava enterrada entre o copyright e o
+         Terms. Agora a ordem de leitura e marca, depois links, depois letra miuda. */
+      footer { padding: 46px 0 30px; }
+      .footer-content { max-width: none; align-items: stretch; text-align: left; gap: 0; }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 28px 40px;
+        flex-wrap: wrap;
+      }
+      .footer-brand img { display: block; width: 180px; height: auto; }
+      .footer-tagline {
+        margin: 14px 0 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+        line-height: 1.2;
+        color: rgba(254, 255, 248, 0.82);
+      }
+      .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+      .footer-links a {
+        font-family: var(--font-label);
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(254, 255, 248, 0.72);
+        text-decoration: none;
+        padding-bottom: 3px;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .footer-links a:hover,
+      .footer-links a:focus-visible { color: #fff; border-bottom-color: var(--gold); }
+      .footer-legal {
+        margin-top: 32px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(254, 255, 248, 0.14);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .footer-legal p {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 0.76rem;
+        line-height: 1.5;
+        color: rgba(254, 255, 248, 0.46);
+        max-width: 820px;
+      }
+      @media (max-width: 760px) {
+        .footer-top { flex-direction: column; align-items: center; }
+        .footer-brand { text-align: center; }
+        .footer-brand img { margin: 0 auto; }
+        .footer-links { justify-content: center; }
+        .footer-legal { text-align: center; align-items: center; }
+      }
 </style>
   </head>
   <body>
@@ -3294,23 +3353,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <footer>
       <div class="wrap">
         <div class="footer-content">
-          <p class="footer-privacy">We respect your privacy.</p>
-          <p class="footer-privacy">ATHENA International, legally incorporated as the ATHENA Foundation, is a federally recognized 501(c)(3) nonprofit organization. EIN: 38-2717362. Contributions are tax-deductible to the extent permitted by law. Mailing Address: 2425 E. Grand River Ave Ste. 1 | Lansing, MI 48912</p>
-          <p class="footer-privacy">© 2026-2027 ATHENA International, All rights reserved.</p>
-          <h3 class="footer-tagline">Ignite. Amplify. Celebrate.</h3>
-          <p class="footer-terms">
-            <a href="https://www.athenainternational.org/terms-and-conditions"
-              >Terms &amp; Conditions</a
-            >
-          </p>
-          <div class="footer-social" aria-label="ATHENA social links">
-            <a href="https://www.instagram.com/athena_international/"
-              >Instagram</a
-            >
-            <a href="https://www.linkedin.com/company/athena-international/"
-              >LinkedIn</a
-            >
-            <a href="https://www.facebook.com/ATHENAInternational">Facebook</a>
+          <div class="footer-top">
+            <div class="footer-brand">
+              <img src="/assets/conference-2027/index-B-assets/brandbook/A-Logo-White.svg" alt="ATHENA International" width="72" height="36" />
+              <p class="footer-tagline">Ignite. Amplify. Celebrate.</p>
+            </div>
+            <nav class="footer-links" aria-label="ATHENA links">
+              <a href="https://www.instagram.com/athena_international/">Instagram</a>
+              <a href="https://www.linkedin.com/company/athena-international/">LinkedIn</a>
+              <a href="https://www.facebook.com/ATHENAInternational">Facebook</a>
+              <a href="https://www.athenainternational.org/terms-and-conditions">Terms &amp; Conditions</a>
+            </nav>
+          </div>
+          <div class="footer-legal">
+            <p>ATHENA International, legally incorporated as the ATHENA Foundation, is a federally recognized 501(c)(3) nonprofit organization. EIN: 38-2717362. Contributions are tax-deductible to the extent permitted by law.</p>
+            <p>Mailing address: 2425 E. Grand River Ave Ste. 1, Lansing, MI 48912</p>
+            <p>&copy; 2026-2027 ATHENA International. All rights reserved. We respect your privacy.</p>
           </div>
         </div>
       </div>
