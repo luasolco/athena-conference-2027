@@ -1786,7 +1786,25 @@
         border: 1px solid var(--line);
         border-radius: 6px;
       }
+      /* O strong vinha com color:#fff inline num card sem fundo: sumia em
+         qualquer viewport e deixava um buraco na primeira linha centralizada.
+         Agora e lead-in de bloco, com a cor do tipo. */
+      .group-line strong {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+      .group-line p {
+        max-width: 62ch;
+        margin: 0 auto 16px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
       .group-line a {
+        display: inline-block;
         color: var(--gold-soft);
         font-weight: 600;
         text-decoration: underline;
@@ -2322,6 +2340,19 @@
         pointer-events: none;
       }
       .tcard p { position: relative; margin: 0; padding-bottom: 14px; }
+
+      /* 340px fixo praticamente preenchia a viewport de 390px: sem sobra, o
+         card seguinte nao aparecia e nada indicava que da pra arrastar. */
+      @media (max-width: 760px) {
+        .tcard {
+          flex: 0 0 84vw;
+          padding: 30px 24px 24px;
+        }
+        .testi-track {
+          gap: 16px;
+          scroll-padding-inline: 0;
+        }
+      }
       /* margin-top auto joga a assinatura pro rodape: o espaco sobrando vira
          respiro entre citacao e assinatura, em vez de buraco no fim do card. */
       .testi-track { scroll-padding-inline: 4px; padding-bottom: 24px; }
@@ -3081,10 +3112,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="group-line">
-          <strong style="color: #fff">Bringing your team?</strong> Group passes
-          make ATHENA 2027 Conference a shared experience. Perfect for
-          colleagues, friends, and communities who want to attend together,
-          learn together, and connect along the way.
+          <strong>Bringing your team?</strong>
+          <p>
+            Group passes make ATHENA 2027 Conference a shared experience.
+            Perfect for colleagues, friends, and communities who want to attend
+            together, learn together, and connect along the way.
+          </p>
           <a href="https://www.athenainternational.org/form-conference">Talk to us →</a>
         </div>
       </div>
@@ -3470,31 +3503,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           "(prefers-reduced-motion: reduce)",
         ).matches;
 
+        // O passo era 362px fixo no codigo. Com o card responsivo no mobile
+        // isso desalinhava o snap, entao medimos o card de verdade.
         let cachedCardStep = 362;
-        let cachedMaxScroll = Infinity;
+        let cachedMaxScroll = 0;
         function measureCardStep() {
-          cachedCardStep = 362;
-          cachedMaxScroll = Infinity;
+          const first = track.querySelector(".tcard");
+          if (first) {
+            const gap = parseFloat(getComputedStyle(track).columnGap || "22") || 22;
+            cachedCardStep = Math.round(first.getBoundingClientRect().width + gap);
+          }
+          cachedMaxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
         }
         function cardStep() {
           return cachedCardStep;
         }
 
+        // Sem isso o carrossel batia no fim e ficava parado la. Quem chegava
+        // na secao depois de uns segundos so via o ultimo card.
         function rotate() {
           const step = cardStep();
           if (!step) return;
+          if (track.scrollLeft >= cachedMaxScroll - 4) {
+            track.scrollTo({ left: 0, behavior: "smooth" });
+            return;
+          }
           track.scrollBy({ left: step, behavior: "smooth" });
         }
 
+        // So gira enquanto a secao esta na tela E ninguem esta mexendo.
+        // Antes girava desde o load, entao o trilho ja chegava no fim antes
+        // de a pessoa rolar ate ali, e a rotacao brigava com o swipe.
+        // Checagem por retangulo, e nao IntersectionObserver: e sincrona,
+        // sem callback que pode nunca chegar, e o pior caso e girar de mais,
+        // nunca girar de menos.
+        function inView() {
+          const r = track.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+          return r.bottom > 0 && r.top < vh;
+        }
+        let pausedUntil = 0;
+        function pause(ms) {
+          pausedUntil = Date.now() + ms;
+        }
+        ["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (evt) {
+          track.addEventListener(evt, function () { pause(9000); }, { passive: true });
+        });
+        track.addEventListener("mouseenter", function () { pause(9000); });
+
         measureCardStep();
         window.addEventListener("resize", measureCardStep, { passive: true });
+
         if (!prefersReducedMotion) {
-          setInterval(rotate, 4200);
+          setInterval(function () {
+            if (!inView() || Date.now() < pausedUntil) return;
+            measureCardStep();
+            rotate();
+          }, 4200);
         }
 
         function moveBy(direction) {
           const step = cardStep();
           if (!step) return;
+          pause(9000);
           track.scrollBy({ left: direction * step, behavior: "smooth" });
         }
 
