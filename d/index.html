@@ -3094,6 +3094,16 @@
       .faq-list.faq-collapsed .faq-extra { display: none; }
       .faq-more { text-align: center; margin-top: 24px; }
       .spk .spk-why { font-size: 0.86rem; line-height: 1.45; color: var(--cream-text) !important; opacity: 1 !important; margin-top: 8px; font-style: italic; }
+      .labs > p { max-width: none !important; } /* frase de abertura numa linha só no desktop */
+      /* filtros dos micro-labs */
+      .labs .lab-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
+      .labs .lab-filters-label { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); flex-basis: 100%; margin-bottom: 2px; }
+      .labs .lab-filter { padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(164, 133, 62, 0.6); background: var(--cream); color: var(--bronze-text); font: 600 0.78rem/1 var(--font-label, inherit); letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; }
+      .labs .lab-filter:hover { border-color: var(--bronze-text); }
+      .labs .lab-filter[aria-pressed="true"] { background: var(--bronze-text); border-color: var(--bronze-text); color: #fff; }
+      .labs .lab-clear { margin-left: 6px; padding: 6px 4px; background: none; border: 0; color: var(--navy); font-weight: 600; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+      .labs .lab-clear[hidden], .labs .labs-more[hidden], .labs .lab-card[hidden] { display: none !important; }
+      .labs .lab-col.lab-col-empty .lab-round::after { content: "No labs in this track for this length."; display: block; padding: 18px 0; color: var(--muted); font-style: italic; font-size: 0.92rem; }
       .labs .lab-card .lab-pill { display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px; background: var(--tint, #f8f6eb); border: 1px solid rgba(164, 133, 62, 0.45); font-style: normal; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--bronze-text); }
       /* faixa da agenda em dourado, igual à dos speakers (texto grande branco passa 3:1) */
       .agenda .inline-cta { background: var(--gold) !important; }
@@ -3105,7 +3115,7 @@
       section.testi .tcard { padding-top: 64px !important; }
       .labs .lab-card .lab-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; color: inherit; font-size: inherit; }
       .labs .lab-card .lab-pills .lab-pill { margin-bottom: 0; }
-      .labs .labs-hub { font-style: normal; margin-bottom: 4px; }
+      .labs .labs-hub { font-style: normal; margin-top: 36px; }
 </style>
   </head>
   <body>
@@ -3703,10 +3713,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="labs labs-collapsed" id="labs">
           <h3>Choose your micro-labs</h3>
           <p>Each round runs several hands-on labs at the same time, so you choose by the outcome you want.</p>
-          <div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-ai">AI Leadership</em><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-ai">AI Leadership</em><em class="lab-pill lab-pill-entrepreneurship">Entrepreneurship</em></span><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-team">Team Leadership</em><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em><em class="lab-pill lab-pill-team">Team Leadership</em></span><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-entrepreneurship">Entrepreneurship</em></span><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-youth">Youth Leadership</em></span><b>Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>For students and emerging leaders</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-ai">AI Leadership</em><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-team">Team Leadership</em></span><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em><em class="lab-pill lab-pill-team">Team Leadership</em></span><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-personal">Personal Leadership</em></span><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-team">Team Leadership</em></span><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card"><span class="lab-pills"><em class="lab-pill lab-pill-youth">Youth Leadership</em></span><b>Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>For students and emerging leaders</span></div></div></div></div></div>
+          <div class="lab-filters" role="group" aria-label="Filter micro-labs by track"><span class="lab-filters-label">Filter by track</span><button type="button" class="lab-filter" data-track="ai" aria-pressed="false">AI Leadership</button><button type="button" class="lab-filter" data-track="team" aria-pressed="false">Team Leadership</button><button type="button" class="lab-filter" data-track="personal" aria-pressed="false">Personal Leadership</button><button type="button" class="lab-filter" data-track="youth" aria-pressed="false">Youth Leadership</button><button type="button" class="lab-filter" data-track="entrepreneurship" aria-pressed="false">Entrepreneurship</button><button type="button" class="lab-clear" hidden>Clear</button></div><p class="sr-only" id="labsStatus" aria-live="polite"></p><div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="ai,entrepreneurship"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card" data-tracks="team,personal"><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card" data-tracks="entrepreneurship"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card" data-tracks="personal"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card" data-tracks="youth"><b>Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>ATHENA Certified Facilitators</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card" data-tracks="team"><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="personal"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card" data-tracks="personal"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card" data-tracks="team"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card" data-tracks="youth"><b>Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>ATHENA Certified Facilitators</span></div></div></div></div></div>
           <div class="labs-more"><button type="button" class="btn btn-dark" id="labsToggle" aria-expanded="false">See all 16 micro-labs</button></div>
-          <p class="labs-foot labs-hub">Once you register, save your picks in the ATHENA Conference Hub.</p>
-          <p class="labs-foot">Agenda subject to change.</p>
+          <p class="labs-foot labs-hub">Once you register, save your picks in the ATHENA Conference Hub. Agenda subject to change.</p>
         </div>
 
         <div class="inline-cta"><p>Three days, one room, and a plan for what's next.</p><a href="#tickets" class="btn btn-primary">Secure Your Pass</a></div>
@@ -3791,7 +3800,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="aw-block">
             <p class="aw-meta">January 28-30, 2027 <i>·</i> In person, Los Angeles</p>
             <h3>The Conference &amp; Awards Celebration</h3>
-            <p>Three immersive days of keynotes, hands-on micro-labs, wellness, and dinner pods, closing with the ATHENA Awards Celebration.</p>
+            <p>Three immersive ATHENA Conference days of keynotes, wellness sessions, ATHENA Networking Dinner Pods, and hands-on micro-labs in <strong>Personal, Team, AI, and Youth Leadership</strong> and <strong>Entrepreneurship</strong>, closing with the ATHENA Awards Celebration.</p>
             <p>You step away from the demands of everyday life, meet leaders who share your values, and start shaping what you want to create next.</p>
           </div>
           <div class="aw-block">
@@ -3970,7 +3979,7 @@ Thank you for considering it.
         <div class="venue-shell">
           <div class="venue-intro center">
             <h2>In the Heart of Universal City, CA</h2>
-            <p>The official conference hotel is the Hilton Los Angeles/Universal City, with a discounted ATHENA rate of $239 + tax per night, steps from Universal Studios Hollywood and CityWalk.</p>
+            <p>The official conference hotel is the Hilton Los Angeles/Universal City, with a discounted ATHENA rate of $239 + tax per night, steps from Universal Studios Hollywood and CityWalk, where most ATHENA Networking Dinner Pods gather each evening.</p>
           </div>
           <details class="venue-more"><summary>Travel details and nearby attractions</summary>
           <div class="venue-details">
@@ -4105,7 +4114,7 @@ Thank you for considering it.
               How do I choose my micro-labs?<span class="plus">+</span>
             </button>
             <div class="faq-a">
-              <p>Labs run in 75- and 90-minute rounds, and each one is tagged by outcome: AI Leadership, Team Leadership, Personal Leadership, Entrepreneurship, or Youth Leadership. After you register, save your picks in the ATHENA Conference Hub. <a href="#labs">See the micro-labs</a>.</p>
+              <p>Labs run in 75- and 90-minute rounds across Personal, Team, AI, and Youth Leadership and Entrepreneurship. After you register, save your picks in the ATHENA Conference Hub. <a href="#labs">See the micro-labs</a>.</p>
             </div>
           </div>
           <div class="faq-item faq-extra">
@@ -4798,6 +4807,47 @@ Traci's leadership journey began as a former NCAA Division I volleyball athlete 
       })();
     </script>
 
+    <script>
+      (function () {
+        var box = document.getElementById("labs"); if (!box) return;
+        var btns = box.querySelectorAll(".lab-filter"), clear = box.querySelector(".lab-clear"), more = box.querySelector(".labs-more"),
+            status = document.getElementById("labsStatus"), wasCollapsed = null,
+            seeAll = (document.getElementById("labsToggle") || {}).textContent;
+        function apply() {
+          var on = [], labels = [];
+          btns.forEach(function (b) { if (b.getAttribute("aria-pressed") === "true") { on.push(b.dataset.track); labels.push(b.textContent); } });
+          if (!on.length) { reset(); return; }
+          box.classList.remove("labs-collapsed"); box.classList.add("labs-filtering");
+          var n = 0;
+          box.querySelectorAll(".lab-card").forEach(function (c) {
+            var tr = (c.dataset.tracks || "").split(","), hit = on.some(function (t) { return tr.indexOf(t) !== -1; });
+            c.hidden = !hit; if (hit) n++;
+          });
+          box.querySelectorAll(".lab-col").forEach(function (col) {
+            col.classList.toggle("lab-col-empty", !col.querySelector(".lab-card:not([hidden])"));
+          });
+          if (more) more.hidden = true; clear.hidden = false;
+          var list = labels.length > 1 ? labels.slice(0, -1).join(", ") + " and " + labels[labels.length - 1] : labels[0];
+          if (status) status.textContent = "Showing " + n + " micro-labs in " + list + ".";
+        }
+        function reset() {
+          box.querySelectorAll(".lab-card").forEach(function (c) { c.hidden = false; });
+          box.querySelectorAll(".lab-col").forEach(function (col) { col.classList.remove("lab-col-empty"); });
+          btns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          box.classList.remove("labs-filtering");
+          box.classList.add("labs-collapsed");  // Clear sempre volta à vista padrão: prévia + "See all"
+          var t = document.getElementById("labsToggle"); if (t) { t.setAttribute("aria-expanded", "false"); t.textContent = seeAll; }
+          wasCollapsed = null; if (more) more.hidden = false; clear.hidden = true;
+          if (status) status.textContent = "Showing all micro-labs.";
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {  // várias trilhas ao mesmo tempo: mostra o lab que tiver qualquer uma
+            b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true"); apply();
+          });
+        });
+        clear.addEventListener("click", reset);
+      })();
+    </script>
     <script>
       (function () {
         var b = document.getElementById("faqMore"), list = document.querySelector(".faq-list");
