@@ -3034,6 +3034,20 @@
       #emailText:focus-visible { outline-offset: -3px !important; }
       .sticky-cta small { color: var(--cream-text) !important; opacity: 1 !important; }
       .letter-sign picture { flex: none; display: block; line-height: 0; } .letter-sign picture .letter-badge { max-width: none !important; } /* o <picture> não pode encolher o selo */
+
+      /* ===== VERSÃO C: Who we serve fixo em duas linhas ===== */
+      #trusted .trusted-logos-track.logos-static { animation: none !important; transform: none !important; width: 100%; display: block; }
+      #trusted .trusted-logos-row::before, #trusted .trusted-logos-row::after { display: none !important; }
+      #trusted .trusted-logos-row { overflow: visible; }
+      #trusted .logos-static .trusted-logos { --cols: 7; --gx: 28px; display: flex !important; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px var(--gx); width: 100%; max-width: 1120px; margin: 0 auto; }
+      #trusted .logos-static .trusted-logo { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gx)) / var(--cols)); max-width: calc((100% - (var(--cols) - 1) * var(--gx)) / var(--cols)) !important; object-fit: contain; }
+      @media (max-width: 980px) { #trusted .logos-static .trusted-logos { --cols: 4; } }
+      @media (max-width: 560px) {
+        #trusted .logos-static .trusted-logos { --cols: 3; --gx: 16px; row-gap: 22px; }
+        #trusted .logos-static .trusted-logo { height: 52px !important; max-height: 52px !important; margin: 0 !important; }
+        #trusted .logos-static .trusted-logo[src*="logo-Snowflake"], #trusted .logos-static .trusted-logo[src*="logo-Anecdotes"], #trusted .logos-static .trusted-logo[src*="logo-Microsoft"] { height: 88px !important; max-height: 88px !important; margin: -18px 0 !important; }
+        #trusted .logos-static .trusted-logo[src*="logo-Google"] { height: 26px !important; max-height: 26px !important; }
+      }
 </style>
   </head>
   <body>
@@ -3157,7 +3171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           aria-label="Organizations that trust ATHENA"
         >
           <div class="trusted-logos-row">
-            <div class="trusted-logos-track">
+            <div class="trusted-logos-track logos-static">
               <div class="trusted-logos">
                 <img loading="lazy" decoding="async"
                   src="/assets/conference-2027/index-B-assets/logos/logo-Microsoft.svg"
@@ -3221,69 +3235,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   class="trusted-logo"
                 / width="396" height="126">
               </div>
-              <div class="trusted-logos" aria-hidden="true">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-Microsoft.svg"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/logos/logo-Google.svg" alt="" class="trusted-logo" width="272" height="92" />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-Snowflake.svg"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-Anecdotes.svg"
-                  alt=""
-                  class="trusted-logo trusted-logo--large"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-manercosterisan.svg"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-Nakehndan.webp"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-Batchewana.webp"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/logos/logo-nasa.svg"
-                  alt=""
-                  class="trusted-logo"
-                />
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/Powerlink.webp"
-                  alt=""
-                  class="trusted-logo"
-                / width="199" height="100">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/communities-in-schools.webp"
-                  alt=""
-                  class="trusted-logo"
-                / width="406" height="126">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/joliet-chamber.webp"
-                  alt=""
-                  class="trusted-logo"
-                / width="337" height="139">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/wit-network.webp"
-                  alt=""
-                  class="trusted-logo trusted-logo--wit"
-                / width="209" height="75">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/mind-wire.webp"
-                  alt=""
-                  class="trusted-logo"
-                / width="396" height="126">
-              </div>
             </div>
           </div>
           <p class="trusted-subline">
@@ -3291,7 +3242,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             teams, leaders choose ATHENA International to grow together.
           </p>
         </div>
-        <div class="motion-row"><button type="button" class="testi-arrow motion-toggle" aria-pressed="false" aria-label="Pause motion" title="Pause motion"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg></button></div>
       </div>
     </section>
 
