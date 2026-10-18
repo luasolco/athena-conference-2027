@@ -33,7 +33,7 @@
       content="Three days of leadership, connection, and recognition. January 28-30, 2027, Hilton Los Angeles/Universal City. Secure your seat."
     />
     <link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-720-pro.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high"><link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-960-pro.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high"><link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=optional" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
     />
   <style>
 
@@ -3094,6 +3094,19 @@
       .faq-list.faq-collapsed .faq-extra { display: none; }
       .faq-more { text-align: center; margin-top: 24px; }
       .spk .spk-why { font-size: 0.86rem; line-height: 1.45; color: var(--cream-text) !important; opacity: 1 !important; margin-top: 8px; font-style: italic; }
+      .letter .letter-cta { margin-top: 28px; }
+      /* pesos decididos (antes o navegador às vezes trocava por negrito sozinho) */
+      .manifesto .anchor { font-weight: 700; }
+      .fit .fit-tag { font-weight: 600; }
+      #main-content > * { order: 0 !important; }
+      /* depoimento com nome */
+      .testi .tcard-by { margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 2px; font-style: normal; }
+      .testi .tcard-by b { color: var(--navy); font-family: var(--font-body); font-size: 0.98rem; }
+      .testi .tcard-by span { color: var(--navy); font-family: var(--font-body); font-size: 0.88rem; font-style: normal; }
+      /* contador dos depoimentos, ao lado das setas */
+      .testi .testi-controls { align-items: center; }
+      .testi .testi-count { margin: 0 auto 0 0; font-family: var(--font-label); font-size: 0.9rem; letter-spacing: 0.06em; color: var(--navy); }
+      .testi .testi-count b { color: var(--bronze-text); }
       .labs > p { max-width: none !important; } /* frase de abertura numa linha só no desktop */
       /* filtros dos micro-labs */
       .labs .lab-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
@@ -3219,6 +3232,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <!-- ===== 03 MANIFESTO ===== -->
+    <section class="manifesto">
+      <div class="wrap grid">
+        <div>
+          <span class="eyebrow">More Than a Conference</span>
+          <p class="anchor">
+            Find your people. Expand your influence. Lead what's&nbsp;next.
+          </p>
+          <p>
+            The 2027 ATHENA Conference &amp; Awards Celebration brings together women leaders, allies, entrepreneurs, executives, and changemakers for three days of learning, recognition, and authentic connection. Experience inspiring keynotes, interactive workshops, wellness sessions, and a global community committed to creating impact that lasts far beyond the event.
+          </p>
+        </div>
+        <div class="imgph">
+          <img loading="lazy" decoding="async"
+            src="/assets/conference-2027/index-C-assets/fotos/courageous-decision.webp"
+            alt="A woman leader standing confidently before a rising bronze arrow"
+            style="width: 100%; height: 100%; object-fit: contain"
+          / width="1033" height="1100">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 13.1 CITAÇÃO DA ISADORA (versão C, auditoria) ===== -->
+    <section class="pull" id="pull">
+      <div class="wrap pull-grid">
+        <img class="pull-photo" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria" width="800" height="960">
+        <figure>
+          <blockquote>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</blockquote>
+          <figcaption><b>Isadora Maria</b><span>ATHENA Board Director</span></figcaption>
+          <a class="pull-more" href="#welcome">Read full story &rarr;</a>
+        </figure>
+      </div>
+    </section>
+
     <!-- ===== 09.5 WHO WE SERVE ===== -->
     <section class="section-trusted" id="trusted">
       <div class="wrap">
@@ -3310,27 +3357,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ===== 03 MANIFESTO ===== -->
-    <section class="manifesto">
-      <div class="wrap grid">
-        <div>
-          <span class="eyebrow">More Than a Conference</span>
-          <p class="anchor">
-            Find your people. Expand your influence. Lead what's&nbsp;next.
-          </p>
-          <p>
-            The 2027 ATHENA Conference &amp; Awards Celebration brings together women leaders, allies, entrepreneurs, executives, and changemakers for three days of learning, recognition, and authentic connection. Experience inspiring keynotes, interactive workshops, wellness sessions, and a global community committed to creating impact that lasts far beyond the event.
-          </p>
-        </div>
-        <div class="imgph">
-          <img loading="lazy" decoding="async"
-            src="/assets/conference-2027/index-C-assets/fotos/courageous-decision.webp"
-            alt="A woman leader standing confidently before a rising bronze arrow"
-            style="width: 100%; height: 100%; object-fit: contain"
-          / width="1033" height="1100">
-        </div>
-      </div>
-    </section>
 
     <!-- ===== 03.1 WHO THIS IS FOR (versão C) ===== -->
     <section class="fit" id="who">
@@ -3380,7 +3406,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Predictive Index insights.</strong> What drives you, how you show up, and how to build stronger teams.</li>
             <li><strong>AI-era leadership tools.</strong> Practical ways to lead through change, AI, and pressure, starting Monday.</li>
             <li><strong>A network of peers and mentors.</strong> Leaders across industries who will still be cheering you on months from now.</li>
-            <li><strong>A plan to bring back.</strong> What you'll put into practice with your team or your business.</li>
+            <li><strong>A plan to bring back.</strong> What you'll put into practice for yourself, your team, or your business.</li>
             <li><strong>Eight online Mini Labs after the event.</strong> Live sessions that keep your growth going.</li>
           </ul>
           <p class="wa-close">ATHENA 2027 ends on January 30. The work you start here doesn't.</p>
@@ -3392,71 +3418,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ===== 13.1 CITAÇÃO DA ISADORA (versão C, auditoria) ===== -->
-    <section class="pull" id="pull">
-      <div class="wrap pull-grid">
-        <img class="pull-photo" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria" width="800" height="960">
-        <figure>
-          <blockquote>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</blockquote>
-          <figcaption><b>Isadora Maria</b><span>ATHENA Board Director</span></figcaption>
-          <a class="pull-more" href="#welcome">Read Isadora's story &rarr;</a>
-        </figure>
-      </div>
-    </section>
-
     <!-- ===== 13 TESTIMONIALS ===== -->
     <section class="testi">
       <div class="wrap">
         <div class="center">
-          <span class="eyebrow">What 2025 attendees said</span>
+          <span class="eyebrow">What 2025 ATHENA Community attendees said</span>
           <h2>The room changes how you lead</h2>
         </div>
         <div class="testi-track" role="region" aria-label="Testimonials" tabindex="0">
+          <div class="tcard tcard-named">
+            <p class="tcard-short">The ATHENA Conference was such a life-changing experience for me. I brought a friend who needed to hear the ATHENA message more than ever. Since the conference, her confidence has been so much higher. 25 years in IT and I've just about seen it all. ATHENA is special, but don't take my word for it. Experience it for yourself!</p>
+            <p class="tcard-by"><b>Meg Glenn</b><span>ATHENA Certified Facilitator</span></p>
+          </div>
           <div class="tcard">
             <p>The 2025 ATHENA conference was a thoughtful blend of expert
               speakers sharing their stories, meaningful networking, and just
               plain fun. The relationships built there have continued to thrive
               long after the event. Grateful to be a part of the ATHENA
               community.</p>
+            <p class="tcard-by"><b>KB</b></p>
           </div>
           <div class="tcard">
             <p>The 2025 ATHENA Leadership Conference reignited the power of the
               ATHENA Leadership Model and its principles. I was grateful to
               connect with an incredible network of women across ATHENA
               communities who lead with courage, purpose, and impact.</p>
+            <p class="tcard-by"><b>KG</b></p>
           </div>
           <div class="tcard">
             <p>Every keynote and workshop provided tools, nuggets, and gems for
               women in leadership. The 2025 ATHENA Conference was a great
               investment that continues to pay relationship dividends.</p>
+            <p class="tcard-by"><b>PM</b></p>
           </div>
           <div class="tcard">
             <p>The 2025 ATHENA Conference provided the opportunity to not only
               hear from inspiring women leaders, but to also connect with women
               in a meaningful way.</p>
-          </div>
-          <div class="tcard">
-            <p>At the last ATHENA Conference in 2025 I met leaders who opened
-              real board and partnership conversations within weeks.</p>
+            <p class="tcard-by"><b>MM</b></p>
           </div>
           <div class="tcard">
             <p>Through engagements with the ATHENA network, I refined my job craft
               narrative and connected to the right decision-makers.</p>
+            <p class="tcard-by"><b>IS</b></p>
           </div>
           <div class="tcard">
             <p>What stood out at the ATHENA 2025 Conference was the quality of
               women leaders who truly champion each other.</p>
-          </div>
-          <div class="tcard">
-            <p>The ATHENA Conference gave me practical frameworks I used
-              immediately to grow my influence and leadership impact.</p>
+            <p class="tcard-by"><b>DS</b></p>
           </div>
           <div class="tcard">
             <p>The Conference sessions were high-signal and immediately useful
               for growth and influence.</p>
+            <p class="tcard-by"><b>ATHENA Community Member</b></p>
           </div>
         </div>
         <div class="testi-controls" aria-label="Testimonials controls">
+          <p class="testi-count"><span class="sr-only">Feedback </span><b id="testiNow">1</b> / <span id="testiTotal">8</span></p>
           <button
             class="testi-arrow testi-prev"
             type="button"
@@ -3783,6 +3801,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>Today, I believe that the way we love ourselves shapes how we belong. And belonging is one of the most powerful forces for change. When we know our worth, we lead more boldly, build stronger communities, and create greater impact together.</p>
             <p>I'm returning to ATHENA 2027 as an ATHENA Board Director &amp; Leadership Institute Facilitator because this community continues to help me grow with greater clarity, confidence, and purpose.</p>
             <p>I hope you'll join us in Los Angeles as we step into our next chapter together.</p>
+            <p class="letter-cta"><a href="#tickets" class="btn btn-primary">Secure Your Seat Today</a></p>
           </div>
         </div>
       </div>
@@ -4807,6 +4826,21 @@ Traci's leadership journey began as a former NCAA Division I volleyball athlete 
       })();
     </script>
 
+    <script>
+      (function () {
+        // contador "1 / n" do carrossel de depoimentos (primeiro card visível)
+        var track = document.querySelector(".testi-track"), now = document.getElementById("testiNow");
+        if (!track || !now) return;
+        var cards = track.querySelectorAll(".tcard");
+        function upd() {
+          var x = track.scrollLeft, best = 0, d = Infinity;
+          cards.forEach(function (c, i) { var dd = Math.abs(c.offsetLeft - track.offsetLeft - x); if (dd < d) { d = dd; best = i; } });
+          now.textContent = best + 1;
+        }
+        track.addEventListener("scroll", function () { window.requestAnimationFrame(upd); }, { passive: true });
+        window.addEventListener("resize", upd); upd();
+      })();
+    </script>
     <script>
       (function () {
         var box = document.getElementById("labs"); if (!box) return;
