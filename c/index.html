@@ -2669,8 +2669,8 @@
       main section#experience .imgph, main section.fit .imgph, main section.room .imgph, main section.case .imgph, main section.venue .imgph, main section.testi .imgph, main section#faq .imgph { background: transparent; }
 
       /* ===== VERSÃO C: área de compra (linguagem do Sponsorship Packet) ===== */
-      #a-pattern .ap-f { fill: var(--gold); }
-      #a-pattern .ap-l { fill: none; stroke: var(--gold); stroke-miterlimit: 10; stroke-width: 1.59px; }
+      #a-pattern .ap-f { fill: var(--ap-color, var(--gold)); }
+      #a-pattern .ap-l { fill: none; stroke: var(--ap-color, var(--gold)); stroke-miterlimit: 10; stroke-width: 1.59px; }
       .tri { position: absolute; top: 0; right: -14px; width: 188px; height: 200px; pointer-events: none; }
       .rule { width: 54px; height: 3px; background: var(--gold); margin: 16px 0 0; }
       ul.b { list-style: none; margin: 0; padding: 0; }
@@ -2724,6 +2724,10 @@
       .tk-go { justify-self: end; font-family: var(--font-label); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 3px; }
 
       .tk .group-tiers { margin-top: 24px; }
+      .tk .gt-cta { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+      .tk .gt-cta .gt-custom { color: #c9d2da; font-size: 0.85rem; text-align: center; }
+      .tk .gt-cta .gt-custom a { color: var(--gold-soft); text-decoration: underline; text-underline-offset: 3px; }
+      @media (max-width: 980px) { .tk .gt-cta { grid-column: 1 / -1; } }
       .tk-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
       .tk-notes p { font-size: 0.85rem; line-height: 1.55; color: var(--muted); }
       .tk-notes b { display: block; color: var(--ink); font-family: var(--font-heading); font-size: 0.88rem; margin-bottom: 4px; }
@@ -2925,6 +2929,12 @@
       .signature .sig-creds li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 6px; height: 5px; background: var(--gold); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
       .signature .sig-extra { margin-top: 16px; font-size: 0.95rem; line-height: 1.6; color: rgba(254, 255, 248, 0.78); max-width: 500px; }
       .signature .sig-extra b { color: var(--cream); font-weight: 600; }
+      .signature .sig-photo { position: relative; overflow: visible; background: transparent; }
+      .signature .sig-photo img { position: relative; z-index: 1; }
+      .signature .sig-tri { --ap-color: var(--orange); position: absolute; z-index: 0; top: -2%; right: -16%; width: 52%; height: auto; aspect-ratio: 340.66 / 709; opacity: 0.9; pointer-events: none; }
+      .signature .sig-photo img { margin-top: 10%; width: 128% !important; height: auto !important; max-width: none; margin-left: -4%; }
+      .signature { overflow: hidden; }
+      @media (max-width: 820px) { .signature .sig-tri { right: -2%; width: 38%; top: -4%; } .signature .sig-photo img { margin-top: 12%; width: 108% !important; margin-left: -4%; } }
       .signature .sig-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
       @media (max-width: 480px) { .signature .sig-feature { padding-left: 16px; } .signature .sig-ctas .btn { width: 100%; } }
 
@@ -2965,20 +2975,65 @@
       @media (max-width: 980px) { .inperson .ip-grid .imgph { width: min(100%, 420px); justify-self: center; } }
       @media (max-width: 680px) { .inline-cta { padding: 28px 20px; gap: 18px; } .inline-cta .btn { width: 100%; } }
       .inline-cta .btn-primary, .inline-cta .btn-primary:hover { background: #fff !important; color: var(--navy) !important; }
-      main section.section-trusted .trusted-logo[src*="logo-Google"] { height: 40px !important; max-height: 40px !important; }
+      main section.section-trusted .trusted-logo[src*="logo-Google"] { height: 48px !important; max-height: 48px !important; }
       /* logos com muita margem interna no arquivo: compensar no tamanho */
-      main section.section-trusted .trusted-logo[src*="logo-Snowflake"], main section.section-trusted .trusted-logo[src*="logo-Anecdotes"], main section.section-trusted .trusted-logo[src*="logo-Microsoft"] { height: 132px !important; max-height: 132px !important; max-width: 230px !important; margin: -28px 0; }
-      main section.section-trusted .trusted-logo[src*="manercosterisan"] { height: 96px !important; max-height: 96px !important; margin: -10px 0; }
+      main section.section-trusted .trusted-logo[src*="logo-Snowflake"], main section.section-trusted .trusted-logo[src*="logo-Anecdotes"], main section.section-trusted .trusted-logo[src*="logo-Microsoft"] { height: 160px !important; max-height: 160px !important; max-width: 280px !important; margin: -34px 0; }
+      main section.section-trusted .trusted-logo[src*="manercosterisan"] { height: 116px !important; max-height: 116px !important; margin: -12px 0; }
       main section.section-trusted { background: var(--cream); --sand: var(--cream); padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
       main section.section-trusted .trusted-heading { font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin-bottom: 0.4rem; }
-      main section.section-trusted .trusted-subline { font-size: 0.92rem; }
-      main section.section-trusted .trusted-logo { height: 76px !important; max-height: 76px !important; max-width: 220px !important; }
+      main section.section-trusted .trusted-subline { font-size: 0.92rem; margin-top: 28px; }
+      main section.section-trusted .trusted-logo { height: 92px !important; max-height: 92px !important; max-width: 260px !important; }
       main section.section-trusted .trusted-logos-wrap { padding: 8px 0 14px; }
       main section.awaits { background: var(--tint, #f8f6eb); }
       main section.case { background: var(--cream); }
       main section.tk { background: var(--tint, #f8f6eb); }
       main section.tk .tk-card:not(.tk-vip), main section.tk .tk-row { background: var(--cream); }
       main section.sponsors { padding-top: clamp(56px, 7vw, 80px); background: var(--cream); --sand: var(--cream); }
+
+      /* ===== VERSÃO C: micro-labs com prévia ===== */
+      .labs.labs-collapsed .lab-col .lab-card:nth-child(n + 4) { display: none; }
+      .labs.labs-collapsed .lab-col .lab-round + .lab-round { display: none; }
+      .labs .labs-more { text-align: center; margin-top: 24px; }
+
+      /* ===== VERSÃO C: acessibilidade, bronze de texto ===== */
+      :root { --bronze-text: #836a31; }
+      main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .eyebrow, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .fit-n, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .fit-tag span, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .exp-kicker, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .aw-meta, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .pr-head, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .tk-card:not(.tk-vip) h3, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .tk-card:not(.tk-vip) .tk-label, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .tk-row-copy .tk-label, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .lab-round-head, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .save-item span a, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .save-fine a, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .tk-notes a, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .labs a, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .letter-sign span, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .room-item b, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .story-photo span, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .spk-li, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .m-li, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .more-link a, main section:not(.proof):not(.inperson):not(.signature):not(.bogo):not(.honor):not(.final) .email-top span { color: var(--bronze-text) !important; }
+
+      /* creme suave pra texto pequeno sobre azul (10.6:1); o bronze da marca reprova ali (4.05) */
+      :root { --cream-text: #dae0dc; }
+      .proof .eyebrow, .inperson .eyebrow, .signature .eyebrow, .bogo .eyebrow, .spk .role, .day-head > span, .day-toggle, .day-toggle span, .signature .sig-when, .signature .sig-when span, .gt em, .gt-custom a, .bogo-prices small { color: var(--cream-text) !important; }
+
+      /* botões dourados: fundo bronze de texto + letra branca (5.16:1) */
+      .btn-primary, .btn-gold, .tk-btn-gold, .group-tiers .btn, .navlinks .btn, .hero .btn-primary, .sticky-cta .btn-primary, .final .btn-primary,
+      .btn-primary:hover, .tk-btn-gold:hover { background: var(--bronze-text) !important; color: #fff !important; }
+      .tk-badge { background: var(--bronze-text) !important; color: #fff !important; }
+      /* CTAs secundários: branco com letra bronze de texto (5.16:1) */
+      .btn-outline, .btn-outline:hover, .btn-line, .btn-line:hover { background: #fff !important; color: var(--bronze-text) !important; border-color: #fff !important; }
+
+      /* ===== VERSÃO C: acessibilidade, parte 2 ===== */
+      /* 1) faixa When/Where/Who: fundo bronze de texto, texto creme (5.1:1) */
+      .strip { background: var(--bronze-text) !important; }
+      .strip, .strip .trust, .strip b, .strip small { color: var(--cream) !important; opacity: 1 !important; }
+      /* 2) rodapé legível */
+      .footer-legal p { color: #b5c0c1 !important; }
+      /* 3) faixa laranja: texto azul (5.6:1) */
+      .agenda .inline-cta p { color: var(--navy) !important; }
+      /* 5) movimento */
+      .motion-paused .trusted-logos-track { animation-play-state: paused !important; }
+      @media (prefers-reduced-motion: reduce) { .trusted-logos-track { animation: none !important; } html { scroll-behavior: auto; } }
+      .motion-row { text-align: center; margin-top: 12px; }
+      .motion-toggle { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bronze-text); background: transparent; border: 1px solid currentColor; padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+      .testi-controls .motion-toggle { margin-right: auto; }
+      .testi-controls { align-items: center; }
+      /* 6) texto só pra leitor de tela */
+      .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+      /* 8) foco visível em tudo que é interativo */
+      a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible, .spk:focus-visible, input:focus-visible {
+        outline: 3px solid #fff !important; outline-offset: 2px !important; box-shadow: 0 0 0 5px var(--navy) !important; /* branco com anel azul: visível no creme e no azul */
+      }
+      #emailText:focus-visible { outline-offset: -3px !important; }
+      .sticky-cta small { color: var(--cream-text) !important; opacity: 1 !important; }
+      .letter-sign picture { flex: none; display: block; line-height: 0; } .letter-sign picture .letter-badge { max-width: none !important; } /* o <picture> não pode encolher o selo */
 </style>
   </head>
   <body>
@@ -3055,7 +3110,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="support">
             Powerful keynotes, hands-on micro-labs, wellness sessions, and dinner pods for networking and intentional connection. Leave with clarity, confidence, and momentum.
           </p>
-          <div class="countdown" id="countdown">
+          <p class="sr-only" id="countdownText" aria-live="off"></p>
+          <div class="countdown" id="countdown" aria-hidden="true">
             <div><b data-d>00</b><span>Days</span></div>
             <div><b data-h>00</b><span>Hours</span></div>
             <div><b data-m>00</b><span>Minutes</span></div>
@@ -3235,6 +3291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             teams, leaders choose ATHENA International to grow together.
           </p>
         </div>
+        <div class="motion-row"><button type="button" class="motion-toggle" aria-pressed="false">Pause motion</button></div>
       </div>
     </section>
 
@@ -3370,7 +3427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               for growth and influence.</p>
           </div>
         </div>
-        <div class="testi-controls" aria-label="Testimonials controls">
+        <div class="testi-controls" aria-label="Testimonials controls"><button type="button" class="motion-toggle" aria-pressed="false">Pause motion</button>
           <button
             class="testi-arrow testi-prev"
             type="button"
@@ -3397,21 +3454,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria, Board Member and Facilitator, ATHENA International" width="800" height="960">
           </div>
           <div class="letter-sign">
-            <img class="letter-badge" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/change-agent-badge.webp" alt="Microsoft Change Agent, Nonprofit Champion badge" width="330" height="330">
-            <div><b>Isadora Maria</b><span>Board Director, ATHENA International</span></div>
+            <picture><source srcset="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-static.webp" media="(prefers-reduced-motion: reduce)"><img class="letter-badge" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-once.webp" alt="Microsoft Change Agent, Nonprofit Champion badge" width="330" height="330"></picture>
+            <div><b>Isadora Maria</b><span>ATHENA International Board Director</span></div>
           </div>
         </div>
         <div class="letter-copy">
           <h2>The moment this is built for</h2>
           <div class="rule"></div>
           <div class="letter-body">
-            <p class="letter-lead">You've built a career, a business, a network, and a life of impact.</p>
-            <p>I'm an artist, a founder, and a Brazilian immigrant. For more than a decade, I've worked in AI and innovation, including seven years at Microsoft Corporation with AI Cloud partnerships, where I discovered the transformative power of nonprofit communities through the Microsoft Change Agent program.</p>
-            <p>ATHENA International enabled and empowered me through The WIT Network Emerging Leaders Program. Since then, it has connected me with leaders who challenged me to dream even bigger, lead with greater courage, and believe that fitting in is not the goal of leadership. Authenticity is.</p>
-            <p>ATHENA helped me navigate the transition beyond the corporate world and into a more integrated life, one where I could become a mother and the Founder &amp; Head of Product of LUASOL Collective without leaving the artist behind.</p>
-            <p>Today, I believe that the way we love ourselves and understand our worth shapes how we belong. And belonging is one of the most powerful forces for change, shaping everything we create together.</p>
-            <p>ATHENA 2027 will be my second conference, and I'm returning as a Board Member &amp; Facilitator because this is where I continue to grow: deepening my leadership, strengthening my community, and stepping into what's next with greater clarity, confidence, and purpose.</p>
-            <p>I hope you'll step into your next chapter with us. I look forward to welcoming you to Los Angeles.</p>
+            <p class="letter-lead">You've built a career, a business, a network, and a life of impact. Now you're asking: what's next?</p>
+            <p>I'm an artist, executive, technologist, and Brazilian immigrant. After more than a decade working in AI and innovation, including seven years at Microsoft AI Cloud partnerships, I discovered the transformative power of nonprofit communities through the Microsoft Change Agent program.</p>
+            <p>ATHENA International and The WIT Network Emerging Leaders Program challenged me to dream bigger, lead with even greater courage, and embrace a simple truth: leadership isn't about fitting in. It's about being fully yourself and paving a path for others to do the same.</p>
+            <p>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</p>
+            <p>Today, I believe that the way we love ourselves shapes how we belong. And belonging is one of the most powerful forces for change. When we know our worth, we lead more boldly, build stronger communities, and create greater impact together.</p>
+            <p>I'm returning to ATHENA 2027 as a Board Member and Facilitator because this community continues to help me grow with greater clarity, confidence, and purpose.</p>
+            <p>I hope you'll join us in Los Angeles as we step into our next chapter together.</p>
           </div>
         </div>
       </div>
@@ -3678,11 +3735,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </details>
         </div>
 
-        <div class="labs" id="labs">
+        <div class="labs labs-collapsed" id="labs">
           <h3>Choose your micro-labs</h3>
           <p>Each round runs several hands-on labs at the same time, so you choose the one that fits where you are. Once you register, save your picks in the ATHENA conference hub.</p>
           <div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card"><b>Chef&rsquo;s Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card"><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div></div></div><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>Youth Leadership Track: Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>For students and emerging leaders</span></div><div class="lab-card"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>Youth Leadership Track: Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>For students and emerging leaders</span></div><div class="lab-card"><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div></div></div><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card"><b>Navigating Change in the AI Era with Confidence</b><span>Dat Tran and Isadora Maria</span></div><div class="lab-card"><b>Human-Centered AI Leadership for Real-World Impact</b><span>Dr. Moacir Antonelli Ponti and Isadora Maria</span></div><div class="lab-card"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div></div></div></div></div>
-          <p class="labs-foot">More micro-labs announced soon. Agenda subject to change.</p>
+          <div class="labs-more"><button type="button" class="btn btn-dark" id="labsToggle" aria-expanded="false">See all 15 micro-labs</button></div>
+          <p class="labs-foot">Agenda subject to change.</p>
         </div>
 
         <div class="inline-cta"><p>Three days, one room, and a plan for what's next.</p><a href="#tickets" class="btn btn-primary">Secure Your Pass</a></div>
@@ -3713,12 +3771,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
             <p class="sig-extra"><b>VIP book signing.</b> Meet Dr. Ruthie Bolton and take home a signed copy of her story.</p>
             <div class="sig-ctas">
-              <a href="#tickets" class="btn btn-primary">Claim VIP Pass</a>
+              <a href="#tickets" class="btn btn-primary">Claim VIP Pass · $795</a>
               <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-national-and-global-awards-ceremony" class="btn btn-outline">Join Only the Celebration · $95</a>
             </div>
           </div>
         </div>
-        <div class="imgph">
+        <div class="imgph sig-photo"><svg class="sig-tri" viewBox="0 0 340.66 709" preserveAspectRatio="xMidYMin meet" aria-hidden="true"><use href="#a-pattern" width="340.66" height="810"/></svg>
           <img loading="lazy" decoding="async"
             src="/assets/conference-2027/index-B-assets/Heros/Ruthie-Book.webp"
             alt="Dr. Ruthie Bolton book"
@@ -3769,7 +3827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="email-card">
           <div class="email-top"><span>Ready-to-send email</span><button type="button" class="copy-btn" id="copyEmail">Copy text</button></div>
-          <pre id="emailText">Subject: Request to attend the ATHENA 2027 Leadership Conference
+          <pre id="emailText" tabindex="0" role="region" aria-label="Ready-to-send email to your manager">Subject: Request to attend the ATHENA 2027 Leadership Conference
 
 Hi [Manager's name],
 
@@ -3862,15 +3920,15 @@ Thank you for considering it.
         </div>
 
         <div class="group-tiers" id="groups">
-          <div class="gt-head"><strong>Develop your leaders together.</strong><span>Group rates on General Admission and VIP for teams of 5 or more.</span><span class="gt-custom">Need a custom package? <a href="https://www.athenainternational.org/form-conference">Talk to us</a>.</span></div>
+          <div class="gt-head"><strong>Develop your leaders together.</strong><span>Group rates on General Admission and VIP for teams of 5 or more.</span></div>
           <div class="gt"><b>5 to 9</b><span>attendees</span><em>10% off</em></div>
           <div class="gt"><b>10 to 19</b><span>attendees</span><em>15% off</em></div>
           <div class="gt"><b>20+</b><span>attendees</span><em>20% off</em></div>
-          <a class="btn btn-dark" href="https://www.athenainternational.org/form-conference">Price your group</a>
+          <div class="gt-cta"><a class="btn btn-dark" href="https://www.athenainternational.org/form-conference">Get your group rate</a><span class="gt-custom">Need a custom package? <a href="https://www.athenainternational.org/form-conference">Talk to us</a>.</span></div>
         </div>
 
         <div class="tk-notes">
-          <p><b>Stay where it happens.</b> Discounted rate at the Hilton Los Angeles/Universal City: $239 + tax per night, January 25 to February 2, 2027.</p>
+          <p><b>Stay where it happens.</b> Every pass unlocks the ATHENA room block at the Hilton Los Angeles/Universal City: $239 + tax per night, January 25 to February 2, 2027. Booking details arrive by email after you register.</p>
           <p><b>Secure, no-fee checkout with Zeffy.</b> Zeffy may add an optional tip. To remove it, select Custom Tip and enter $0. Any tip goes directly to Zeffy and cannot be refunded by ATHENA.</p>
           <p><b>Discounts &amp; Scholarships</b> One code per order, and discounts do not stack. Are you a student? <a href="https://www.athenainternational.org/form-conference">Apply for a scholarship</a>. Recipients will be announced in late December.</p>
         </div>
@@ -4206,6 +4264,7 @@ Thank you for considering it.
             a mission-driven, influential leadership community.
           </p>
         </div>
+        <div class="motion-row"><button type="button" class="motion-toggle" aria-pressed="false">Pause motion</button></div>
       </div>
     </section>
 
@@ -4253,9 +4312,9 @@ Thank you for considering it.
     </footer>
 
     <!-- ===== SPEAKER MODAL ===== -->
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName" aria-hidden="true">
       <div class="modal-box">
-        <button class="x" id="modalX">×</button>
+        <button class="x" id="modalX" aria-label="Close speaker bio">×</button>
         <h3 id="mName"></h3>
         <p class="role" id="mRole"></p>
         <p class="m-quote" id="mQuote"></p>
@@ -4266,7 +4325,7 @@ Thank you for considering it.
 
     <!-- ===== STICKY MOBILE CTA ===== -->
     <div class="sticky-cta">
-      <div><b>Starting from $95</b><small>Early bird pricing ends soon</small></div>
+      <div><b>Starting from $95</b><small>Early Bird ends November 15</small></div>
       <a href="#tickets" class="btn btn-primary">Compare tickets</a>
     </div>
     <script>
@@ -4296,6 +4355,7 @@ Thank you for considering it.
           (d % 864e5) / 36e5,
         );
         cd.querySelector("[data-m]").textContent = Math.floor((d % 36e5) / 6e4);
+        var ct = document.getElementById("countdownText"); if (ct) ct.textContent = Math.floor(d / 864e5) + " days until ATHENA 2027 begins on January 28.";
       }
       tick();
       setInterval(tick, 60000);
@@ -4329,6 +4389,7 @@ Thank you for considering it.
         // Sem isso o carrossel batia no fim e ficava parado la. Quem chegava
         // na secao depois de uns segundos so via o ultimo card.
         function rotate() {
+          if (document.documentElement.classList.contains("motion-paused")) return;
           const step = cardStep();
           if (!step) return;
           if (track.scrollLeft >= cachedMaxScroll - 4) {
@@ -4621,5 +4682,62 @@ Traci's leadership journey began as a former NCAA Division I volleyball athlete 
       });
     </script>
     </main>
-  </body>
+  
+    <script>
+      (function () {
+        var box = document.getElementById("labs"), b = document.getElementById("labsToggle");
+        if (!box || !b) return;
+        var label = b.textContent;
+        b.addEventListener("click", function () {
+          var open = box.classList.toggle("labs-collapsed") === false;
+          b.setAttribute("aria-expanded", open ? "true" : "false");
+          b.textContent = open ? "Show fewer micro-labs" : label;
+          if (!open) box.scrollIntoView({ block: "start" });
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        // cartões de speaker acessíveis pelo teclado + diálogo com foco preso
+        var modal = document.getElementById("modal"), box = modal && modal.querySelector(".modal-box"), last = null;
+        document.querySelectorAll(".spk[data-name]").forEach(function (c) {
+          // o cartão segue clicável com o mouse; pro teclado, o "Read bio +" vira o botão (sem botão dentro de botão)
+          var more = c.querySelector(".more");
+          c.addEventListener("click", function () { last = more || c; });
+          if (!more) return;
+          more.setAttribute("role", "button"); more.setAttribute("tabindex", "0"); more.setAttribute("aria-haspopup", "dialog");
+          more.setAttribute("aria-label", "Read bio of " + c.dataset.name);
+          more.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); c.click(); } });
+        });
+        if (modal) {
+          new MutationObserver(function () {
+            var open = modal.classList.contains("open");
+            modal.setAttribute("aria-hidden", open ? "false" : "true");
+            if (open) { var x = document.getElementById("modalX"); x && x.focus(); }
+            else if (last) { last.focus(); }
+          }).observe(modal, { attributes: true, attributeFilter: ["class"] });
+          document.addEventListener("keydown", function (e) {
+            if (!modal.classList.contains("open")) return;
+            if (e.key === "Escape") { modal.classList.remove("open"); return; }
+            if (e.key === "Tab") {
+              var f = Array.prototype.filter.call(box.querySelectorAll("a[href], button, [tabindex]"), function (el) { return el.offsetParent !== null; });
+              if (!f.length) return;
+              var a = f[0], z = f[f.length - 1];
+              if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+              else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+            }
+          });
+        }
+        // pausa de movimento (logos e depoimentos); reduz automaticamente se o sistema pedir
+        var root = document.documentElement, btns = document.querySelectorAll(".motion-toggle");
+        function setPaused(p) {
+          root.classList.toggle("motion-paused", p);
+          btns.forEach(function (b) { b.setAttribute("aria-pressed", p ? "true" : "false"); b.textContent = p ? "Play motion" : "Pause motion"; });
+        }
+        btns.forEach(function (b) { b.addEventListener("click", function () { setPaused(!root.classList.contains("motion-paused")); }); });
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(true);
+      })();
+    </script>
+</body>
 </html>
