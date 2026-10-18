@@ -33,9 +33,15 @@
       content="Three days of leadership, connection, and recognition. January 28-30, 2027, Hilton Los Angeles/Universal City. Secure your seat."
     />
     <link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-720-pro.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high"><link rel="preload" as="image" href="/assets/conference-2027/index-B-assets/hero-people-960-pro.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high"><link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=optional" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
     />
+  <link rel="preload" href="/assets/conference-2027/index-C-assets/fonts/open-sauce-one-regular.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+      @font-face { font-family: "Open Sauce One"; src: url("/assets/conference-2027/index-C-assets/fonts/open-sauce-one-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Open Sauce One"; src: url("/assets/conference-2027/index-C-assets/fonts/open-sauce-one-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Open Sauce One"; src: url("/assets/conference-2027/index-C-assets/fonts/open-sauce-one-semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Open Sauce One"; src: url("/assets/conference-2027/index-C-assets/fonts/open-sauce-one-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Open Sauce One"; src: url("/assets/conference-2027/index-C-assets/fonts/open-sauce-one-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 
       :root {
         --navy: #0c2e40;
@@ -2936,7 +2942,7 @@
       .signature .sig-extra b { color: var(--cream); font-weight: 600; }
       .signature .sig-photo { position: relative; overflow: visible; background: transparent; }
       .signature .sig-photo img { position: relative; z-index: 1; }
-      .signature .sig-tri { --ap-color: var(--orange); position: absolute; z-index: 0; top: -2%; right: -16%; width: 52%; height: auto; aspect-ratio: 340.66 / 709; opacity: 0.9; pointer-events: none; }
+      .signature .sig-tri { --ap-color: var(--gold); position: absolute; z-index: 0; top: -2%; right: -16%; width: 52%; height: auto; aspect-ratio: 340.66 / 709; opacity: 0.9; pointer-events: none; }
       .signature .sig-photo img { margin-top: 10%; width: 128% !important; height: auto !important; max-width: none; margin-left: -4%; }
       .signature { overflow: hidden; }
       @media (max-width: 820px) { .signature .sig-tri { right: -2%; width: 38%; top: -4%; } .signature .sig-photo img { margin-top: 12%; width: 108% !important; margin-left: -4%; } }
@@ -3059,6 +3065,76 @@
       .spk-grid.spk-preview .spk:nth-child(n + 9) { display: none !important; }
       .spk-more { text-align: center; margin-top: 32px; }
       @media (max-width: 680px) { .spk-grid.spk-preview .spk:nth-child(n + 9) { display: flex !important; } .spk-more { display: none; } }
+
+      /* ===== VERSÃO C: auditoria de conversão ===== */
+      /* cartões do Who alinhados: título, texto e "You leave with" na mesma altura nos três */
+      @media (min-width: 900px) {
+        .fit .fit-grid { grid-template-rows: auto auto 1fr auto; }
+        .fit .fit-card { display: grid; grid-row: span 4; grid-template-rows: subgrid; gap: 14px; }
+        .fit .fit-card .fit-tag { margin-top: 0; align-self: start; }
+      }
+      .fit .fit-cta { text-align: center; margin-top: 28px; }
+      /* citação da Isadora: painel cobre (Iconic Bronze, só decorativo) atrás da foto + tom de bronze claro atrás do texto */
+      /* o cobre termina a 60% da largura da foto: borda esquerda da grade (centralizada, 920px, ou o recuo de 24px) + 0.6 x 220px */
+      .pull { padding: 72px 0; --pull-split: calc(max(0px, 50% - 460px) + 24px + 132px); background: linear-gradient(90deg, var(--gold) 0 var(--pull-split), var(--tint, #f8f6eb) var(--pull-split) 100%); }
+      .pull-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; max-width: 920px; margin: 0 auto; }
+      .pull-photo { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; object-position: center 20%; }
+      .pull blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.45; color: var(--navy); margin: 0; }
+      .pull blockquote::before { content: "\201C"; display: block; font-size: 5rem; line-height: 0.6; color: var(--gold); font-style: normal; margin-bottom: 8px; }
+      .pull figure { margin: 0; }
+      .pull figcaption { margin-top: 16px; display: flex; flex-direction: column; gap: 2px; }
+      .pull figcaption b { color: var(--navy); }
+      .pull figcaption span { color: var(--navy); font-size: 0.95rem; }
+      .pull-more { display: inline-block; margin-top: 14px; color: var(--bronze-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+      .pull-more:hover { color: var(--navy); }
+      @media (max-width: 760px) { .pull { padding-top: 40px; background: linear-gradient(180deg, var(--gold) 0 124px, var(--tint, #f8f6eb) 124px 100%); } }
+      @media (max-width: 760px) { .pull-grid { grid-template-columns: 1fr; gap: 20px; justify-items: start; } .pull-photo { width: 140px; height: 140px; } }
+      .exp-row.exp-minor { grid-template-columns: 0.6fr 1fr; }
+      @media (max-width: 900px) { .exp-row.exp-minor { grid-template-columns: 1fr; } }
+      .tk-best { margin: 6px 0 0; font-size: 0.95rem; font-weight: 600; color: var(--bronze-text); }
+      .tk-vip .tk-best { color: var(--cream-text); }
+      .venue-more { margin-top: 24px; }
+      .venue-more > summary { cursor: pointer; text-align: center; font-weight: 600; color: var(--bronze-text); text-decoration: underline; text-underline-offset: 3px; list-style: none; }
+      .venue-more > summary::-webkit-details-marker { display: none; }
+      .venue-more[open] > summary { margin-bottom: 20px; }
+      .faq-list.faq-collapsed .faq-extra { display: none; }
+      .faq-more { text-align: center; margin-top: 24px; }
+      .spk .spk-why { font-size: 0.86rem; line-height: 1.45; color: var(--cream-text) !important; opacity: 1 !important; margin-top: 8px; font-style: italic; }
+      .letter .letter-cta { margin-top: 28px; }
+      /* pesos decididos (antes o navegador às vezes trocava por negrito sozinho) */
+      .manifesto .anchor { font-weight: 700; }
+      .fit .fit-tag { font-weight: 600; }
+      #main-content > * { order: 0 !important; }
+      /* depoimento com nome */
+      .testi .tcard-by { margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 2px; font-style: normal; }
+      .testi .tcard-by b { color: var(--navy); font-family: var(--font-body); font-size: 0.98rem; }
+      .testi .tcard-by span { color: var(--navy); font-family: var(--font-body); font-size: 0.88rem; font-style: normal; }
+      /* contador dos depoimentos, ao lado das setas */
+      .testi .testi-controls { align-items: center; }
+      .testi .testi-count { margin: 0 auto 0 0; font-family: var(--font-label); font-size: 0.9rem; letter-spacing: 0.06em; color: var(--navy); }
+      .testi .testi-count b { color: var(--bronze-text); }
+      .labs > p { max-width: none !important; } /* frase de abertura numa linha só no desktop */
+      /* filtros dos micro-labs */
+      .labs .lab-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
+      .labs .lab-filters-label { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); flex-basis: 100%; margin-bottom: 2px; }
+      .labs .lab-filter { padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(164, 133, 62, 0.6); background: var(--cream); color: var(--bronze-text); font: 600 0.78rem/1 var(--font-label, inherit); letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; }
+      .labs .lab-filter:hover { border-color: var(--bronze-text); }
+      .labs .lab-filter[aria-pressed="true"] { background: var(--bronze-text); border-color: var(--bronze-text); color: #fff; }
+      .labs .lab-clear { margin-left: 6px; padding: 6px 4px; background: none; border: 0; color: var(--navy); font-weight: 600; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+      .labs .lab-clear[hidden], .labs .labs-more[hidden], .labs .lab-card[hidden] { display: none !important; }
+      .labs .lab-col.lab-col-empty .lab-round::after { content: "No labs in this track for this length."; display: block; padding: 18px 0; color: var(--muted); font-style: italic; font-size: 0.92rem; }
+      .labs .lab-card .lab-pill { display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px; background: var(--tint, #f8f6eb); border: 1px solid rgba(164, 133, 62, 0.45); font-style: normal; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--bronze-text); }
+      /* faixa da agenda em dourado, igual à dos speakers (texto grande branco passa 3:1) */
+      .agenda .inline-cta { background: var(--gold) !important; }
+      .agenda .inline-cta p { color: #fff !important; }
+      /* depoimentos 2025: fundo branco, cards no creme da marca com borda e aspas em dourado */
+      section.testi { background: #fff !important; }
+      section.testi .tcard { background: var(--cream) !important; border: 1px solid var(--gold) !important; border-top: 3px solid var(--gold) !important; }
+      section.testi .tcard::before { color: var(--gold) !important; opacity: 1 !important; font-size: 3.6rem !important; top: 14px !important; left: 28px !important; }
+      section.testi .tcard { padding-top: 64px !important; }
+      .labs .lab-card .lab-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; color: inherit; font-size: inherit; }
+      .labs .lab-card .lab-pills .lab-pill { margin-bottom: 0; }
+      .labs .labs-hub { font-style: normal; margin-top: 36px; }
 </style>
   </head>
   <body>
@@ -3130,11 +3206,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           >
           <h2>Your Community. Your Influence.</h2>
           <h1><span class="line-break">Leading 2027</span> <span class="line-break">and Beyond</span></h1>
-          <p class="sub"> Lead what's next. Join purpose-driven women leaders and allies for three immersive days of learning, connection, and celebration.
-          </p>
-          <p class="support">
-            Powerful keynotes, hands-on micro-labs, wellness sessions, and dinner pods for networking and intentional connection. Leave with clarity, confidence, and momentum.
-          </p>
+          <p class="sub"><strong>Lead your next chapter with confidence.</strong> Three immersive days to sharpen how you lead through change, build relationships that open doors, and celebrate the women honored as Global and National ATHENA Award Recipients.</p>
+          
           <p class="sr-only" id="countdownText" aria-live="off"></p>
           <div class="countdown" id="countdown" aria-hidden="true">
             <div><b data-d>00</b><span>Days</span></div>
@@ -3142,8 +3215,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div><b data-m>00</b><span>Minutes</span></div>
           </div>
           <div class="hero-cta">
-            <a href="#tickets" class="btn btn-primary">Claim Your Seat</a>
-            <a href="#experience" class="btn btn-outline">Explore the Experience</a>
+            <a href="#tickets" class="btn btn-primary">Get Your Pass</a>
+            <a href="#agenda" class="btn btn-outline">View Agenda</a>
           </div>
           <p class="hero-price"><b>Early Bird from $545</b> <i>·</i> Ends November 15</p>
         </div>
@@ -3164,6 +3237,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
+
+    <!-- ===== 03 MANIFESTO ===== -->
+    <section class="manifesto">
+      <div class="wrap grid">
+        <div>
+          <span class="eyebrow">More Than a Conference</span>
+          <p class="anchor">
+            Find your people. Expand your influence. Lead what's&nbsp;next.
+          </p>
+          <p>
+            The 2027 ATHENA Conference &amp; Awards Celebration brings together women leaders, allies, entrepreneurs, executives, and changemakers for three days of learning, recognition, and authentic connection. Experience inspiring keynotes, interactive workshops, wellness sessions, and a global community committed to creating impact that lasts far beyond the event.
+          </p>
+        </div>
+        <div class="imgph">
+          <img loading="lazy" decoding="async"
+            src="/assets/conference-2027/index-C-assets/fotos/courageous-decision.webp"
+            alt="A woman leader standing confidently before a rising bronze arrow"
+            style="width: 100%; height: 100%; object-fit: contain"
+          / width="1033" height="1100">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 13.1 CITAÇÃO DA ISADORA (versão C, auditoria) ===== -->
+    <section class="pull" id="pull">
+      <div class="wrap pull-grid">
+        <img class="pull-photo" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria" width="800" height="960">
+        <figure>
+          <blockquote>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</blockquote>
+          <figcaption><b>Isadora Maria</b><span>ATHENA Board Director</span></figcaption>
+          <a class="pull-more" href="#welcome">Read full story &rarr;</a>
+        </figure>
+      </div>
+    </section>
 
     <!-- ===== 09.5 WHO WE SERVE ===== -->
     <section class="section-trusted" id="trusted">
@@ -3256,27 +3363,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ===== 03 MANIFESTO ===== -->
-    <section class="manifesto">
-      <div class="wrap grid">
-        <div>
-          <span class="eyebrow">More Than a Conference</span>
-          <p class="anchor">
-            Find your people. Expand your influence. Lead what's&nbsp;next.
-          </p>
-          <p>
-            The 2027 ATHENA Conference &amp; Awards Celebration brings together women leaders, allies, entrepreneurs, executives, and changemakers for three days of learning, recognition, and authentic connection. Experience inspiring keynotes, interactive workshops, wellness sessions, and a global community committed to creating impact that lasts far beyond the event.
-          </p>
-        </div>
-        <div class="imgph">
-          <img loading="lazy" decoding="async"
-            src="/assets/conference-2027/index-C-assets/fotos/courageous-decision.webp"
-            alt="A woman leader standing confidently before a rising bronze arrow"
-            style="width: 100%; height: 100%; object-fit: contain"
-          / width="1033" height="1100">
-        </div>
-      </div>
-    </section>
 
     <!-- ===== 03.1 WHO THIS IS FOR (versão C) ===== -->
     <section class="fit" id="who">
@@ -3292,24 +3378,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <article class="fit-card">
             <span class="fit-n">01</span>
             <h3>The emerging leader</h3>
-            <p>You're just getting started. You stepped into your first lead role, or you're about to. You want influence before the title catches up, and a network that will vouch for you.</p>
+            <p>You're just getting started. You stepped into your first lead role, or you're about to. You want to build influence before the title catches up, speak with confidence in rooms where you're the newest voice, and grow a network of mentors and peers who will vouch for you.</p>
             <p class="fit-tag"><span>You leave with</span>Influence at any level and the start of your personal board.</p>
           </article>
           <article class="fit-card">
             <span class="fit-n">02</span>
             <h3>The advancing leader</h3>
-            <p>You're ready to grow your influence beyond your role. You lead a team inside an organization, from a regional business to a global enterprise, and you're expected to deliver through reorgs, AI, and budget cuts. You need frameworks that work on Monday.</p>
+            <p>You're ready to grow your influence beyond your role. You lead a team inside an organization, from a regional business to a global enterprise, and you're expected to deliver through reorgs, AI adoption, and budget cuts. You need frameworks that work on Monday and peers who understand the pressure.</p>
             <p class="fit-tag"><span>You leave with</span>Tools for leading under pressure and a plan to stay visible and valuable.</p>
           </article>
           <article class="fit-card">
             <span class="fit-n">03</span>
             <h3>The leader in transition</h3>
-            <p>You're entering a new chapter. You've already achieved a lot, and you can feel there's more you're meant to do. Maybe you left, were cut, or know a move is coming. Whether what's next is a new role or your own business, you want clarity, courage, and people who have made the same leap.</p>
+            <p>You're entering a new chapter. You've achieved a lot, and you can feel there's more you're meant to do. Maybe you left, were cut, or know a move is coming. Whether what's next is a new role or your own business, you want clarity, courage, and people who have made the same leap.</p>
             <p class="fit-tag"><span>You leave with</span>A clear next step and a circle that holds you to it.</p>
           </article>
         </div>
         <p class="fit-also"><strong>Also in the room:</strong> executive corporate leaders, founders and small business owners, nonprofit and community leaders, educators, ATHENA Award Recipients, ATHENA Certified Facilitators, students from high school to college, and the allies who champion women's leadership.</p>
         <p class="fence">You don't need a title to belong here. You need the ambition to lead well.</p>
+        <p class="fit-cta"><a href="#labs" class="btn btn-dark">Find Your Micro-Labs</a></p>
       </div>
     </section>
 
@@ -3319,11 +3406,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <span class="eyebrow">What you'll walk away with</span>
           <h2>Toward what's next.</h2>
-          <p class="wa-lead">Maybe you're growing a business or a career. Maybe you're in a season of reinvention. Or maybe things are going well, and you sense there's still more you want to create, contribute, or experience. Wherever your curiosity is leading you, these three days help you take the next step and lead it with integrity.</p>
+          <p class="wa-lead">Wherever you are in your leadership, these three days help you take the next step and lead it with integrity.</p>
           <ul class="b wa-list">
-            <li><strong>A compass, not a checklist.</strong> Eight principles, refined over 44 years, to guide your decisions long after the last session.</li>
-            <li><strong>Skills you'll use on Monday.</strong> Hands-on practice in leading through change, AI, and pressure; 1:1 Predictive Index coaching; and a plan to share with your team or your business.</li>
-            <li><strong>People who keep you going.</strong> A circle of leaders who will still be cheering you on months from now.</li>
+            <li><strong>Your personal leadership compass.</strong> The eight ATHENA Principles, refined over 44 years, to guide your decisions.</li>
+            <li><strong>Predictive Index insights.</strong> What drives you, how you show up, and how to build stronger teams.</li>
+            <li><strong>AI-era leadership tools.</strong> Practical ways to lead through change, AI, and pressure, starting Monday.</li>
+            <li><strong>A network of peers and mentors.</strong> Leaders across industries who will still be cheering you on months from now.</li>
+            <li><strong>A plan to bring back.</strong> What you'll put into practice for yourself, your team, or your business.</li>
+            <li><strong>Eight online Mini Labs after the event.</strong> Live sessions that keep your growth going.</li>
           </ul>
           <p class="wa-close">ATHENA 2027 ends on January 30. The work you start here doesn't.</p>
         </div>
@@ -3338,55 +3428,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="testi">
       <div class="wrap">
         <div class="center">
-          <span class="eyebrow">What 2025 attendees said</span>
+          <span class="eyebrow">What 2025 ATHENA Community attendees said</span>
           <h2>The room changes how you lead</h2>
         </div>
         <div class="testi-track" role="region" aria-label="Testimonials" tabindex="0">
+          <div class="tcard tcard-named">
+            <p class="tcard-short">The ATHENA Conference was such a life-changing experience for me. I brought a friend who needed to hear the ATHENA message more than ever. Since the conference, her confidence has been so much higher. 25 years in IT and I've just about seen it all. ATHENA is special, but don't take my word for it. Experience it for yourself!</p>
+            <p class="tcard-by"><b>Meg Glenn</b><span>ATHENA Certified Facilitator</span></p>
+          </div>
           <div class="tcard">
             <p>The 2025 ATHENA conference was a thoughtful blend of expert
               speakers sharing their stories, meaningful networking, and just
               plain fun. The relationships built there have continued to thrive
               long after the event. Grateful to be a part of the ATHENA
               community.</p>
+            <p class="tcard-by"><b>KB</b></p>
           </div>
           <div class="tcard">
             <p>The 2025 ATHENA Leadership Conference reignited the power of the
               ATHENA Leadership Model and its principles. I was grateful to
               connect with an incredible network of women across ATHENA
               communities who lead with courage, purpose, and impact.</p>
+            <p class="tcard-by"><b>KG</b></p>
           </div>
           <div class="tcard">
             <p>Every keynote and workshop provided tools, nuggets, and gems for
               women in leadership. The 2025 ATHENA Conference was a great
               investment that continues to pay relationship dividends.</p>
+            <p class="tcard-by"><b>PM</b></p>
           </div>
           <div class="tcard">
             <p>The 2025 ATHENA Conference provided the opportunity to not only
               hear from inspiring women leaders, but to also connect with women
               in a meaningful way.</p>
-          </div>
-          <div class="tcard">
-            <p>At the last ATHENA Conference in 2025 I met leaders who opened
-              real board and partnership conversations within weeks.</p>
+            <p class="tcard-by"><b>MM</b></p>
           </div>
           <div class="tcard">
             <p>Through engagements with the ATHENA network, I refined my job craft
               narrative and connected to the right decision-makers.</p>
+            <p class="tcard-by"><b>IS</b></p>
           </div>
           <div class="tcard">
             <p>What stood out at the ATHENA 2025 Conference was the quality of
               women leaders who truly champion each other.</p>
-          </div>
-          <div class="tcard">
-            <p>The ATHENA Conference gave me practical frameworks I used
-              immediately to grow my influence and leadership impact.</p>
+            <p class="tcard-by"><b>DS</b></p>
           </div>
           <div class="tcard">
             <p>The Conference sessions were high-signal and immediately useful
               for growth and influence.</p>
+            <p class="tcard-by"><b>ATHENA Community Member</b></p>
           </div>
         </div>
         <div class="testi-controls" aria-label="Testimonials controls">
+          <p class="testi-count"><span class="sr-only">Feedback </span><b id="testiNow">1</b> / <span id="testiTotal">8</span></p>
           <button
             class="testi-arrow testi-prev"
             type="button"
@@ -3406,62 +3500,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ===== 03.4 WELCOME LETTER (versão C) ===== -->
-    <section class="letter" id="welcome">
-      <div class="wrap letter-grid">
-        <div class="letter-side">
-          <div class="letter-portrait">
-            <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria, ATHENA Board Director and Leadership Institute Facilitator" width="800" height="960">
-          </div>
-          <div class="letter-sign">
-            <picture><source srcset="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-static.webp" media="(prefers-reduced-motion: reduce)"><img class="letter-badge" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-once.webp" alt="Microsoft Change Agent, Nonprofit Champion badge" width="330" height="330"></picture>
-            <div><b>Isadora Maria</b><span>ATHENA Board Director &amp; Leadership Institute Facilitator</span></div>
-          </div>
-        </div>
-        <div class="letter-copy">
-          <h2>The moment this is built for</h2>
-          <div class="rule"></div>
-          <div class="letter-body">
-            <p class="letter-lead">You've built a career, a business, a network, and a life of impact. Now you're asking: what's next?</p>
-            <p>I'm an artist, executive, technologist, and Brazilian immigrant. After more than a decade working in AI and innovation, including seven years in AI Cloud partnerships at Microsoft, I discovered the transformative power of nonprofit communities through the Microsoft Change Agent program.</p>
-            <p>ATHENA International and The WIT Network Emerging Leaders Program challenged me to dream bigger, lead with even greater courage, and embrace a simple truth: leadership isn't about fitting in. It's about being fully yourself and paving a path for others to do the same.</p>
-            <p>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</p>
-            <p>Today, I believe that the way we love ourselves shapes how we belong. And belonging is one of the most powerful forces for change. When we know our worth, we lead more boldly, build stronger communities, and create greater impact together.</p>
-            <p>I'm returning to ATHENA 2027 as an ATHENA Board Director &amp; Leadership Institute Facilitator because this community continues to help me grow with greater clarity, confidence, and purpose.</p>
-            <p>I hope you'll join us in Los Angeles as we step into our next chapter together.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== 04 PROOF ===== -->
-    <section class="proof">
-      <div class="wrap">
-        <span class="eyebrow">A legacy no one else can claim</span>
-        <h2>44 Years. One Mission.<br />Thousands of Leaders.</h2>
-        <div class="stats">
-          <div class="stat">
-            <b>10,000+</b>
-            <span class="stat-label">Awards presented across our history</span>
-            <span class="stat-note">Recognizing leaders who create impact and open doors for others.</span>
-          </div>
-          <div class="stat">
-            <b>2,000+</b>
-            <span class="stat-label">Leaders served through our global network</span>
-            <span class="stat-note">Advancing leadership through development, connection, and opportunity.</span>
-          </div>
-          <div class="stat">
-            <b>30+</b>
-            <span class="stat-label">Countries represented</span>
-            <span class="stat-note">Bringing together perspectives, experiences, and voices from around the world.</span>
-          </div>
-          <div class="stat">
-            <b>44</b>
-            <span class="stat-label">Years of advancing women's leadership</span>
-            <span class="stat-note">Building a lasting legacy of recognition, influence, and impact.</span>
-          </div>
+
+    <!-- ===== 06.1 ONLY IN PERSON (versão C) ===== -->
+    <section class="inperson" id="in-person">
+      <div class="wrap ip-grid">
+        <div class="imgph pod-single">
+          <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/citywalk-night.webp" alt="Universal CityWalk restaurants at night, a short walk from the hotel" width="940" height="705">
         </div>
-        <p class="fence lede">For 44 years, ATHENA International has championed leaders who create opportunities for others and drive positive change in their communities. The ATHENA International Conference &amp; Awards Celebration 2027 brings this global network together for three days of learning, connection, recognition, and inspiration.</p>
+        <div>
+          <span class="eyebrow">ATHENA Networking Dinner Pods</span>
+          <h2>The conversations that never happen on a call.</h2>
+          <p class="ip-lead">The part ATHENA 2025 Conference attendees asked for most: more time to actually talk. So both evenings end around a small table.</p>
+          <ol class="steps">
+            <li><b>Pick your table.</b> After you register, choose the speaker you want to have dinner with in the ATHENA Conference Hub on the Mighty Networks app (iOS, Android, and web). First come, first served.</li>
+            <li><b>Walk over together.</b> Restaurants a short walk up the hill from the hotel, with hotel carts available, plus a table at the Hilton for anyone who prefers to stay close.</li>
+            <li><b>Talk like people, not badges.</b> A small group, a speaker, and an evening of real conversation. Optional, and you can always do your own thing.</li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -3476,27 +3532,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="exp-row">
             <div class="imgph">
               <img loading="lazy" decoding="async"
-                src="/assets/conference-2027/index-B-assets/Pilares/Keynote%20and%20Plenares.webp"
-                alt="Keynotes"
-                style="width: 100%; height: 100%; object-fit: cover"
-              / width="1410" height="1383">
-            </div>
-            <div>
-              <h3>Keynotes &amp; Panels</h3>
-              <p class="exp-kicker">Ideas become action.</p>
-              <p>
-                Forget passive listening. Keynote speakers and panelists
-                challenge assumptions, take on the leadership questions that
-                matter right now, and start conversations that keep going long
-                after the session ends. Human-centered AI, influence without
-                authority, resilience under pressure, workplace wellbeing, and
-                the future of leadership in a world that will not slow down.
-              </p>
-            </div>
-          </div>
-          <div class="exp-row">
-            <div class="imgph">
-              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Curated%20Labs.webp"
                 alt="Curated Labs"
                 style="width: 100%; height: 100%; object-fit: cover"
@@ -3504,7 +3539,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div>
               <h3>Hands-On Micro-Labs</h3>
-              <p class="exp-kicker">Learn it. Practice it. Use it.</p>
+              <p class="exp-kicker">Skills you can use on Monday.</p>
               <p>
                 Leadership is not built by watching. It is built by doing.
                 Interactive micro-labs give you room for real application, peer
@@ -3524,8 +3559,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               / width="1854" height="1113">
             </div>
             <div>
-              <h3>Connection That Matters</h3>
-              <p class="exp-kicker">Relationships that outlast the conference.</p>
+              <h3>Networking That Opens Doors</h3>
+              <p class="exp-kicker">Relationships that accelerate opportunity.</p>
               <p>
                 Some of the most valuable conversations happen between sessions.
                 ATHENA's intentional networking connects you with leaders,
@@ -3544,6 +3579,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="exp-row">
             <div class="imgph">
               <img loading="lazy" decoding="async"
+                src="/assets/conference-2027/index-B-assets/Pilares/Keynote%20and%20Plenares.webp"
+                alt="Keynotes"
+                style="width: 100%; height: 100%; object-fit: cover"
+              / width="1410" height="1383">
+            </div>
+            <div>
+              <h3>The Future of Leadership</h3>
+              <p class="exp-kicker">Keynotes and panels on AI, change, and influence.</p>
+              <p>
+                Forget passive listening. Keynote speakers and panelists
+                challenge assumptions, take on the leadership questions that
+                matter right now, and start conversations that keep going long
+                after the session ends. Human-centered AI, influence without
+                authority, resilience under pressure, workplace wellbeing, and
+                the future of leadership in a world that will not slow down.
+              </p>
+            </div>
+          </div>
+          <div class="exp-row exp-minor">
+            <div class="imgph">
+              <img loading="lazy" decoding="async"
                 src="/assets/conference-2027/index-B-assets/Pilares/Wellness.webp"
                 alt="Wellness"
                 style="width: 100%; height: 100%; object-fit: cover"
@@ -3551,7 +3607,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div>
               <h3>Wellness &amp; Renewal</h3>
-              <p class="exp-kicker">Leadership that honors the whole human.</p>
+              <p class="exp-kicker">Recharge and reflect.</p>
               <p>
                 Great leaders need more than professional development. They need
                 space to recharge. Morning and afternoon wellness experiences run
@@ -3594,14 +3650,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div id="spkGrid" class="spk-grid spk-preview">
-          <div class="spk" data-name="Gavriella Schuster" data-linkedin="https://www.linkedin.com/in/gavriella-schuster" data-role="Board Director | Former Corporate Vice President, Microsoft" data-bio="Former Microsoft Corporate Vice President who led a global partner ecosystem influencing over $1 trillion in revenue, now a board director and one of the most recognized voices on allyship in technology."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/gavriella-s.webp" alt="Gavriella Schuster" width="1200" height="1440"></div><div class="info"><h3>Gavriella Schuster</h3><p class="role">Board Director | Former Corporate Vice President, Microsoft</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/gavriella-schuster" target="_blank" rel="noopener" aria-label="Gavriella Schuster on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="Karol Pelletier" data-linkedin="https://www.linkedin.com/in/karol-pelletier-shrm-scp" data-role="Chief Human Resources Officer" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karol-p.webp" alt="Karol Pelletier" width="1200" height="1440"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Chief Human Resources Officer</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/karol-pelletier-shrm-scp" target="_blank" rel="noopener" aria-label="Karol Pelletier on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="Karen Bird" data-linkedin="https://www.linkedin.com/in/karen-bird-76930346" data-role="CEO, Batchewana First Nation | Founder, Nakehndan | ATHENA Board Director" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karen-b.webp" alt="Karen Bird" width="1200" height="1440"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | Founder, Nakehndan | ATHENA Board Director</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/karen-bird-76930346" target="_blank" rel="noopener" aria-label="Karen Bird on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="JC Ayers" data-linkedin="https://www.linkedin.com/in/jc-ayers" data-role="Senior VP of Human Resources, Cherokee Nation Entertainment" data-bio="Senior Vice President of Human Resources for Cherokee Nation Entertainment, leading HR across 11 tribal and commercial casino resorts. A strategic executive and culture architect with more than 35 years of experience aligning people strategies with business performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/jc-ayers.webp" alt="JC Ayers" width="1200" height="1440"></div><div class="info"><h3>JC Ayers</h3><p class="role">Senior VP of Human Resources, Cherokee Nation Entertainment</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/jc-ayers" target="_blank" rel="noopener" aria-label="JC Ayers on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="Bobby Hoffman" data-linkedin="https://www.linkedin.com/in/bobhoffman11" data-role="Co-founder, Thought Partner Services | Motivational Speaker" data-bio="Motivational speaker, leadership development facilitator, and cofounder of Thought Partner Services, a people-first consultancy focused on strengthening leadership, communication, culture, and service."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/bobby-h.webp" alt="Bobby Hoffman" width="1200" height="1440"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Co-founder, Thought Partner Services | Motivational Speaker</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/bobhoffman11" target="_blank" rel="noopener" aria-label="Bobby Hoffman on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="Deb Hart" data-linkedin="https://www.linkedin.com/in/deb-hart-6b85a413" data-role="Trauma-Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/deb-h.webp" alt="Deb Hart" width="1200" height="1440"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma-Sensitive Yoga Certified | iRest Meditation Teacher</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/deb-hart-6b85a413" target="_blank" rel="noopener" aria-label="Deb Hart on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
-          <div class="spk" data-name="Dr. Amy Bonomi" data-role="Dean, College of Health and Human Services, San Diego State University" data-bio="Dr. Amy Bonomi has served as Dean of the College of Health and Human Services at San Diego State University since July 2024. She previously served as associate dean of strategic initiatives at Northern Arizona University and chaired the Department of Human Development at Michigan State University, where she founded the Women's Leadership Institute."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/speakers/amy-bonomi.webp" alt="Dr. Amy Bonomi" width="560" height="672"></div><div class="info"><h3>Dr. Amy Bonomi</h3><p class="role">Dean, College of Health and Human Services, San Diego State University</p><div class="spk-foot"><p class="more">Read bio +</p></div></div></div>
-          <div class="spk" data-name="Dr. Moacir Antonelli Ponti" data-linkedin="https://www.linkedin.com/in/moacir-antonelli-ponti" data-role="Author | AI/ML Expert | 2% Most Influential Scientists Worldwide" data-bio="Dr. Moacir Antonelli Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of São Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/moacir-a.webp" alt="Dr. Moacir Antonelli Ponti" width="1200" height="1440"></div><div class="info"><h3>Dr. Moacir Antonelli Ponti</h3><p class="role">Author | AI/ML Expert | 2% Most Influential Scientists Worldwide</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/moacir-antonelli-ponti" target="_blank" rel="noopener" aria-label="Dr. Moacir Antonelli Ponti on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Gavriella Schuster" data-linkedin="https://www.linkedin.com/in/gavriella-schuster" data-role="Board Director | Former Corporate Vice President, Microsoft" data-bio="Former Microsoft Corporate Vice President who led a global partner ecosystem influencing over $1 trillion in revenue, now a board director and one of the most recognized voices on allyship in technology."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/gavriella-s.webp" alt="Gavriella Schuster" width="1200" height="1440"></div><div class="info"><h3>Gavriella Schuster</h3><p class="role">Board Director | Former Corporate Vice President, Microsoft</p><p class="spk-why">Led the Microsoft AI Cloud partner ecosystem influencing over $1 trillion in revenue. Learn to build the personal board that builds your career.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/gavriella-schuster" target="_blank" rel="noopener" aria-label="Gavriella Schuster on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Karol Pelletier" data-linkedin="https://www.linkedin.com/in/karol-pelletier-shrm-scp" data-role="Chief Human Resources Officer" data-bio="Strategic HR executive with 25+ years leading people strategy, culture transformation, and organizational design across global organizations."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karol-p.webp" alt="Karol Pelletier" width="1200" height="1440"></div><div class="info"><h3>Karol Pelletier</h3><p class="role">Chief Human Resources Officer</p><p class="spk-why">25+ years leading people strategy at global organizations. Learn to influence at any level, with or without the title.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/karol-pelletier-shrm-scp" target="_blank" rel="noopener" aria-label="Karol Pelletier on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Karen Bird" data-linkedin="https://www.linkedin.com/in/karen-bird-76930346" data-role="CEO, Batchewana First Nation | Founder, Nakehndan | ATHENA Board Director" data-bio="Ojibwe executive leading Batchewana First Nation and founder of programs supporting women and families through transition."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/karen-b.webp" alt="Karen Bird" width="1200" height="1440"></div><div class="info"><h3>Karen Bird</h3><p class="role">CEO, Batchewana First Nation | Founder, Nakehndan | ATHENA Board Director</p><p class="spk-why">Learn how circles and shared leadership, rooted in Indigenous traditions, help teams lead together.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/karen-bird-76930346" target="_blank" rel="noopener" aria-label="Karen Bird on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="JC Ayers" data-linkedin="https://www.linkedin.com/in/jc-ayers" data-role="Senior VP of Human Resources, Cherokee Nation Entertainment" data-bio="Senior Vice President of Human Resources for Cherokee Nation Entertainment, leading HR across 11 tribal and commercial casino resorts. A strategic executive and culture architect with more than 35 years of experience aligning people strategies with business performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/jc-ayers.webp" alt="JC Ayers" width="1200" height="1440"></div><div class="info"><h3>JC Ayers</h3><p class="role">Senior VP of Human Resources, Cherokee Nation Entertainment</p><p class="spk-why">35+ years aligning people strategy with business results. Find out what's really stopping your next career move.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/jc-ayers" target="_blank" rel="noopener" aria-label="JC Ayers on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Bobby Hoffman" data-linkedin="https://www.linkedin.com/in/bobhoffman11" data-role="Co-founder, Thought Partner Services | Motivational Speaker" data-bio="Motivational speaker, leadership development facilitator, and cofounder of Thought Partner Services, a people-first consultancy focused on strengthening leadership, communication, culture, and service."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/bobby-h.webp" alt="Bobby Hoffman" width="1200" height="1440"></div><div class="info"><h3>Bobby Hoffman</h3><p class="role">Co-founder, Thought Partner Services | Motivational Speaker</p><p class="spk-why">Your co-emcee for the three days. Learn to lead yourself first when pressure takes over, so you can lead the moment.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/bobhoffman11" target="_blank" rel="noopener" aria-label="Bobby Hoffman on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Deb Hart" data-linkedin="https://www.linkedin.com/in/deb-hart-6b85a413" data-role="Trauma-Sensitive Yoga Certified | iRest Meditation Teacher" data-bio="Radio and TV personality and certified facilitator leading wellness moments that sustain leadership performance."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/deb-h.webp" alt="Deb Hart" width="1200" height="1440"></div><div class="info"><h3>Deb Hart</h3><p class="role">Trauma-Sensitive Yoga Certified | iRest Meditation Teacher</p><p class="spk-why">Your co-emcee and morning wellness guide, so you lead the three days energized, not depleted.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/deb-hart-6b85a413" target="_blank" rel="noopener" aria-label="Deb Hart on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
+          <div class="spk" data-name="Dr. Amy Bonomi" data-role="Dean, College of Health and Human Services, San Diego State University" data-bio="Dr. Amy Bonomi has served as Dean of the College of Health and Human Services at San Diego State University since July 2024. She previously served as associate dean of strategic initiatives at Northern Arizona University and chaired the Department of Human Development at Michigan State University, where she founded the Women's Leadership Institute."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/speakers/amy-bonomi.webp" alt="Dr. Amy Bonomi" width="560" height="672"></div><div class="info"><h3>Dr. Amy Bonomi</h3><p class="role">Dean, College of Health and Human Services, San Diego State University</p><p class="spk-why">Rethink how women navigate work and the systems around it, and trade the rigid career path for one you design on your own terms.</p><div class="spk-foot"><p class="more">Read bio +</p></div></div></div>
+          <div class="spk" data-name="Dr. Moacir Antonelli Ponti" data-linkedin="https://www.linkedin.com/in/moacir-antonelli-ponti" data-role="Author | AI/ML Expert | 2% Most Influential Scientists Worldwide" data-bio="Dr. Moacir Antonelli Ponti is one of Latin America's leading AI and Machine Learning experts, leading strategy and research in foundation models, AI agents, and machine learning at scale at Mercado Livre, while serving as an Associate Professor of Computer Science at the University of São Paulo. Recognized among the top 2% most influential scientists globally, he helps leaders turn AI into practical advantage through better decisions, faster innovation, and human-centered execution."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/moacir-a.webp" alt="Dr. Moacir Antonelli Ponti" width="1200" height="1440"></div><div class="info"><h3>Dr. Moacir Antonelli Ponti</h3><p class="role">Author | AI/ML Expert | 2% Most Influential Scientists Worldwide</p><p class="spk-why">Learn where AI creates real value and where people stay at the center.</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/moacir-antonelli-ponti" target="_blank" rel="noopener" aria-label="Dr. Moacir Antonelli Ponti on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
           <div class="spk" data-name="Rachel B. Lee" data-linkedin="https://www.linkedin.com/in/therachelblee" data-role="Co-founder, YOUmanize™ | Co-owner and CMO, StandOut Authority" data-bio="LinkedIn Top Voice and brand strategist. Co-founder of YOUmanize™ and co-owner and CMO of StandOut Authority, after leading brand strategy at Microsoft and Gartner."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/rachel-bl.webp" alt="Rachel B. Lee" width="1200" height="1440"></div><div class="info"><h3>Rachel B. Lee</h3><p class="role">Co-founder, YOUmanize™ | Co-owner and CMO, StandOut Authority</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/therachelblee" target="_blank" rel="noopener" aria-label="Rachel B. Lee on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
           <div class="spk" data-name="Dr. Amy Blasen" data-linkedin="https://www.linkedin.com/in/dr-amy-blasen-do-facep" data-role="DO, Fellow of the American College of Emergency Physicians" data-bio="Board-certified emergency physician with three decades of clinical leadership. Founder of Avita Health and Wellness and author of The Modern Menopause Action Plan."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/amy-b.webp" alt="Dr. Amy Blasen" width="1200" height="1440"></div><div class="info"><h3>Dr. Amy Blasen</h3><p class="role">DO, Fellow of the American College of Emergency Physicians</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.linkedin.com/in/dr-amy-blasen-do-facep" target="_blank" rel="noopener" aria-label="Dr. Amy Blasen on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div></div>
           <div class="spk" data-name="Carlene Kanellis" data-linkedin="https://www.instagram.com/themoderndaymedicinewoman/" data-role="Modern Day Medicine Woman | Wellness Mentor" data-bio="Founder of Modern Day Medicine Woman, a wellness practice rooted in breathwork, ritual, and sacred sisterhood."><div class="imgph"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-B-assets/speakers/carlene-k.webp" alt="Carlene Kanellis" width="1200" height="1440"></div><div class="info"><h3>Carlene Kanellis</h3><p class="role">Modern Day Medicine Woman | Wellness Mentor</p><div class="spk-foot"><p class="more">Read bio +</p><a class="spk-li" href="https://www.instagram.com/themoderndaymedicinewoman/" target="_blank" rel="noopener" aria-label="Carlene Kanellis on Instagram"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a></div></div></div>
@@ -3628,24 +3684,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ===== 06.1 ONLY IN PERSON (versão C) ===== -->
-    <section class="inperson" id="in-person">
-      <div class="wrap ip-grid">
-        <div class="imgph pod-single">
-          <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/citywalk-night.webp" alt="Universal CityWalk restaurants at night, a short walk from the hotel" width="940" height="705">
-        </div>
-        <div>
-          <span class="eyebrow">ATHENA Networking Dinner Pods</span>
-          <h2>The conversations that never happen on a call.</h2>
-          <p class="ip-lead">The part ATHENA 2025 Conference attendees asked for most: more time to actually talk. So both evenings end around a small table.</p>
-          <ol class="steps">
-            <li><b>Pick your table.</b> After you register, choose the speaker you want to have dinner with in the ATHENA Conference Hub on the Mighty Networks app (iOS, Android, and web). First come, first served.</li>
-            <li><b>Walk over together.</b> Restaurants a short walk up the hill from the hotel, with hotel carts available, plus a table at the Hilton for anyone who prefers to stay close.</li>
-            <li><b>Talk like people, not badges.</b> A small group, a speaker, and an evening of real conversation. Optional, and you can always do your own thing.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
 
     <!-- ===== 06.2 AGENDA (versão C) ===== -->
     <section class="agenda" id="agenda">
@@ -3657,7 +3695,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="days">
           <details class="day">
-            <summary class="day-head"><span>Day 1</span><b>Thursday, Jan 28</b><small>Opening momentum</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+            <summary class="day-head"><span>Day 1</span><b>Thursday, Jan 28</b><small>Connection + Inspiration</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
               <li><time>1:00 PM</time><div><b>Welcome</b><span>Kimberli Green, Board Chair, and Traci Costa, CEO, with emcees Bobby Hoffman and Deb Hart</span></div></li>
               <li class="key"><time>1:15 PM</time><div><b>Opening Keynote</b><span>Karol Pelletier · Leadership Isn't a Title: How to Influence at Any Level</span></div></li>
@@ -3669,7 +3707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ol>
           </details>
           <details class="day">
-            <summary class="day-head"><span>Day 2</span><b>Friday, Jan 29</b><small>Hands-on depth</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+            <summary class="day-head"><span>Day 2</span><b>Friday, Jan 29</b><small>Deep Skill Building</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
               <li><time>6:45 AM</time><div><b>Morning Wellness</b><span>With Carlene Kanellis and Deb Hart</span></div></li>
               <li><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
@@ -3685,7 +3723,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ol>
           </details>
           <details class="day">
-            <summary class="day-head"><span>Day 3</span><b>Saturday, Jan 30</b><small>Awards and celebration</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+            <summary class="day-head"><span>Day 3</span><b>Saturday, Jan 30</b><small>Awards + Action Plan</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
               <li><time>6:45 AM</time><div><b>Morning Wellness</b><span>With Carlene Kanellis and Deb Hart</span></div></li>
               <li><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
@@ -3698,10 +3736,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="labs labs-collapsed" id="labs">
           <h3>Choose your micro-labs</h3>
-          <p>Each round runs several hands-on labs at the same time, so you choose the one that fits where you are. Once you register, save your picks in the ATHENA Conference Hub.</p>
-          <div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div><div class="lab-card"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card"><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card"><b>Youth Leadership Track: Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>For students and emerging leaders</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card"><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card"><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card"><b>Youth Leadership Track: Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>For students and emerging leaders</span></div></div></div></div></div>
+          <p>Each round runs several hands-on labs at the same time, so you choose by the outcome you want.</p>
+          <div class="lab-filters" role="group" aria-label="Filter micro-labs by track"><span class="lab-filters-label">Filter by track</span><button type="button" class="lab-filter" data-track="ai" aria-pressed="false">AI Leadership</button><button type="button" class="lab-filter" data-track="team" aria-pressed="false">Team Leadership</button><button type="button" class="lab-filter" data-track="personal" aria-pressed="false">Personal Leadership</button><button type="button" class="lab-filter" data-track="youth" aria-pressed="false">Youth Leadership</button><button type="button" class="lab-filter" data-track="entrepreneurship" aria-pressed="false">Entrepreneurship</button><button type="button" class="lab-clear" hidden>Clear</button></div><p class="sr-only" id="labsStatus" aria-live="polite"></p><div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="ai,entrepreneurship"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card" data-tracks="team,personal"><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card" data-tracks="entrepreneurship"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card" data-tracks="personal"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card" data-tracks="youth"><b>Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>ATHENA Certified Facilitators</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card" data-tracks="team"><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="personal"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card" data-tracks="personal"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card" data-tracks="team"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card" data-tracks="youth"><b>Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>ATHENA Certified Facilitators</span></div></div></div></div></div>
           <div class="labs-more"><button type="button" class="btn btn-dark" id="labsToggle" aria-expanded="false">See all 16 micro-labs</button></div>
-          <p class="labs-foot">Agenda subject to change.</p>
+          <p class="labs-foot labs-hub">Once you register, save your picks in the ATHENA Conference Hub. Agenda subject to change.</p>
         </div>
 
         <div class="inline-cta"><p>Three days, one room, and a plan for what's next.</p><a href="#tickets" class="btn btn-primary">Secure Your Pass</a></div>
@@ -3713,12 +3751,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="wrap grid">
         <div>
           <span class="eyebrow">The grand finale</span>
-          <h2>The Awards Celebration.</h2>
+          <h2>Celebrate the Leaders Changing Communities Worldwide</h2>
           <p class="body">
-            ATHENA doesn't just talk about leadership; it honors it. The Awards
-            Celebration is where the women moving their communities forward are
-            recognized on stage. It's the heart of three days, and you're in the
-            room.
+            The ATHENA Awards Celebration honors the women moving their communities
+            forward, on a global stage. It's the heart of the three days, and
+            you're in the room.
           </p>
           <p class="sig-when"><span>Saturday, January 30, 2027</span> <i>·</i> <span>9:45 AM PT</span></p>
           <div class="sig-feature">
@@ -3747,6 +3784,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
+    <!-- ===== 03.4 WELCOME LETTER (versão C) ===== -->
+    <section class="letter" id="welcome">
+      <div class="wrap letter-grid">
+        <div class="letter-side">
+          <div class="letter-portrait">
+            <img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/isadora-maria.webp" alt="Isadora Maria, ATHENA Board Director and Leadership Institute Facilitator" width="800" height="960">
+          </div>
+          <div class="letter-sign">
+            <picture><source srcset="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-static.webp" media="(prefers-reduced-motion: reduce)"><img class="letter-badge" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/change-agent-badge-once.webp" alt="Microsoft Change Agent, Nonprofit Champion badge" width="330" height="330"></picture>
+            <div><b>Isadora Maria</b><span>ATHENA Board Director &amp; Leadership Institute Facilitator</span></div>
+          </div>
+        </div>
+        <div class="letter-copy">
+          <h2>The moment this is built for</h2>
+          <div class="rule"></div>
+          <div class="letter-body">
+            <p class="letter-lead">You've built a career, a business, a network, and a life of impact. Now you're asking: what's next?</p>
+            <p>I'm an artist, executive, technologist, and Brazilian immigrant. After more than a decade working in AI and innovation, including seven years in AI Cloud partnerships at Microsoft, I discovered the transformative power of nonprofit communities through the Microsoft Change Agent program.</p>
+            <p>ATHENA International and The WIT Network Emerging Leaders Program challenged me to dream bigger, lead with even greater courage, and embrace a simple truth: leadership isn't about fitting in. It's about being fully yourself and paving a path for others to do the same.</p>
+            <p>The ATHENA community helped me navigate the journey from corporate leadership to entrepreneurship, motherhood, and founding LUASOL Collective, without having to choose between being a leader and being an artist.</p>
+            <p>Today, I believe that the way we love ourselves shapes how we belong. And belonging is one of the most powerful forces for change. When we know our worth, we lead more boldly, build stronger communities, and create greater impact together.</p>
+            <p>I'm returning to ATHENA 2027 as an ATHENA Board Director &amp; Leadership Institute Facilitator because this community continues to help me grow with greater clarity, confidence, and purpose.</p>
+            <p>I hope you'll join us in Los Angeles as we step into our next chapter together.</p>
+            <p class="letter-cta"><a href="#tickets" class="btn btn-primary">Secure Your Seat Today</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 10.2 WHAT AWAITS YOU (versão C) ===== -->
     <section class="awaits" id="what-awaits">
       <div class="wrap awaits-grid">
@@ -3759,7 +3825,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="aw-block">
             <p class="aw-meta">January 28-30, 2027 <i>·</i> In person, Los Angeles</p>
             <h3>The Conference &amp; Awards Celebration</h3>
-            <p>Three immersive days of keynotes, hands-on micro-labs, wellness, and dinner pods, closing with the ATHENA Awards Celebration.</p>
+            <p>Three immersive ATHENA Conference days of keynotes, wellness sessions, ATHENA Networking Dinner Pods, and hands-on micro-labs in <strong>Personal, Team, AI, and Youth Leadership</strong> and <strong>Entrepreneurship</strong>, closing with the ATHENA Awards Celebration.</p>
             <p>You step away from the demands of everyday life, meet leaders who share your values, and start shaping what you want to create next.</p>
           </div>
           <div class="aw-block">
@@ -3822,6 +3888,7 @@ Thank you for considering it.
         <div class="tk-cards">
           <article class="tk-card">
             <div class="tk-top"><h3>General Admission</h3><span class="tk-label">Early Bird</span></div>
+            <p class="tk-best">Best for first-time attendees</p>
             <div class="tk-price">$545<s>$695</s></div>
             <p class="per per-highlight"><span>Early Bird pricing is limited and will sell out</span></p>
             <ul class="b">
@@ -3841,6 +3908,7 @@ Thank you for considering it.
           <article class="tk-card tk-vip">
             <span class="tk-badge">50 seats only</span>
             <div class="tk-top"><h3>VIP Experience</h3><span class="tk-label">Early Bird</span></div>
+            <p class="tk-best">Best for executives, founders, and ATHENA advocates</p>
             <div class="tk-price">$795<s>$995</s></div>
             <p class="per per-highlight"><span>Early Bird pricing is limited and will sell out</span></p>
             <ul class="b">
@@ -3936,12 +4004,9 @@ Thank you for considering it.
         <div class="venue-shell">
           <div class="venue-intro center">
             <h2>In the Heart of Universal City, CA</h2>
-            <p>
-              Hosted at the Hilton Los Angeles/Universal City, ATHENA 2027 Conference
-              puts you steps from world-class entertainment while keeping you
-              fully immersed in the experience.
-            </p>
+            <p>The official conference hotel is the Hilton Los Angeles/Universal City, with a discounted ATHENA rate of $239 + tax per night, steps from Universal Studios Hollywood and CityWalk, where most ATHENA Networking Dinner Pods gather each evening.</p>
           </div>
+          <details class="venue-more"><summary>Travel details and nearby attractions</summary>
           <div class="venue-details">
             <article class="venue-card">
               <h3>Travel Highlights</h3>
@@ -3963,6 +4028,7 @@ Thank you for considering it.
               </ul>
             </article>
           </div>
+          </details>
           <p class="venue-note center">
             <strong
               >After you purchase your ticket, you will receive an email with
@@ -4014,15 +4080,7 @@ Thank you for considering it.
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-q">
-              When and where is it?<span class="plus">+</span>
-            </button>
-            <div class="faq-a">
-              <p>January 28-30, 2027, at the Hilton Los Angeles/Universal City.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Who is this for?<span class="plus">+</span>
+              Is this for me?<span class="plus">+</span>
             </button>
             <div class="faq-a">
               <p>Emerging leaders getting started, advancing leaders growing their influence inside organizations, and leaders entering a new chapter. Founders, executives, educators, nonprofit and community leaders, students, and allies are all part of the room.</p>
@@ -4038,33 +4096,10 @@ Thank you for considering it.
           </div>
           <div class="faq-item">
             <button class="faq-q">
-              What tracks are available?<span class="plus">+</span>
-            </button>
-            <div class="faq-a">
-              <p><strong>Designed for Every Stage of Leadership</strong></p>
-              <ul>
-                <li><strong>Impact &amp; Influence</strong> - Professionals</li>
-                <li><strong>Impact &amp; Influence</strong> - Youth</li>
-                <li><strong>Building Leadership Ecosystems</strong></li>
-                <li><strong>Entrepreneurship &amp; Business Growth</strong></li>
-              </ul>
-              <p>ATHENA's multi-track experience allows you to customize your journey while staying connected to the broader community.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
               What's included in my ticket?<span class="plus">+</span>
             </button>
             <div class="faq-a">
               <p>For GA and VIP, all three days include keynotes, micro-labs, and curated networking. General Admission and VIP Experience also include the Awards Celebration. The Celebration only ticket is for a few hours of the event during the awards presentation. For a detailed comparison, <a href="#tickets">&uarr; Go to Tickets: compare each option line by line</a>.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              What's the difference between General Admission and VIP Experience?<span class="plus">+</span>
-            </button>
-            <div class="faq-a">
-              <p>VIP Experience includes everything in General Admission, plus priority seating, exclusive access, and elevated experiences. VIP is limited to 50 seats.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -4077,13 +4112,45 @@ Thank you for considering it.
           </div>
           <div class="faq-item">
             <button class="faq-q">
+              Can I book the conference hotel at a discounted rate?<span class="plus">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes. A limited ATHENA room block is available at Hilton Los Angeles/Universal City at $239 + tax per night, from January 25 to February 2, 2027. After registration, you will receive the booking details by email so you can secure the discounted rate while inventory lasts.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-q">
+              When and where is it?<span class="plus">+</span>
+            </button>
+            <div class="faq-a">
+              <p>January 28-30, 2027, at the Hilton Los Angeles/Universal City.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-q">
+              What's the difference between General Admission and VIP Experience?<span class="plus">+</span>
+            </button>
+            <div class="faq-a">
+              <p>VIP Experience includes everything in General Admission, plus priority seating, exclusive access, and elevated experiences. VIP is limited to 50 seats.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-q">
+              How do I choose my micro-labs?<span class="plus">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Labs run in 75- and 90-minute rounds across Personal, Team, AI, and Youth Leadership and Entrepreneurship. After you register, save your picks in the ATHENA Conference Hub. <a href="#labs">See the micro-labs</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-q">
               Is there student pricing?<span class="plus">+</span>
             </button>
             <div class="faq-a">
               <p>Yes, and it is capped. High school students pay $145 and college students pay $295. <a href="https://www.athenainternational.org/form-conference">Contact us</a> with official proof of student status, and we will share the discount while capacity lasts.</p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               How do I get there?<span class="plus">+</span>
             </button>
@@ -4091,7 +4158,7 @@ Thank you for considering it.
               <p>Hilton Los Angeles/Universal City is the host hotel, with easy access from Burbank, Van Nuys, and LAX. Parking and valet are available on site, and the venue keeps you close to sessions, dining, and nearby entertainment.</p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               What should I expect during the three days?<span class="plus">+</span>
             </button>
@@ -4099,15 +4166,7 @@ Thank you for considering it.
               <p>ATHENA 2027 brings together keynotes, panels, hands-on micro-labs, wellness sessions, networking, and the ATHENA Awards Celebration. It is built to help you grow your leadership, your connections, and your momentum.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Can I book the conference hotel at a discounted rate?<span class="plus">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Yes. A limited ATHENA room block is available at Hilton Los Angeles/Universal City. After registration, you will receive the booking details by email so you can secure the discounted rate while inventory lasts.</p>
-            </div>
-          </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               Can my organization sponsor or partner with ATHENA 2027?<span class="plus">+</span>
             </button>
@@ -4115,7 +4174,7 @@ Thank you for considering it.
               <p>Yes. Sponsorship opportunities are available for organizations that want to align with ATHENA's leadership community. For sponsor inquiries, <a href="https://www.athenainternational.org/form-conference">contact the ATHENA team</a>.</p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               How do I pay?<span class="plus">+</span>
             </button>
@@ -4123,7 +4182,7 @@ Thank you for considering it.
               <p>Secure online checkout is available during registration, with major payment methods accepted. If you need group, nonprofit, or corporate options not listed in Zeffy, <a href="https://www.athenainternational.org/form-conference">contact the ATHENA team</a>.</p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               What is the optional Zeffy contribution at checkout?<span class="plus">+</span>
             </button>
@@ -4139,7 +4198,7 @@ Thank you for considering it.
               <p>If you choose to pay the tip, that amount is paid to Zeffy. ATHENA cannot reverse or refund that specific contribution.</p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item faq-extra">
             <button class="faq-q">
               What's your refund policy?<span class="plus">+</span>
             </button>
@@ -4147,15 +4206,39 @@ Thank you for considering it.
               <p>All ticket sales are final, but substitutions may be permitted. Early Bird pricing is limited by time and quantity.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Where should I stay?<span class="plus">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Hilton Los Angeles/Universal City is the host hotel. After you purchase your ticket, you will receive an email with the Hilton promotion and booking details for the discounted ATHENA room block.</p>
-            </div>
+        </div>
+        <div class="faq-more"><button type="button" class="btn btn-outline" id="faqMore" aria-expanded="false">See all questions</button></div>
+      </div>
+    </section>
+
+    <!-- ===== 04 PROOF ===== -->
+    <section class="proof">
+      <div class="wrap">
+        <span class="eyebrow">A legacy no one else can claim</span>
+        <h2>44 Years. One Mission.<br />Thousands of Leaders.</h2>
+        <div class="stats">
+          <div class="stat">
+            <b>10,000+</b>
+            <span class="stat-label">Awards presented across our history</span>
+            <span class="stat-note">Recognizing leaders who create impact and open doors for others.</span>
+          </div>
+          <div class="stat">
+            <b>2,000+</b>
+            <span class="stat-label">Leaders served through our global network</span>
+            <span class="stat-note">Advancing leadership through development, connection, and opportunity.</span>
+          </div>
+          <div class="stat">
+            <b>30+</b>
+            <span class="stat-label">Countries represented</span>
+            <span class="stat-note">Bringing together perspectives, experiences, and voices from around the world.</span>
+          </div>
+          <div class="stat">
+            <b>44</b>
+            <span class="stat-label">Years of advancing women's leadership</span>
+            <span class="stat-note">Building a lasting legacy of recognition, influence, and impact.</span>
           </div>
         </div>
+        <p class="fence lede">For 44 years, ATHENA International has championed leaders who create opportunities for others and drive positive change in their communities. The ATHENA International Conference &amp; Awards Celebration 2027 brings this global network together for three days of learning, connection, recognition, and inspiration.</p>
       </div>
     </section>
 
@@ -4745,6 +4828,75 @@ Traci's leadership journey began as a former NCAA Division I volleyball athlete 
           b.textContent = open ? "Show fewer speakers" : label;
           if (open) { var c = g.querySelectorAll(".spk")[8]; var m = c && c.querySelector(".more"); m && m.focus({ preventScroll: true }); }
           else { document.getElementById("speakers").scrollIntoView({ block: "start" }); }
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        // contador "1 / n" do carrossel de depoimentos (primeiro card visível)
+        var track = document.querySelector(".testi-track"), now = document.getElementById("testiNow");
+        if (!track || !now) return;
+        var cards = track.querySelectorAll(".tcard");
+        function upd() {
+          var x = track.scrollLeft, best = 0, d = Infinity;
+          cards.forEach(function (c, i) { var dd = Math.abs(c.offsetLeft - track.offsetLeft - x); if (dd < d) { d = dd; best = i; } });
+          now.textContent = best + 1;
+        }
+        track.addEventListener("scroll", function () { window.requestAnimationFrame(upd); }, { passive: true });
+        window.addEventListener("resize", upd); upd();
+      })();
+    </script>
+    <script>
+      (function () {
+        var box = document.getElementById("labs"); if (!box) return;
+        var btns = box.querySelectorAll(".lab-filter"), clear = box.querySelector(".lab-clear"), more = box.querySelector(".labs-more"),
+            status = document.getElementById("labsStatus"), wasCollapsed = null,
+            seeAll = (document.getElementById("labsToggle") || {}).textContent;
+        function apply() {
+          var on = [], labels = [];
+          btns.forEach(function (b) { if (b.getAttribute("aria-pressed") === "true") { on.push(b.dataset.track); labels.push(b.textContent); } });
+          if (!on.length) { reset(); return; }
+          box.classList.remove("labs-collapsed"); box.classList.add("labs-filtering");
+          var n = 0;
+          box.querySelectorAll(".lab-card").forEach(function (c) {
+            var tr = (c.dataset.tracks || "").split(","), hit = on.some(function (t) { return tr.indexOf(t) !== -1; });
+            c.hidden = !hit; if (hit) n++;
+          });
+          box.querySelectorAll(".lab-col").forEach(function (col) {
+            col.classList.toggle("lab-col-empty", !col.querySelector(".lab-card:not([hidden])"));
+          });
+          if (more) more.hidden = true; clear.hidden = false;
+          var list = labels.length > 1 ? labels.slice(0, -1).join(", ") + " and " + labels[labels.length - 1] : labels[0];
+          if (status) status.textContent = "Showing " + n + " micro-labs in " + list + ".";
+        }
+        function reset() {
+          box.querySelectorAll(".lab-card").forEach(function (c) { c.hidden = false; });
+          box.querySelectorAll(".lab-col").forEach(function (col) { col.classList.remove("lab-col-empty"); });
+          btns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          box.classList.remove("labs-filtering");
+          box.classList.add("labs-collapsed");  // Clear sempre volta à vista padrão: prévia + "See all"
+          var t = document.getElementById("labsToggle"); if (t) { t.setAttribute("aria-expanded", "false"); t.textContent = seeAll; }
+          wasCollapsed = null; if (more) more.hidden = false; clear.hidden = true;
+          if (status) status.textContent = "Showing all micro-labs.";
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {  // várias trilhas ao mesmo tempo: mostra o lab que tiver qualquer uma
+            b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true"); apply();
+          });
+        });
+        clear.addEventListener("click", reset);
+      })();
+    </script>
+    <script>
+      (function () {
+        var b = document.getElementById("faqMore"), list = document.querySelector(".faq-list");
+        if (!b || !list) return;
+        list.classList.add("faq-collapsed");
+        b.addEventListener("click", function () {
+          var open = list.classList.toggle("faq-collapsed") === false;
+          b.setAttribute("aria-expanded", open ? "true" : "false");
+          b.textContent = open ? "Show fewer questions" : "See all questions";
         });
       })();
     </script>
