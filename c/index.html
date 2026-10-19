@@ -3136,12 +3136,43 @@
       .labs .lab-card .lab-pills .lab-pill { margin-bottom: 0; }
       .labs .labs-hub { font-style: normal; margin-top: 36px; }
 
+      .agenda .days-rows .tl > li:not(.key):not(.tl-social):not(.tl-pi):not(.tl-break) { box-shadow: inset 3px 0 0 var(--navy); } /* linhas brancas com barra azul */
+      .agenda .tl li.tl-break { background: #eeeeec; box-shadow: inset 3px 0 0 var(--gray, #706D6D); }
+      .agenda .tl li.tl-pi, .agenda .tl li.tl-social { background: rgba(255, 130, 0, 0.1); box-shadow: inset 3px 0 0 var(--orange); }
+      .agenda .days-rows .tl { padding: 0 !important; } /* sem faixa branca embaixo da última linha */
+      .tl li.pod b::after { content: none !important; } /* bolinha antiga dos Dinner Pods, sem legenda */
+      .agenda .tl .tl-lablink a { color: var(--bronze-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+      /* tablet: título e nomes em cima, descrição embaixo (como no celular) */
+      @media (min-width: 761px) and (max-width: 1080px) {
+        .agenda .days-rows .tl > li > div { display: block !important; }
+        .agenda .days-rows .tl > li > div > span { margin-top: 4px; }
+      }
+      .agenda .tl .tl-who { display: block; font-style: normal; font-size: 0.9rem; color: var(--bronze-text); font-weight: 600; margin-top: 2px; line-height: 1.35; }
+      @media (min-width: 761px) {
+        .agenda .days-rows .tl > li > div { grid-template-areas: "t d" "w d"; }
+        .agenda .days-rows .tl > li > div > b { grid-area: t; }
+        .agenda .days-rows .tl > li > div > .tl-who { grid-area: w; }
+        .agenda .days-rows .tl > li > div > span { grid-area: d; align-self: start; padding-top: 1px; }
+      }
+      /* agenda em linhas: barra fina por dia; aberto, cada item numa linha (hora | título | detalhe) */
+      .agenda .days.days-rows { grid-template-columns: 1fr; gap: 14px; max-width: 1160px; margin-left: auto; margin-right: auto; }
+      @media (min-width: 761px) {
+        .agenda .days-rows .day-head { display: grid; grid-template-columns: 70px auto 1fr auto; align-items: baseline; column-gap: 18px; padding: 18px 64px 18px 24px; }
+        .agenda .days-rows .day-head b { margin-top: 0; font-size: 1.25rem; }
+        .agenda .days-rows .day-head small { font-size: 0.95rem; }
+        .agenda .days-rows .day-toggle { margin-top: 0; }
+        .agenda .days-rows .tl { padding: 0; }
+        .agenda .days-rows .tl > li { grid-template-columns: 90px minmax(0, 1fr); padding: 12px 24px; }
+        .agenda .days-rows .tl > li > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; align-items: baseline; }
+        .agenda .days-rows .tl > li > div > span { margin-top: 0; }
+        .agenda .days-rows .tl > li > div > b { font-size: 1rem; }
+      }
       /* faixa da WIT Network em branco: respiro entre os ingressos (tom claro) e o BOGO (azul); legenda azul, régua dourada */
       main section.honor { background: #fff !important; }
       .honor .sig-honor figcaption { color: var(--navy) !important; border-left-color: var(--gold) !important; }
       .honor .sig-honor figcaption a { color: var(--navy) !important; text-decoration-color: var(--gold) !important; }
       @media (min-width: 981px) { .tk .group-tiers:not(.hotel-bar) .gt-cta { max-width: 270px; } .tk .group-tiers:not(.hotel-bar) .gt-custom { line-height: 1.5; } }
-      .agenda .tl-stay-head { color: var(--bronze-text); }
+      .agenda .tl-stay-head { color: var(--ink); }
       .agenda .tl-stay a { color: var(--bronze-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
       .tk .tk-zeffy { max-width: 760px; margin: 18px 0 26px calc(50% - 480px); padding: 12px 18px; background: var(--tint, #f8f6eb); border-left: 3px solid var(--gold); font-size: 0.9rem; line-height: 1.55; color: var(--ink); }
       .tk .tk-zeffy strong { font-weight: 700; }
@@ -3741,44 +3772,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2>Three days, hour by hour.</h2>
           <p class="lead">All times Pacific. Starts Thursday at 1:00 PM, wraps Saturday at 1:00 PM.</p>
         </div>
-        <div class="days">
-          <details class="day">
-            <summary class="day-head"><span>Day 1</span><b>Thursday, Jan 28</b><small>Connection + Inspiration</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+        <div class="days days-rows">
+          <details class="day" open>
+            <summary class="day-head"><span>Day 1</span><b>Thursday, Jan 28</b><small>Feel connected and inspired</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
-              <li><time>1:00 PM</time><div><b>Welcome</b><span>Kimberli Green, Board Chair, and Traci Costa, CEO, with emcees Bobby Hoffman and Deb Hart</span></div></li>
-              <li class="key"><time>1:15 PM</time><div><b>Opening Keynote</b><span>Karol Pelletier · Leadership Isn't a Title: How to Influence at Any Level</span></div></li>
-              <li class="lab"><time>2:15 PM</time><div><b>Micro-Lab Round 1 · 75 min</b></div></li>
-              <li><time>3:30 PM</time><div><b>Hotel Check-in and Networking Lounge</b></div></li>
-              <li class="key"><time>4:30 PM</time><div><b>Keynote</b><span>Gavriella Schuster · From Ally to Architect: Building the Personal Board That Builds Your Career</span></div></li>
-              <li><time>5:30 PM</time><div><b>Conference Welcome Reception</b><span>Live music with ADORA</span></div></li>
-              <li class="pod"><time>6:45 PM</time><div><b>ATHENA Networking Dinner Pods</b><span>Or dinner on your own</span></div></li>
+              <li class="key"><time>1:00 PM</time><div><b>Welcome</b><em class="tl-who">Kimberli Green, Traci Costa, Bobby Hoffman, and Deb Hart</em><span>ATHENA Board Chair and CEO open the conference with our two emcees</span></div></li>
+              <li class="key"><time>1:15 PM</time><div><b>Opening Keynote</b><em class="tl-who">Karol Pelletier</em><span>Leadership Isn't a Title: How to Influence at Any Level</span></div></li>
+              <li class="lab"><time>2:15 PM</time><div><b>Micro-Lab Round 1 · 75 min</b><span class="tl-lablink"><a href="#labs">See the 75-minute labs &darr;</a></span></div></li>
+              <li class="tl-social"><time>3:30 PM</time><div><b>Hotel Check-in and Networking Lounge</b></div></li>
+              <li class="key"><time>4:30 PM</time><div><b>Keynote</b><em class="tl-who">Gavriella Schuster</em><span>From Ally to Architect: Building the Personal Board That Builds Your Career</span></div></li>
+              <li class="tl-social"><time>5:30 PM</time><div><b>Conference Welcome Reception</b><em class="tl-who">ATHENA Leadership Team &amp; Board of Directors</em><span>Live music with ADORA</span></div></li>
+              <li class="tl-social pod"><time>6:45 PM</time><div><b>ATHENA Networking Dinner Pods</b><span>Or dinner on your own</span></div></li>
             </ol>
           </details>
           <details class="day">
-            <summary class="day-head"><span>Day 2</span><b>Friday, Jan 29</b><small>Deep Skill Building</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+            <summary class="day-head"><span>Day 2</span><b>Friday, Jan 29</b><small>Build skills you'll use for life</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
-              <li><time>6:45 AM</time><div><b>Morning Wellness</b><span>With Carlene Kanellis and Deb Hart</span></div></li>
-              <li><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
-              <li class="key"><time>9:00 AM</time><div><b>Keynote Panel</b><span>Nicole Noll-Williams, Melissa Cooper, Charlene Reynolds, and Dominique Ranieri · Leading Through Turbulence: Courage, Clarity, and Calm When the Pressure Rises</span></div></li>
-              <li class="lab"><time>10:00 AM</time><div><b>Micro-Lab Round 2 · 90 min</b></div></li>
-              <li class="key"><time>11:45 AM</time><div><b>Keynote</b><span>Bobby Hoffman · When Pressure Takes Over: Leading Yourself Before You Lead the Moment</span></div></li>
-              <li><time>12:30 PM</time><div><b>Lunch</b></div></li>
-              <li class="lab"><time>1:45 PM</time><div><b>Micro-Lab Round 3 · 75 min</b></div></li>
-              <li><time>3:00 PM</time><div><b>Catch Your Breath</b></div></li>
-              <li class="lab"><time>3:45 PM</time><div><b>Micro-Lab Round 4 · 90 min</b></div></li>
-              <li class="key"><time>5:30 PM</time><div><b>Keynote</b><span>JC Ayers · Career Success: What's Stopping You?</span></div></li>
-              <li class="pod"><time>6:30 PM</time><div><b>ATHENA Networking Dinner Pods</b><span>Or dinner on your own</span></div></li>
+              <li><time>6:45 AM</time><div><b>Morning Wellness</b><em class="tl-who">Carlene Kanellis and Deb Hart</em></div></li>
+              <li class="tl-social"><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
+              <li class="key"><time>9:00 AM</time><div><b>Keynote Panel</b><em class="tl-who">Nicole Noll-Williams, Melissa Cooper, Charlene Reynolds, and Dominique Ranieri</em><span>Leading Through Turbulence: Courage, Clarity, and Calm When the Pressure Rises</span></div></li>
+              <li class="lab"><time>10:00 AM</time><div><b>Micro-Lab Round 2 · 90 min</b><span class="tl-lablink"><a href="#labs">See the 90-minute labs &darr;</a></span></div></li>
+              <li class="key"><time>11:45 AM</time><div><b>Keynote</b><em class="tl-who">Bobby Hoffman</em><span>When Pressure Takes Over: Leading Yourself Before You Lead the Moment</span></div></li>
+              <li class="tl-social tl-pi"><time>12:30 PM</time><div><b>Lunch &amp; 1:1 Predictive Index Coaching</b><em class="tl-who">Certified Predictive Index Practitioners</em><span>20-minute sessions, first come, first served</span></div></li>
+              <li class="lab"><time>1:45 PM</time><div><b>Micro-Lab Round 3 · 75 min</b><span class="tl-lablink"><a href="#labs">See the 75-minute labs &darr;</a></span></div></li>
+              <li class="tl-break"><time>3:00 PM</time><div><b>Catch Your Breath</b></div></li>
+              <li class="lab"><time>3:45 PM</time><div><b>Micro-Lab Round 4 · 90 min</b><span class="tl-lablink"><a href="#labs">See the 90-minute labs &darr;</a></span></div></li>
+              <li class="key"><time>5:30 PM</time><div><b>Keynote</b><em class="tl-who">JC Ayers</em><span>Career Success: What's Stopping You?</span></div></li>
+              <li class="tl-social pod"><time>6:30 PM</time><div><b>ATHENA Networking Dinner Pods</b><span>Or dinner on your own</span></div></li>
             </ol>
           </details>
           <details class="day">
-            <summary class="day-head"><span>Day 3</span><b>Saturday, Jan 30</b><small>Awards + Action Plan</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
+            <summary class="day-head"><span>Day 3</span><b>Saturday, Jan 30</b><small>Celebrate the moment and what you'll build next</small><em class="day-toggle"><span class="dt-open">See the schedule</span><span class="dt-close">Hide the schedule</span></em></summary>
             <ol class="tl">
-              <li><time>6:45 AM</time><div><b>Morning Wellness</b><span>With Carlene Kanellis and Deb Hart</span></div></li>
-              <li><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
-              <li class="key"><time>8:30 AM</time><div><b>Closing Keynote and Fireside Chat</b><span>Karen Bird · Circles, Stories, and Shared Leadership: What Indigenous Traditions Teach Us About Leading Together. Then a Fireside Chat with Kimberli Green, ATHENA Board Chair, and Linda Ackley-Eaker, the sculptor who created the ATHENA award more than 40 years ago.</span></div></li>
-              <li class="key"><time>9:45 AM</time><div><b>ATHENA National and Global Awards Celebration</b><span>Honoring Dr. Ruthie Bolton, ATHENA Global Award recipient, and Avery Colvert, National Youth recipient</span></div></li>
-              <li><time>12:30 PM</time><div><b>VIP Reception with Award Recipients</b><span>VIP ticket holders</span></div></li>
-              <li><time>1:00 PM</time><div><b class="tl-stay-head">Make it a weekend</b><span class="tl-stay">Stay a little longer to explore California with family, friends, or peers. Traveling solo? We'll connect you with fellow attendees extending their stay. <a href="#hotel">Extend Your Stay at the ATHENA Rate</a></span></div></li>
+              <li><time>6:45 AM</time><div><b>Morning Wellness</b><em class="tl-who">Carlene Kanellis and Deb Hart</em></div></li>
+              <li class="tl-social"><time>7:15 AM</time><div><b>Breakfast Networking Roundtables &amp; 1:1 Predictive Index Coaching</b><em class="tl-who">Certified Predictive Index Practitioners</em><span>20-minute sessions, first come, first served</span></div></li>
+              <li class="key"><time>8:30 AM</time><div><b>Closing Keynote and Fireside Chat</b><em class="tl-who">Karen Bird, then Kimberli Green and Linda Ackley-Eaker</em><span>Circles, Stories, and Shared Leadership: What Indigenous Traditions Teach Us About Leading Together</span></div></li>
+              <li class="key"><time>9:45 AM</time><div><b>ATHENA National and Global Awards Celebration</b><em class="tl-who">Dr. Ruthie Bolton and Avery Colvert</em><span>Honoring the ATHENA Global Award recipient and the National Youth recipient</span></div></li>
+              <li class="tl-social"><time>12:30 PM</time><div><b>VIP Reception with Award Recipients</b><span>VIP ticket holders</span></div></li>
+              <li class="tl-break"><time>1:00 PM</time><div><b class="tl-stay-head">Make it a weekend</b><em class="tl-who tl-stay"><a href="#hotel">Extend Your Stay at the ATHENA Rate</a></em><span class="tl-stay">Stay a little longer to explore California with family, friends, or peers. Traveling solo? We'll connect you with fellow attendees extending their stay.</span></div></li>
             </ol>
           </details>
         </div>
