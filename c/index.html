@@ -3136,6 +3136,8 @@
       .labs .lab-card .lab-pills .lab-pill { margin-bottom: 0; }
       .labs .labs-hub { font-style: normal; margin-top: 36px; }
 
+      .tk .tk-row-prices small { white-space: nowrap; }
+      .tk .tk-row-prices s { margin-left: 8px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 400; color: var(--muted); }
       .agenda .days-rows .tl > li:not(.key):not(.tl-social):not(.tl-pi):not(.tl-break) { box-shadow: inset 3px 0 0 var(--navy); } /* linhas brancas com barra azul */
       .agenda .tl li.tl-break { background: #EDEAEA; box-shadow: inset 3px 0 0 var(--gray, #706D6D); }
       .agenda .tl li.tl-pi, .agenda .tl li.tl-social { background: rgba(255, 130, 0, 0.1); box-shadow: inset 3px 0 0 var(--orange); }
@@ -3179,7 +3181,7 @@
       /* ingresso de um dia: só o que não inclui, com x cinza */
       /* linhas de ingresso nunca passam da largura dos cards de cima */
       .tk .tk-rows { grid-template-columns: minmax(0, 1fr); }
-      @media (min-width: 981px) { .tk .tk-row:has(.tk-excl) { grid-template-columns: minmax(0, 1fr) 120px 190px; gap: 22px; } }
+      @media (min-width: 981px) { .tk .tk-row:has(.tk-excl) { grid-template-columns: minmax(0, 1fr) 150px 190px; gap: 22px; } }
       .tk .tk-excl { position: relative; margin-top: 16px; padding-left: 0; font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
       @media (min-width: 761px) { .tk .tk-label-one, .tk .tk-excl { white-space: nowrap; position: relative; z-index: 1; } }
       @media (max-width: 1008px) { .tk .tk-zeffy { margin-left: 0; } }
@@ -4056,7 +4058,7 @@ Thank you for considering it.
               <p>Join us for the Closing Keynote, Fireside Chat and the ATHENA 2027 Awards Celebration.</p><p class="tk-excl">* Day 3 Morning Wellness &amp; Breakfast Networking Roundtables not included</p>
             </div>
             <div class="tk-row-prices">
-              <span><small>Per person</small>$95</span>
+              <span><small>Early Bird · per person</small>$95<s>$145</s></span>
             </div>
             <span class="tk-go">Join the Celebration</span>
           </a>
