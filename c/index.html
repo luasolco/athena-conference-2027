@@ -3135,6 +3135,56 @@
       .labs .lab-card .lab-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; color: inherit; font-size: inherit; }
       .labs .lab-card .lab-pills .lab-pill { margin-bottom: 0; }
       .labs .labs-hub { font-style: normal; margin-top: 36px; }
+
+      /* faixa da WIT Network em branco: respiro entre os ingressos (tom claro) e o BOGO (azul); legenda azul, régua dourada */
+      main section.honor { background: #fff !important; }
+      .honor .sig-honor figcaption { color: var(--navy) !important; border-left-color: var(--gold) !important; }
+      .honor .sig-honor figcaption a { color: var(--navy) !important; text-decoration-color: var(--gold) !important; }
+      @media (min-width: 981px) { .tk .group-tiers:not(.hotel-bar) .gt-cta { max-width: 270px; } .tk .group-tiers:not(.hotel-bar) .gt-custom { line-height: 1.5; } }
+      .agenda .tl-stay-head { color: var(--bronze-text); }
+      .agenda .tl-stay a { color: var(--bronze-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+      .tk .tk-zeffy { max-width: 760px; margin: 18px 0 26px calc(50% - 480px); padding: 12px 18px; background: var(--tint, #f8f6eb); border-left: 3px solid var(--gold); font-size: 0.9rem; line-height: 1.55; color: var(--ink); }
+      .tk .tk-zeffy strong { font-weight: 700; }
+      /* ingresso de um dia: só o que não inclui, com x cinza */
+      .tk .tk-excl { position: relative; margin-top: 16px; padding-left: 0; font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
+      @media (min-width: 761px) { .tk .tk-label-one, .tk .tk-excl { white-space: nowrap; position: relative; z-index: 1; } }
+      @media (max-width: 1008px) { .tk .tk-zeffy { margin-left: 0; } }
+      .tk .tk-notes { max-width: 960px; grid-template-columns: 1fr; gap: 14px; }
+      @media (max-width: 900px) { .tk .tk-notes { grid-template-columns: 1fr; gap: 14px; } }
+      .email-card .email-tip { margin: 0; padding: 14px 21px; font-size: 0.9rem; line-height: 1.5; color: var(--ink); background: var(--tint, #f8f6eb); border-bottom: 1px solid var(--line); }
+      /* hotel: card editorial com foto; laranja só no selo do prazo */
+      .tk .hotel-card { max-width: 960px; margin: 24px auto 0; display: grid; grid-template-columns: 0.9fr 1.1fr; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold); }
+      .tk .hotel-photo { position: relative; min-height: 100%; }
+      .tk .hotel-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 60%; }
+      .tk .hotel-copy { padding: 30px 32px; }
+      .tk .hotel-kicker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0; }
+      .tk .hotel-kicker span { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-text); }
+      .tk .hotel-badge { font-style: normal; background: var(--orange); color: var(--navy); font-family: var(--font-label); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+      .tk .hotel-copy h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.2; color: var(--ink); margin: 10px 0 10px; }
+      .tk .hotel-lead { font-size: 0.98rem; line-height: 1.6; color: var(--muted); margin: 0; }
+      .tk .hotel-facts { display: grid; grid-template-columns: 0.8fr 1.25fr 0.95fr; margin: 20px 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .tk .hotel-facts > div { padding: 14px 12px 14px 0; }
+      .tk .hotel-facts > div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+      .tk .hotel-facts dt { white-space: nowrap; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; line-height: 1.15; color: var(--ink); }
+      .tk .hotel-facts dd { margin: 4px 0 0; font-size: 0.85rem; line-height: 1.4; color: var(--muted); }
+      .tk .hotel-note { margin: 14px 0 0; font-size: 0.9rem; line-height: 1.5; color: var(--ink); }
+      @media (max-width: 860px) {
+        .tk .hotel-card { grid-template-columns: 1fr; }
+        .tk .hotel-photo { aspect-ratio: 16 / 9; min-height: 0; }
+        .tk .hotel-copy { padding: 24px 20px; }
+      }
+      @media (max-width: 560px) {
+        .tk .hotel-facts { grid-template-columns: 1fr; }
+        .tk .hotel-facts > div, .tk .hotel-facts > div + div { padding: 12px 0; border-left: none; }
+        .tk .hotel-facts > div + div { border-top: 1px solid var(--line); }
+        .tk .hotel-kicker { flex-wrap: wrap; }
+      }
+      /* coaching do Predictive Index: aviso próprio abaixo das colunas */
+      .labs .lab-pi { margin-top: 18px; padding: 16px 20px; background: var(--cream); border: 1px solid var(--line); border-left: 3px solid var(--gold); }
+      .labs .lab-pi-tag { display: inline-block; margin-bottom: 6px; font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-text); }
+      .labs .lab-pi[hidden] { display: none !important; }
+      .labs .lab-pi b { display: block; font-family: var(--font-heading); color: var(--ink); font-size: 0.98rem; }
+      .labs .lab-pi span { display: block; color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
 </style>
   </head>
   <body>
@@ -3347,11 +3397,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   alt="The WIT Network"
                   class="trusted-logo trusted-logo--wit"
                 / width="209" height="75">
-                <img loading="lazy" decoding="async"
-                  src="/assets/conference-2027/index-B-assets/sponsors/mind-wire.webp"
-                  alt="MindWire"
-                  class="trusted-logo"
-                / width="396" height="126">
               </div>
             </div>
           </div>
@@ -3395,7 +3440,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </article>
         </div>
         <p class="fit-also"><strong>Also in the room:</strong> executive corporate leaders, founders and small business owners, nonprofit and community leaders, educators, ATHENA Award Recipients, ATHENA Certified Facilitators, students from high school to college, and the allies who champion women's leadership.</p>
-        <p class="fence">You don't need a title to belong here. You need the ambition to lead well.</p>
+        <p class="fence">You don't need a title to belong here. Join our community of human-centered leaders.</p>
         <p class="fit-cta"><a href="#labs" class="btn btn-dark">Find Your Micro-Labs</a></p>
       </div>
     </section>
@@ -3408,7 +3453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2>Toward what's next.</h2>
           <p class="wa-lead">Wherever you are in your leadership, these three days help you take the next step and lead it with integrity.</p>
           <ul class="b wa-list">
-            <li><strong>Your personal leadership compass.</strong> The eight ATHENA Principles, refined over 44 years, to guide your decisions.</li>
+            <li><strong>Your personal leadership compass.</strong> The ATHENA Leadership Model&trade;, refined over decades to stabilize under pressure, strengthen trust, improve decisions, and lead with greater consciousness and courage.</li>
             <li><strong>Predictive Index insights.</strong> What drives you, how you show up, and how to build stronger teams.</li>
             <li><strong>AI-era leadership tools.</strong> Practical ways to lead through change, AI, and pressure, starting Monday.</li>
             <li><strong>A network of peers and mentors.</strong> Leaders across industries who will still be cheering you on months from now.</li>
@@ -3418,8 +3463,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="wa-close">ATHENA 2027 ends on January 30. The work you start here doesn't.</p>
         </div>
         <div class="pr-box">
-          <img class="pr-tree" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/principles/eight-principles-tree.webp" alt="The eight ATHENA Principles drawn as a tree: Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration, Advocate Fiercely, Act Courageously, Celebrate, and Give Back. Their letters spell INNOVATE down the trunk." width="1000" height="1294">
-          <p class="pr-foot">The eight ATHENA Principles by Hannah S.</p>
+          <img class="pr-tree" loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/principles/eight-principles-tree.webp" alt="The ATHENA Leadership Model, ATHENA's Eight Leadership Principles, drawn as a tree: Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration, Advocate Fiercely, Act Courageously, Celebrate, and Give Back. Their letters spell INNOVATE down the trunk." width="1000" height="1294">
+          <p class="pr-foot">ATHENA's Eight Leadership Principles that make up the ATHENA Leadership Model&trade; illustrated by Hannah S.</p>
         </div>
       </div>
     </section>
@@ -3513,7 +3558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2>The conversations that never happen on a call.</h2>
           <p class="ip-lead">The part ATHENA 2025 Conference attendees asked for most: more time to actually talk. So both evenings end around a small table.</p>
           <ol class="steps">
-            <li><b>Pick your table.</b> After you register, choose the speaker you want to have dinner with in the ATHENA Conference Hub on the Mighty Networks app (iOS, Android, and web). First come, first served.</li>
+            <li><b>Pick your table.</b> After you register, choose the speaker you want to have dinner with in the ATHENA Conference Hub on the Mighty Networks app (iOS/Android/Web). First come, first served.</li>
             <li><b>Walk over together.</b> Restaurants a short walk up the hill from the hotel, with hotel carts available, plus a table at the Hilton for anyone who prefers to stay close.</li>
             <li><b>Talk like people, not badges.</b> A small group, a speaker, and an evening of real conversation. Optional, and you can always do your own thing.</li>
           </ol>
@@ -3563,7 +3608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="exp-kicker">Relationships that accelerate opportunity.</p>
               <p>
                 Some of the most valuable conversations happen between sessions.
-                ATHENA's intentional networking connects you with leaders,
+                ATHENA International's intentional networking connects you with leaders,
                 entrepreneurs, artists, nonprofit innovators, and change-makers
                 from around the world.
               </p>
@@ -3714,7 +3759,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li class="key"><time>9:00 AM</time><div><b>Keynote Panel</b><span>Nicole Noll-Williams, Melissa Cooper, Charlene Reynolds, and Dominique Ranieri · Leading Through Turbulence: Courage, Clarity, and Calm When the Pressure Rises</span></div></li>
               <li class="lab"><time>10:00 AM</time><div><b>Micro-Lab Round 2 · 90 min</b></div></li>
               <li class="key"><time>11:45 AM</time><div><b>Keynote</b><span>Bobby Hoffman · When Pressure Takes Over: Leading Yourself Before You Lead the Moment</span></div></li>
-              <li><time>12:30 PM</time><div><b>Lunch and Fireside Chat</b><span>Kimberli Green, ATHENA Board Chair, with Linda Ackley-Eaker, the sculptor who created the ATHENA award more than 40 years ago.</span></div></li>
+              <li><time>12:30 PM</time><div><b>Lunch</b></div></li>
               <li class="lab"><time>1:45 PM</time><div><b>Micro-Lab Round 3 · 75 min</b></div></li>
               <li><time>3:00 PM</time><div><b>Catch Your Breath</b></div></li>
               <li class="lab"><time>3:45 PM</time><div><b>Micro-Lab Round 4 · 90 min</b></div></li>
@@ -3727,9 +3772,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ol class="tl">
               <li><time>6:45 AM</time><div><b>Morning Wellness</b><span>With Carlene Kanellis and Deb Hart</span></div></li>
               <li><time>7:15 AM</time><div><b>Breakfast Networking Roundtables</b></div></li>
-              <li class="key"><time>8:30 AM</time><div><b>Closing Keynote</b><span>Karen Bird · Circles, Stories, and Shared Leadership: What Indigenous Traditions Teach Us About Leading Together</span></div></li>
+              <li class="key"><time>8:30 AM</time><div><b>Closing Keynote and Fireside Chat</b><span>Karen Bird · Circles, Stories, and Shared Leadership: What Indigenous Traditions Teach Us About Leading Together. Then a Fireside Chat with Kimberli Green, ATHENA Board Chair, and Linda Ackley-Eaker, the sculptor who created the ATHENA award more than 40 years ago.</span></div></li>
               <li class="key"><time>9:45 AM</time><div><b>ATHENA National and Global Awards Celebration</b><span>Honoring Dr. Ruthie Bolton, ATHENA Global Award recipient, and Avery Colvert, National Youth recipient</span></div></li>
               <li><time>12:30 PM</time><div><b>VIP Reception with Award Recipients</b><span>VIP ticket holders</span></div></li>
+              <li><time>1:00 PM</time><div><b class="tl-stay-head">Make it a weekend</b><span class="tl-stay">Stay a little longer to explore California with family, friends, or peers. Traveling solo? We'll connect you with fellow attendees extending their stay. <a href="#hotel">Extend Your Stay at the ATHENA Rate</a></span></div></li>
             </ol>
           </details>
         </div>
@@ -3737,12 +3783,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="labs labs-collapsed" id="labs">
           <h3>Choose your micro-labs</h3>
           <p>Each round runs several hands-on labs at the same time, so you choose by the outcome you want.</p>
-          <div class="lab-filters" role="group" aria-label="Filter micro-labs by track"><span class="lab-filters-label">Filter by track</span><button type="button" class="lab-filter" data-track="ai" aria-pressed="false">AI Leadership</button><button type="button" class="lab-filter" data-track="team" aria-pressed="false">Team Leadership</button><button type="button" class="lab-filter" data-track="personal" aria-pressed="false">Personal Leadership</button><button type="button" class="lab-filter" data-track="youth" aria-pressed="false">Youth Leadership</button><button type="button" class="lab-filter" data-track="entrepreneurship" aria-pressed="false">Entrepreneurship</button><button type="button" class="lab-clear" hidden>Clear</button></div><p class="sr-only" id="labsStatus" aria-live="polite"></p><div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>AI + Human Design for Conscious Leadership</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="ai,entrepreneurship"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card" data-tracks="team,personal"><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card" data-tracks="entrepreneurship"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card" data-tracks="personal"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card" data-tracks="youth"><b>Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>ATHENA Certified Facilitators</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card" data-tracks="team"><b>Building Your Teams Through Predictive Index</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal,team"><b>1:1 Predictive Index Coaching</b><span>MindWire Group</span></div><div class="lab-card" data-tracks="personal"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="personal"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card" data-tracks="personal"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card" data-tracks="team"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card" data-tracks="youth"><b>Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>ATHENA Certified Facilitators</span></div></div></div></div></div>
-          <div class="labs-more"><button type="button" class="btn btn-dark" id="labsToggle" aria-expanded="false">See all 16 micro-labs</button></div>
+          <div class="lab-filters" role="group" aria-label="Filter micro-labs by track"><span class="lab-filters-label">Filter by track</span><button type="button" class="lab-filter" data-track="ai" aria-pressed="false">AI Leadership</button><button type="button" class="lab-filter" data-track="team" aria-pressed="false">Team Leadership</button><button type="button" class="lab-filter" data-track="personal" aria-pressed="false">Personal Leadership</button><button type="button" class="lab-filter" data-track="youth" aria-pressed="false">Youth Leadership</button><button type="button" class="lab-filter" data-track="entrepreneurship" aria-pressed="false">Entrepreneurship</button><button type="button" class="lab-clear" hidden>Clear</button></div><p class="sr-only" id="labsStatus" aria-live="polite"></p><div class="lab-cols"><div class="lab-col"><p class="lab-col-head">75-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,entrepreneurship"><b>YOUmanize&trade; Your Brand: Building Trust When AI Makes the First Impression</b><span>Rachel B. Lee</span></div><div class="lab-card" data-tracks="personal"><b>Dear Career, It's You, Not Me: Find Opportunity Beyond the Straight Line</b><span>Jody Bishop-Pompili</span></div><div class="lab-card" data-tracks="team,personal"><b>Chef's Table: Leadership in the Heat of the Moment</b><span>Kurt Kwiatkowski</span></div><div class="lab-card" data-tracks="personal"><b>Living &amp; Leading with Purpose</b><span>Michelle Massey</span></div><div class="lab-card" data-tracks="entrepreneurship"><b>Money, Boundaries, and Running a Small Business for Sustainable Growth</b><span>Melanie Estes, Rachel B. Lee, Kurt Kwiatkowski, and Carrie Rathbun Hawks, moderated by Paula Farmer</span></div><div class="lab-card" data-tracks="personal"><b>Menopause 101: It's Not &ldquo;All in Your Head&rdquo; or &ldquo;Just Aging&rdquo;</b><span>Dr. Amy Blasen</span></div><div class="lab-card" data-tracks="youth"><b>Act Courageously, Advocate Fiercely, Give Back, Celebrate</b><span>ATHENA Certified Facilitators</span></div></div></div></div><div class="lab-col"><p class="lab-col-head">90-minute labs</p><div class="lab-round"><div class="lab-grid"><div class="lab-card" data-tracks="ai,personal"><b>Human-Centered AI Leadership: Lead with Confidence into the Emerging Future</b><span>Isadora Maria, Dr. Moacir Antonelli Ponti, and Dat Tran</span></div><div class="lab-card" data-tracks="team"><b>Building Your Teams Through Predictive Index</b><span>Certified Predictive Index Practitioners</span></div><div class="lab-card" data-tracks="personal"><b>From Principle to Practice: Living ATHENA from the Inside Out</b><span>Heather Reaume</span></div><div class="lab-card" data-tracks="personal"><b>Hopscotch vs. Sandbox: Women, Work, and the Broader Environment</b><span>Dr. Amy Bonomi</span></div><div class="lab-card" data-tracks="personal"><b>The Illusion of Holding It All Together</b><span>Paula Farmer</span></div><div class="lab-card" data-tracks="team"><b>Top Tier ATHENA Facilitator Skill Development</b><span>Jody Bishop-Pompili and Heather Reaume, for ATHENA Certified Facilitators</span></div><div class="lab-card" data-tracks="youth"><b>Live Authentically, Learn Constantly, Build Relationships, Foster Collaboration</b><span>ATHENA Certified Facilitators</span></div></div></div></div></div>
+          <div class="lab-pi" data-tracks="personal"><b>1:1 Predictive Index Coaching</b><span>20-minute sessions with Certified Predictive Index Practitioners. First come, first served.</span></div><div class="labs-more"><button type="button" class="btn btn-dark" id="labsToggle" aria-expanded="false">See all 14 micro-labs</button></div>
           <p class="labs-foot labs-hub">Once you register, save your picks in the ATHENA Conference Hub. Agenda subject to change.</p>
         </div>
 
         <div class="inline-cta"><p>Three days, one room, and a plan for what's next.</p><a href="#tickets" class="btn btn-primary">Secure Your Pass</a></div>
+      </div>
+    </section>
+
+    <!-- ===== 11 VENUE ===== -->
+    <section class="venue" id="venue">
+      <div class="wrap">
+        <div class="venue-shell">
+          <div class="venue-intro center">
+            <h2>In the Heart of Universal City, CA</h2>
+            <p>The official conference hotel is the Hilton Los Angeles/Universal City, with a discounted ATHENA block rate of $239 + tax per night (book by December 31, 2026), steps from Universal Studios Hollywood and CityWalk, where most ATHENA Networking Dinner Pods gather each evening. The same rate covers January 25 to February 2, so bring your family or your team and make it a long weekend in Los Angeles.</p>
+          </div>
+          <details class="venue-more"><summary>Travel details and nearby attractions</summary>
+          <div class="venue-details">
+            <article class="venue-card">
+              <h3>Travel Highlights</h3>
+              <ul>
+                <li>Burbank Airport: 15 minutes</li>
+                <li>Van Nuys Airport (private): 15 minutes</li>
+                <li>LAX: 35-45 minutes</li>
+              </ul>
+            </article>
+            <article class="venue-card">
+              <h3>Nearby Attractions</h3>
+              <ul>
+                <li>Universal Studios Hollywood</li>
+                <li>Universal CityWalk dining and shopping</li>
+                <li>Griffith Park and Observatory</li>
+                <li>Los Angeles Zoo</li>
+                <li>Santa Monica Pier</li>
+                <li>Disneyland and Disney California Adventure</li>
+              </ul>
+            </article>
+          </div>
+          </details>
+          <p class="venue-note center">
+            <strong
+              >After you purchase your ticket, you will receive an email with
+              the Hilton promotion and booking details for the ATHENA room
+              block at Hilton Los Angeles/Universal City.</strong
+            >
+          </p>
+        </div>
+        <div class="venue-gallery" aria-label="Universal City and nearby attractions">
+          <img loading="lazy" decoding="async"
+            src="/assets/conference-2027/index-B-assets/external/Athena-International-2027-Conference-attractions.webp"
+            alt="ATHENA International 2027 nearby attractions collage"
+            width="1200"
+            height="800"
+          />
+        </div>
       </div>
     </section>
 
@@ -3846,7 +3942,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="eyebrow">Make the case</span>
           <h2>Need a yes from your boss? We wrote it for you.</h2>
           <ul class="checklist">
-            <li><span><strong>Skills your team sees on Monday:</strong> influence without authority, leading under pressure, and managing change in the AI era.</span></li>
+            <li><span><strong>Skills your team sees on Monday:</strong> influence at any level, leading under pressure, and managing change in the AI era.</span></li>
             <li><span><strong>One trip, four kinds of development:</strong> keynotes, hands-on workshops, Predictive Index coaching, and a global peer network.</span></li>
             <li><span><strong>A visible return:</strong> you come back with a summary for your team and one initiative to launch within 30 days.</span></li>
             <li><span><strong>Running your own business?</strong> The same math applies. Three days away, and a network and plan that pay back all year.</span></li>
@@ -3854,6 +3950,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="email-card">
           <div class="email-top"><span>Ready-to-send email</span><button type="button" class="copy-btn" id="copyEmail">Copy text</button></div>
+          <p class="email-tip"><strong>Make it yours.</strong> Add your own goals and the session you are most excited about. A personal note gets a faster yes.</p>
           <pre id="emailText" tabindex="0" role="region" aria-label="Ready-to-send email to your manager">Subject: Request to attend the ATHENA 2027 Leadership Conference
 
 Hi [Manager's name],
@@ -3885,6 +3982,8 @@ Thank you for considering it.
           <div class="rule"></div>
         </div>
 
+        <p class="tk-zeffy"><strong>Enjoy a seamless, secure, and no-fee checkout through Zeffy.</strong> You may see an optional tip for Zeffy during checkout. To opt out, choose <strong>Custom Tip</strong> and enter <strong>$0</strong>. Please note that tips go directly to Zeffy and are not refundable by ATHENA.</p>
+
         <div class="tk-cards">
           <article class="tk-card">
             <div class="tk-top"><h3>General Admission</h3><span class="tk-label">Early Bird</span></div>
@@ -3892,16 +3991,16 @@ Thank you for considering it.
             <div class="tk-price">$545<s>$695</s></div>
             <p class="per per-highlight"><span>Early Bird pricing is limited and will sell out</span></p>
             <ul class="b">
-              <li>Three days of conference in Los Angeles</li>
-              <li>The Awards Celebration</li>
+              <li>3-day ATHENA Conference in Los Angeles</li>
+              <li>The ATHENA Awards Celebration</li>
               <li>Breakfasts, lunches, and receptions</li>
               <li>Visionary keynotes</li>
               <li>Expert-led sessions</li>
               <li>Interactive micro-labs</li>
               <li>Curated wellness experiences</li>
               <li>Networking opportunities</li>
-              <li>Access to the ATHENA Conference Hub on the Mighty Networks app (iOS, Android, and web)</li>
-              <li>8 ATHENA Leadership Mini Labs Online</li>
+              <li>Access to the ATHENA Conference Hub on the Mighty Networks app (iOS/Android/Web)</li>
+              <li>Access to the ATHENA Leadership Mini Labs<br>(8 live online sessions)</li>
             </ul>
             <a class="btn tk-btn tk-btn-navy" href="https://www.zeffy.com/en-US/ticketing/athena-2027-conference-in-los-angeles">Get General Admission Pass</a>
           </article>
@@ -3927,7 +4026,7 @@ Thank you for considering it.
             <div class="tk-row-copy">
               <span class="tk-label">Bring a guest free</span>
               <b>ATHENA Award Recipients BOGO</b>
-              <p>Buy one ticket and your guest comes free. One guest per Award Recipient.</p>
+              <p>Buy one ticket and your guest comes free. One guest per ATHENA Award Recipient.</p>
             </div>
             <div class="tk-row-prices">
               <span><small>GA for two</small>$545</span>
@@ -3937,9 +4036,9 @@ Thank you for considering it.
           </a>
           <a class="tk-row" href="https://www.zeffy.com/en-US/ticketing/athena-2027-national-and-global-awards-ceremony">
             <div class="tk-row-copy">
-              <span class="tk-label">Celebration only</span>
-              <b>The ATHENA Awards Celebration</b>
-              <p>Be in the room on January 30, 2027, as ATHENA honors this year's recipients, then stay for post-event networking. Conference sessions are not included.</p>
+              <span class="tk-label tk-label-one">Experience the highlight of ATHENA&nbsp;2027 · <span style="white-space: nowrap">Day 3*</span></span>
+              <b>ATHENA Awards Celebration</b>
+              <p>Join us for the Closing Keynote, Fireside Chat and the ATHENA 2027 Awards Celebration.</p><p class="tk-excl">* Day 3 Morning Wellness &amp; Breakfast Networking Roundtables not included</p>
             </div>
             <div class="tk-row-prices">
               <span><small>Per person</small>$95</span>
@@ -3953,29 +4052,30 @@ Thank you for considering it.
           <div class="gt"><b>5 to 9</b><span>attendees</span><em>10% off</em></div>
           <div class="gt"><b>10 to 19</b><span>attendees</span><em>15% off</em></div>
           <div class="gt"><b>20+</b><span>attendees</span><em>20% off</em></div>
-          <div class="gt-cta"><a class="btn btn-dark" href="https://www.athenainternational.org/form-conference">Get your group rate</a><span class="gt-custom">Need a custom package? <a href="https://www.athenainternational.org/form-conference">Talk to us</a>.</span></div>
+          <div class="gt-cta"><a class="btn btn-dark" href="https://www.athenainternational.org/form-conference">Get your group rate</a><span class="gt-custom">Need a custom package? <a href="https://www.athenainternational.org/form-conference">Talk to us</a>.<br>Bringing a team? Book your rooms together at the <a href="#hotel">ATHENA block rate</a>.</span></div>
+        </div>
+
+        <div class="hotel-card" id="hotel">
+          <div class="hotel-photo"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/hilton-universal-city.webp" alt="The Universal globe with the Hilton Los Angeles/Universal City tower right behind it" width="1000" height="752"></div>
+          <div class="hotel-copy">
+            <p class="hotel-kicker"><span>Stay where it happens</span><em class="hotel-badge">Book by December 31, 2026</em></p>
+            <h3>Make it a long weekend at Universal City.</h3>
+            <p class="hotel-lead">Your pass unlocks the ATHENA block rate at the Hilton Los Angeles/Universal City, for the conference and the nights around it. Arrive early to settle in, or stay through the weekend: Universal Studios with your family, a getaway with friends, or a retreat with your team.</p>
+            <dl class="hotel-facts">
+              <div><dt>$239</dt><dd>+ tax per night</dd></div>
+              <div><dt>Jan 25 to Feb 2</dt><dd>arrive early or stay late, same rate</dd></div>
+              <div><dt>Dec 31</dt><dd>last day to book at this rate</dd></div>
+            </dl>
+            <p class="hotel-note">Register first, and we email you the private booking link. January is peak season in Los Angeles, so book early.</p>
+          </div>
         </div>
 
         <div class="tk-notes">
-          <div><b>Stay where it happens</b>
-            <ul class="b">
-              <li>Any ATHENA 2027 pass unlocks a discounted rate at the Hilton Los Angeles/Universal City</li>
-              <li>$239 + tax per night, January 25 to February 2, 2027</li>
-              <li>Your booking link arrives by email after you register</li>
-            </ul>
-          </div>
-          <div><b>Secure, no-fee checkout with Zeffy</b>
-            <ul class="b">
-              <li>Zeffy may add an optional tip at checkout</li>
-              <li>To remove it, select <strong>Custom Tip</strong> and enter <strong>$0</strong></li>
-              <li>Any tip goes to Zeffy and cannot be refunded by ATHENA</li>
-            </ul>
-          </div>
           <div><b>Discounts &amp; Scholarships</b>
             <ul class="b">
               <li>One code per order; discounts do not stack</li>
               <li>Are you a student? <a href="https://www.athenainternational.org/form-conference"><strong>Apply for a scholarship</strong></a></li>
-              <li>Scholarship recipients will be announced in late December</li>
+              <li>Scholarship recipients announced in late December</li>
             </ul>
           </div>
         </div>
@@ -3998,55 +4098,6 @@ Thank you for considering it.
       </div>
     </section>
 
-    <!-- ===== 11 VENUE ===== -->
-    <section class="venue" id="venue">
-      <div class="wrap">
-        <div class="venue-shell">
-          <div class="venue-intro center">
-            <h2>In the Heart of Universal City, CA</h2>
-            <p>The official conference hotel is the Hilton Los Angeles/Universal City, with a discounted ATHENA rate of $239 + tax per night, steps from Universal Studios Hollywood and CityWalk, where most ATHENA Networking Dinner Pods gather each evening.</p>
-          </div>
-          <details class="venue-more"><summary>Travel details and nearby attractions</summary>
-          <div class="venue-details">
-            <article class="venue-card">
-              <h3>Travel Highlights</h3>
-              <ul>
-                <li>Burbank Airport: 15 minutes</li>
-                <li>Van Nuys Airport (private): 15 minutes</li>
-                <li>LAX: 35-45 minutes</li>
-              </ul>
-            </article>
-            <article class="venue-card">
-              <h3>Nearby Attractions</h3>
-              <ul>
-                <li>Universal Studios Hollywood</li>
-                <li>Universal CityWalk dining and shopping</li>
-                <li>Griffith Park and Observatory</li>
-                <li>Los Angeles Zoo</li>
-                <li>Santa Monica Pier</li>
-                <li>Disneyland and Disney California Adventure</li>
-              </ul>
-            </article>
-          </div>
-          </details>
-          <p class="venue-note center">
-            <strong
-              >After you purchase your ticket, you will receive an email with
-              the Hilton promotion and booking details for the ATHENA room
-              block at Hilton Los Angeles/Universal City.</strong
-            >
-          </p>
-        </div>
-        <div class="venue-gallery" aria-label="Universal City and nearby attractions">
-          <img loading="lazy" decoding="async"
-            src="/assets/conference-2027/index-B-assets/external/Athena-International-2027-Conference-attractions.webp"
-            alt="Athena International 2027 nearby attractions collage"
-            width="1200"
-            height="800"
-          />
-        </div>
-      </div>
-    </section>
 
     <!-- ===== 10.1 AWARD RECIPIENT BOGO (versão C) ===== -->
     <section class="bogo" id="recipients">
@@ -4065,7 +4116,7 @@ Thank you for considering it.
             <div><small>VIP Experience</small><b>$795</b><span>for two seats</span></div>
           </div>
           <a href="/recipients/" class="btn btn-primary">Claim your two seats</a>
-          <p class="bogo-fine">One guest per Award Recipient. Awards are verified against ATHENA's list of presenting communities and organizations.</p>
+          <p class="bogo-fine">One guest per ATHENA Award Recipient. Awards are verified against ATHENA's list of presenting communities and organizations.</p>
         </div>
       </div>
     </section>
@@ -4099,7 +4150,7 @@ Thank you for considering it.
               What's included in my ticket?<span class="plus">+</span>
             </button>
             <div class="faq-a">
-              <p>For GA and VIP, all three days include keynotes, micro-labs, and curated networking. General Admission and VIP Experience also include the Awards Celebration. The Celebration only ticket is for a few hours of the event during the awards presentation. For a detailed comparison, <a href="#tickets">&uarr; Go to Tickets: compare each option line by line</a>.</p>
+              <p>For GA and VIP, all three days include keynotes, micro-labs, and curated networking. General Admission and VIP Experience also include the Awards Celebration. The ATHENA Awards Celebration day only ticket covers the morning of January 30: the closing keynote with Karen Bird, the Fireside Chat, and the Awards Celebration. It does not include Conference Days 1 and 2, Morning Wellness, or the Breakfast Networking Roundtables. For a detailed comparison, <a href="#tickets">&uarr; Go to Tickets: compare each option line by line</a>.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -4115,7 +4166,7 @@ Thank you for considering it.
               Can I book the conference hotel at a discounted rate?<span class="plus">+</span>
             </button>
             <div class="faq-a">
-              <p>Yes. A limited ATHENA room block is available at Hilton Los Angeles/Universal City at $239 + tax per night, from January 25 to February 2, 2027. After registration, you will receive the booking details by email so you can secure the discounted rate while inventory lasts.</p>
+              <p>Yes. A limited ATHENA room block is available at Hilton Los Angeles/Universal City at $239 + tax per night, from January 25 to February 2, 2027. Book by December 31, 2026, to secure the ATHENA block rate. After registration, you will receive the booking link by email. January is peak season in Los Angeles, so we recommend booking early.</p>
             </div>
           </div>
           <div class="faq-item faq-extra">
@@ -4898,6 +4949,35 @@ Traci's leadership journey began as a former NCAA Division I volleyball athlete 
           b.setAttribute("aria-expanded", open ? "true" : "false");
           b.textContent = open ? "Show fewer questions" : "See all questions";
         });
+      })();
+    </script>
+    <script>
+      (function () {
+        var box = document.getElementById("labs"), pi = box && box.querySelector(".lab-pi");
+        if (!pi) return;
+        function sync() {
+          var on = [].map.call(box.querySelectorAll('.lab-filter[aria-pressed="true"]'), function (b) { return b.dataset.track; });
+          pi.hidden = on.length > 0 && on.indexOf("personal") === -1;
+        }
+        box.addEventListener("click", function (e) { if (e.target.closest(".lab-filter, .lab-clear")) setTimeout(sync, 0); });
+      })();
+      (function () {
+        // cards de micro-lab todos da mesma altura (a do mais alto), a partir de tablet
+        var box = document.getElementById("labs"); if (!box) return;
+        var cards = box.querySelectorAll(".lab-col .lab-card");
+        function eq() {
+          cards.forEach(function (c) { c.style.minHeight = ""; });
+          if (window.innerWidth < 761) return;
+          var col = box.classList.contains("labs-collapsed"); box.classList.remove("labs-collapsed");
+          var hid = []; cards.forEach(function (c) { if (c.hidden) { hid.push(c); c.hidden = false; } });
+          var h = 0; cards.forEach(function (c) { h = Math.max(h, c.offsetHeight); });
+          hid.forEach(function (c) { c.hidden = true; }); if (col) box.classList.add("labs-collapsed");
+          cards.forEach(function (c) { c.style.minHeight = h + "px"; });
+        }
+        eq();
+        window.addEventListener("resize", eq);
+        box.addEventListener("click", function (e) { if (e.target.closest("button")) setTimeout(eq, 0); });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(eq);
       })();
     </script>
 </body>
