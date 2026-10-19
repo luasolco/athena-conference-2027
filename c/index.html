@@ -3146,6 +3146,9 @@
       .tk .tk-zeffy { max-width: 760px; margin: 18px 0 26px calc(50% - 480px); padding: 12px 18px; background: var(--tint, #f8f6eb); border-left: 3px solid var(--gold); font-size: 0.9rem; line-height: 1.55; color: var(--ink); }
       .tk .tk-zeffy strong { font-weight: 700; }
       /* ingresso de um dia: só o que não inclui, com x cinza */
+      /* linhas de ingresso nunca passam da largura dos cards de cima */
+      .tk .tk-rows { grid-template-columns: minmax(0, 1fr); }
+      @media (min-width: 981px) { .tk .tk-row:has(.tk-excl) { grid-template-columns: minmax(0, 1fr) 120px 190px; gap: 22px; } }
       .tk .tk-excl { position: relative; margin-top: 16px; padding-left: 0; font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
       @media (min-width: 761px) { .tk .tk-label-one, .tk .tk-excl { white-space: nowrap; position: relative; z-index: 1; } }
       @media (max-width: 1008px) { .tk .tk-zeffy { margin-left: 0; } }
