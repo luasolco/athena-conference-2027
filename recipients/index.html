@@ -214,6 +214,53 @@
       .hero-prices span { color: #c9d2da; font-size: 0.88rem; }
       .hero-fine { color: #b9c3cc; font-size: 0.85rem; margin-top: 18px; max-width: 480px; }
       @media (max-width: 900px) { .hero-img { aspect-ratio: 16 / 11; } }
+      /* hero compacto com duas CTAs diretas pro Zeffy (2026-10-19) */
+      .hero { padding: clamp(28px, 3.6vw, 44px) 0; }
+      .hero-grid { grid-template-columns: 0.8fr 1.2fr; gap: 44px; }
+      .hero-img { aspect-ratio: 4 / 3; max-height: 340px; }
+      .hero .hero-kick { margin-top: 10px; font-size: clamp(1.1rem, 1.9vw, 1.35rem); }
+      .hero h1.hero-title { margin-top: 8px; font-size: clamp(1.55rem, 2.6vw, 2.15rem); }
+      .hero .sub { margin-top: 12px; font-size: 1.02rem; max-width: 580px; }
+      .hero-bogo { margin-top: 20px; gap: 12px; }
+      .hero-bogo .btn { flex-direction: column; align-items: flex-start; padding: 12px 22px; font-size: 16px; text-transform: none; letter-spacing: 0; line-height: 1.25; }
+      .hero-bogo .btn small { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+      .hero-bogo .btn-line small { color: var(--gold); opacity: 1; }
+      .hero-fine { margin-top: 14px; }
+      @media (max-width: 900px) {
+        .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+        .hero-img { aspect-ratio: 16 / 7; max-height: none; }
+      }
+      @media (max-width: 600px) {
+        .hero-bogo .btn { width: 100%; align-items: center; text-align: center; }
+      }
+      /* card do hotel, igual ao da landing C, + nota de que não entra no BOGO (2026-10-19) */
+      .hotel-card { max-width: 960px; margin: 40px auto 0; display: grid; grid-template-columns: 0.9fr 1.1fr; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold); text-align: left; }
+      .hotel-photo { position: relative; min-height: 100%; }
+      .hotel-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 60%; }
+      .hotel-copy { padding: 30px 32px; }
+      .hotel-kicker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0; }
+      .hotel-kicker span { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #836a31; }
+      .hotel-badge { font-style: normal; background: var(--orange); color: var(--navy); font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+      .hotel-copy h3 { font-family: var(--serif); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.2; color: var(--ink); margin: 10px 0 10px; }
+      .hotel-lead { font-size: 0.98rem; line-height: 1.6; color: var(--muted); margin: 0; }
+      .hotel-facts { display: grid; grid-template-columns: 0.8fr 1.25fr 0.95fr; margin: 20px 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .hotel-facts > div { padding: 14px 12px 14px 0; }
+      .hotel-facts > div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+      .hotel-facts dt { white-space: nowrap; font-family: var(--serif); font-weight: 700; font-size: 1.3rem; line-height: 1.15; color: var(--ink); }
+      .hotel-facts dd { margin: 4px 0 0; font-size: 0.85rem; line-height: 1.4; color: var(--muted); }
+      .hotel-note { margin: 14px 0 0; font-size: 0.9rem; line-height: 1.5; color: var(--ink); }
+      .hotel-bogo { margin: 14px 0 0; padding: 10px 14px; background: var(--tint); border-left: 3px solid var(--navy); font-size: 0.9rem; line-height: 1.5; color: var(--ink); }
+      @media (max-width: 860px) {
+        .hotel-card { grid-template-columns: 1fr; }
+        .hotel-photo { aspect-ratio: 16 / 9; min-height: 0; }
+        .hotel-copy { padding: 24px 20px; }
+      }
+      @media (max-width: 560px) {
+        .hotel-facts { grid-template-columns: 1fr; }
+        .hotel-facts > div, .hotel-facts > div + div { padding: 12px 0; border-left: none; }
+        .hotel-facts > div + div { border-top: 1px solid var(--line); }
+        .hotel-kicker { flex-wrap: wrap; }
+      }
     </style>
   </head>
   <body>
@@ -271,13 +318,9 @@
           <p class="hero-kick">You were honored for opening doors.</p>
           <h1 class="hero-title"><span>Bring someone</span> <span>through <mark>this one</mark></span></h1>
           <p class="sub">Buy one ticket to ATHENA 2027 and your guest comes free. Bring the rising leader on your team, someone you mentor, or a friend at a crossroads.</p>
-          <div class="hero-prices">
-            <div><small>General Admission</small><b>$545</b><span>for two seats</span></div>
-            <div><small>VIP Experience</small><b>$795</b><span>for two seats</span></div>
-          </div>
-          <div class="hero-cta">
-            <a href="#offer" class="btn btn-gold">Claim your two seats</a>
-            <a href="#included" class="btn btn-line">See what's included</a>
+          <div class="hero-cta hero-bogo">
+            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-bogo-pass-2" class="btn btn-line"><small>General Admission BOGO</small>$545 for two seats</a>
+            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-vip-experience-bogo-pass" class="btn btn-gold"><small>VIP Experience BOGO</small>$795 for two seats</a>
           </div>
           <!-- PENDENTE: prazo da oferta (padrão 15/12/2026) aguarda ok da Traci -->
           <p class="hero-fine">January 28-30, 2027 · Los Angeles. Offer ends December 15, 2026. One guest per ATHENA Award Recipient, verified against ATHENA's list of presenting communities and organizations.</p>
@@ -328,7 +371,21 @@
                         <a class="btn btn-gold" href="https://www.zeffy.com/en-US/ticketing/athena-2027-vip-experience-bogo-pass">Claim Your VIP BOGO Pass</a>
           </div>
         </div>
-        <p class="fine">Hotel not included. Stay where it happens at the Hilton Los Angeles/Universal City for $239 + tax per night, January 25 to February 2, 2027.</p>
+        <div class="hotel-card" id="hotel">
+          <div class="hotel-photo"><img loading="lazy" decoding="async" src="/assets/conference-2027/index-C-assets/fotos/hilton-universal-city.webp" alt="The Universal globe with the Hilton Los Angeles/Universal City tower right behind it" width="1000" height="752"></div>
+          <div class="hotel-copy">
+            <p class="hotel-kicker"><span>Stay where it happens</span><em class="hotel-badge">Book by December 31, 2026</em></p>
+            <h3>Make it a long weekend at Universal City.</h3>
+            <p class="hotel-lead">Your pass unlocks the ATHENA block rate at the Hilton Los Angeles/Universal City, for the conference and the nights around it. Arrive early to settle in, or stay through the weekend: Universal Studios with your family, a getaway with friends, or a retreat with your team.</p>
+            <dl class="hotel-facts">
+              <div><dt>$239</dt><dd>+ tax per night</dd></div>
+              <div><dt>Jan 25 to Feb 2</dt><dd>arrive early or stay late, same rate</dd></div>
+              <div><dt>Dec 31</dt><dd>last day to book at this rate</dd></div>
+            </dl>
+            <p class="hotel-note">Register first, and we email you the private booking link. January is peak season in Los Angeles, so book early.</p>
+            <p class="hotel-bogo"><b>The hotel is not included in the BOGO offer.</b> Rooms are booked and paid separately.</p>
+          </div>
+        </div>
       </div>
     </section>
 
