@@ -5,15 +5,16 @@ Servido por GitHub Pages em **https://conference.athenainternational.org/**
 
 | URL | Arquivo |
 |-----|---------|
-| `/` | `index.html` (versao B, escolhida como principal) |
-| `/a/` | `a/index.html` (versao A) |
-| `/b/` | `b/index.html` (versao B) |
+| `/` | `index.html` (versao C, pagina principal desde 2026-10-19) |
+| `/a/` `/b/` `/c/` `/d/` | redirecionamento pra `/` (mantem UTM e ancora, noindex) |
+| `/recipients/` | `recipients/index.html` (BOGO Award Recipients) |
+| `/groups/` | `groups/index.html` (grupos) |
 | `/thanks-athena/` | `thanks-athena/index.html` (pagina do hotel) |
 
 ## Nao editar os HTMLs aqui
 
-Este repositorio e **gerado**. A fonte da verdade dos HTMLs fica no repo interno
-`lua-sol-co`, em `Clients/athena-international/_aprovacao/2026-08-10_landing-pages-athena/`.
+Este repositorio e **gerado**. A fonte da verdade da raiz e `Clients/athena-international/_rascunhos/2026-10-16_landing-page_versao-c/index-C.html`
+(repo interno `lua-sol-co`); a do hotel fica em `_aprovacao/2026-08-10_landing-pages-athena/`.
 Edicao feita direto aqui e sobrescrita no proximo sync.
 
 Pra publicar uma alteracao, rodar de dentro do repo `lua-sol-co`:
