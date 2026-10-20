@@ -7,7 +7,8 @@ Servido por GitHub Pages em **https://conference.athenainternational.org/**
 |-----|---------|
 | `/` | `index.html` (versao C, pagina principal desde 2026-10-19) |
 | `/a/` `/b/` `/c/` `/d/` | redirecionamento pra `/` (mantem UTM e ancora, noindex) |
-| `/recipients/` | `recipients/index.html` (BOGO Award Recipients) |
+| `/bogo/` | `bogo/index.html` (BOGO Award Recipients) |
+| `/recipients/` | redirecionamento pra `/bogo/` |
 | `/groups/` | `groups/index.html` (grupos) |
 | `/thanks-athena/` | `thanks-athena/index.html` (pagina do hotel) |
 
