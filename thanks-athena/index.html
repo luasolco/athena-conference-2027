@@ -10,6 +10,86 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PLM73FC4');</script>
   <!-- End Google Tag Manager -->
+  <!-- Zeffy purchase -> GTM (purchase_stape). Fires ONLY when the URL has ?purchase=zeffy
+       (post-checkout redirect). Plain visits (hotel link sent by email) never fire. Do not remove. -->
+  <script>
+  (function () {
+    try {
+      var qs = new URLSearchParams(window.location.search);
+      if ((qs.get('purchase') || '').toLowerCase() !== 'zeffy') return;
+
+      function pick(names) {
+        for (var i = 0; i < names.length; i++) {
+          var v = qs.get(names[i]);
+          if (v !== null && String(v).trim() !== '') return String(v).trim();
+        }
+        return '';
+      }
+      function num(v) {
+        if (v === '') return NaN;
+        var n = parseFloat(String(v).replace(/[^0-9.\-]/g, ''));
+        return isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : NaN;
+      }
+
+      var DEFAULT_VALUE = 545;
+      var orderId = pick(['order_id', 'transaction_id', 'orderId', 'id']);
+      var value = num(pick(['value', 'amount', 'total']));
+      if (isNaN(value)) value = DEFAULT_VALUE;
+      var currency = (pick(['currency']) || 'USD').toUpperCase().slice(0, 3);
+      var ticket = pick(['ticket', 'ticket_type', 'item']) || 'ATHENA 2027 Ticket';
+      var qty = parseInt(pick(['qty', 'quantity']), 10);
+      if (!(qty > 0)) qty = 1;
+      var email = pick(['email']).toLowerCase();
+      var firstName = pick(['first_name', 'firstname']);
+      var lastName = pick(['last_name', 'lastname']);
+
+      var generated = !orderId;
+      if (generated) orderId = 'zeffy-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+
+      // Lock: same order never fires twice (reload, back button, shared link).
+      var lockKey = generated ? 'athena_zeffy_noid:' + window.location.search : 'athena_zeffy_order:' + orderId;
+      var store = null;
+      try { store = generated ? window.sessionStorage : window.localStorage; } catch (e) { store = null; }
+      try { if (store && store.getItem(lockKey)) { cleanUrl(); return; } } catch (e) {}
+
+      var payload = {
+        event: 'purchase_stape',
+        ecommerce: {
+          transaction_id: orderId,
+          value: value,
+          currency: currency,
+          items: [{
+            item_id: ticket.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+            item_name: ticket,
+            price: Math.round((value / qty) * 100) / 100,
+            quantity: qty
+          }]
+        }
+      };
+      if (email || firstName || lastName) {
+        payload.user_data = {};
+        if (email) payload.user_data.email = email;
+        if (firstName) payload.user_data.first_name = firstName;
+        if (lastName) payload.user_data.last_name = lastName;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ ecommerce: null, user_data: null });
+      window.dataLayer.push(payload);
+
+      try { if (store) store.setItem(lockKey, String(Date.now())); } catch (e) {}
+      cleanUrl();
+    } catch (err) {}
+
+    function cleanUrl() {
+      try {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+        }
+      } catch (e) {}
+    }
+  })();
+  </script>
   <title>ATHENA 2027 Conference Hotel</title>
   <meta name="description" content="Single-page booking brief for ATHENA Hilton Los Angeles/Universal City room block at $239 per night.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
