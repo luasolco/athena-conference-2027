@@ -4123,8 +4123,8 @@ Thank you for considering it.
           <div><b>Discounts &amp; Scholarships</b>
             <ul class="b">
               <li>One code per order; discounts do not stack</li>
-              <li>Are you a student? <a href="https://www.athenainternational.org/form-conference"><strong>Apply for a scholarship</strong></a></li>
-              <li>Scholarship recipients announced in late December</li>
+              <li>Are you a student? <a href="#faq-scholarship" class="js-faq-open"><strong>Learn about the scholarship available</strong></a></li>
+              <li>Scholarship applications close November 20; recipients notified by December 11</li>
             </ul>
           </div>
         </div>
@@ -4248,6 +4248,15 @@ Thank you for considering it.
             </button>
             <div class="faq-a">
               <p>Yes, and it is capped. High school students pay $145 and college students pay $295. First, <a href="https://www.athenainternational.org/form-conference">contact us</a> with official proof of student status. Once we approve it, complete your purchase on the <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-student-pass"><strong>Student Pass page</strong></a>. Seats are available while capacity lasts.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra" id="faq-scholarship">
+            <button class="faq-q">
+              Do you offer scholarships?<span class="plus">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes, for a limited number of high school and college students. <a href="https://www.athenainternational.org/form-conference"><strong>Apply through our contact form</strong></a> by November 20, 2026, and tell us why you are applying and how the conference will help your current or future career. Recipients are notified by December 11, 2026.</p>
+              <p>The scholarship applies to conference registration only. It does not cover travel or hotel. Recipients agree to share a testimonial about the impact of the conference and post it on their social media.</p>
             </div>
           </div>
           <div class="faq-item faq-extra">
@@ -5047,5 +5056,20 @@ new IntersectionObserver(function(e){bar.classList.toggle('is-on',!e[0].isInters
   });
 })();
 </script>
+    <script>
+      (function () {
+        function openFaq(id) {
+          var item = document.getElementById(id); if (!item) return;
+          var list = item.closest(".faq-list"), more = document.getElementById("faqMore");
+          if (list && list.classList.contains("faq-collapsed") && more) more.click();
+          if (!item.classList.contains("open")) item.querySelector(".faq-q").click();
+          item.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        document.querySelectorAll(".js-faq-open").forEach(function (a) {
+          a.addEventListener("click", function (e) { e.preventDefault(); openFaq(a.getAttribute("href").slice(1)); });
+        });
+        if (location.hash === "#faq-scholarship") setTimeout(function () { openFaq("faq-scholarship"); }, 300);
+      })();
+    </script>
 </body>
 </html>
