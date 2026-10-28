@@ -4123,8 +4123,8 @@ Thank you for considering it.
           <div><b>Discounts &amp; Scholarships</b>
             <ul class="b">
               <li>One code per order; discounts do not stack</li>
-              <li>Are you a student? <a href="#faq-scholarship" class="js-faq-open"><strong>Learn about the scholarship available</strong></a></li>
-              <li>Scholarship applications close November 20; recipients notified by December 11</li>
+              <li>Are you a student? <a href="#faq-student" class="js-faq-open"><strong>Learn about it</strong></a></li>
+              <li><a href="#faq-scholarship" class="js-faq-open"><strong>A few scholarships are available</strong></a></li>
             </ul>
           </div>
         </div>
@@ -4242,12 +4242,12 @@ Thank you for considering it.
               <p>Labs run in 75- and 90-minute rounds across Personal, Team, AI, and Youth Leadership and Entrepreneurship. After you register, save your picks in the ATHENA Conference Hub. <a href="#labs">See the micro-labs</a>.</p>
             </div>
           </div>
-          <div class="faq-item faq-extra">
+          <div class="faq-item faq-extra" id="faq-student">
             <button class="faq-q">
               Is there student pricing?<span class="plus">+</span>
             </button>
             <div class="faq-a">
-              <p>Yes, and it is capped. High school students pay $145 and college students pay $295. First, <a href="https://www.athenainternational.org/form-conference">contact us</a> with official proof of student status. Once we approve it, complete your purchase on the <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-student-pass"><strong>Student Pass page</strong></a>. Seats are available while capacity lasts.</p>
+              <p>Yes, while capacity lasts. High school students pay $145 and college students pay $295. Register on the <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-student-pass"><strong>Student Pass page</strong></a> and check the box certifying that you are a student. Then bring a valid student ID or proof of enrollment to check-in at the conference. ATHENA International will verify eligibility, and registrations found ineligible may be canceled unless the full registration fee is paid.</p>
             </div>
           </div>
           <div class="faq-item faq-extra" id="faq-scholarship">
@@ -5068,7 +5068,7 @@ new IntersectionObserver(function(e){bar.classList.toggle('is-on',!e[0].isInters
         document.querySelectorAll(".js-faq-open").forEach(function (a) {
           a.addEventListener("click", function (e) { e.preventDefault(); openFaq(a.getAttribute("href").slice(1)); });
         });
-        if (location.hash === "#faq-scholarship") setTimeout(function () { openFaq("faq-scholarship"); }, 300);
+        if (/^#faq-(student|scholarship)$/.test(location.hash)) setTimeout(function () { openFaq(location.hash.slice(1)); }, 300);
       })();
     </script>
 </body>
