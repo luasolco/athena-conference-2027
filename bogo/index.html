@@ -343,8 +343,8 @@
           <h1 class="hero-title"><span>Bring someone</span> <span>through <mark>this one</mark></span></h1>
           <p class="sub">Buy one ticket to ATHENA 2027 and your guest comes free. Bring the rising leader on your team, someone you mentor, or a friend at a crossroads.</p>
           <div class="hero-cta hero-bogo">
-            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-bogo-pass-2" class="btn btn-line"><small>General Admission BOGO</small>$545 for two seats</a>
-            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-vip-experience-bogo-pass" class="btn btn-gold"><small>VIP Experience BOGO</small>$795 for two seats</a>
+            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-general-admission-bogo-pass-2" class="btn btn-line" data-ph="{&quot;t2&quot;: &quot;&lt;small&gt;General Admission BOGO&lt;/small&gt;$620 for two seats&quot;, &quot;reg&quot;: &quot;&lt;small&gt;General Admission BOGO&lt;/small&gt;$695 for two seats&quot;}"><small>General Admission BOGO</small>$545 for two seats</a>
+            <a href="https://www.zeffy.com/en-US/ticketing/athena-2027-vip-experience-bogo-pass" class="btn btn-gold" data-ph="{&quot;t2&quot;: &quot;&lt;small&gt;VIP Experience BOGO&lt;/small&gt;$895 for two seats&quot;, &quot;reg&quot;: &quot;&lt;small&gt;VIP Experience BOGO&lt;/small&gt;$995 for two seats&quot;}"><small>VIP Experience BOGO</small>$795 for two seats</a>
           </div>
           <!-- PENDENTE: prazo da oferta (padrão 15/12/2026) aguarda ok da Traci -->
           <p class="hero-fine">January 28-30, 2027 · Los Angeles. Offer ends December 15, 2026. One guest per ATHENA Award Recipient, verified against ATHENA's list of presenting communities and organizations.</p>
@@ -364,8 +364,8 @@
         <div class="offer-grid">
           <div class="card">
             <span class="tier">General Admission · Buy one, get one</span>
-            <div class="price">$545 <span>for two seats</span></div>
-            <p class="value"><s>$1,090</s> &nbsp;<b>You save $545</b></p>
+            <div class="price" data-ph="{&quot;t2&quot;: &quot;$620 &lt;span&gt;for two seats&lt;/span&gt;&quot;, &quot;reg&quot;: &quot;$695 &lt;span&gt;for two seats&lt;/span&gt;&quot;}">$545 <span>for two seats</span></div>
+            <p class="value" data-ph="{&quot;t2&quot;: &quot;&lt;s&gt;$1,240&lt;/s&gt; &amp;nbsp;&lt;b&gt;You save $620&lt;/b&gt;&quot;, &quot;reg&quot;: &quot;&lt;s&gt;$1,390&lt;/s&gt; &amp;nbsp;&lt;b&gt;You save $695&lt;/b&gt;&quot;}"><s>$1,090</s> &nbsp;<b>You save $545</b></p>
             <ul>
               <li>3-day ATHENA Conference in Los Angeles</li>
               <li>The ATHENA Awards Celebration</li>
@@ -383,8 +383,8 @@
           <div class="card featured">
             <span class="badge">50 VIP seats in total</span>
             <span class="tier">VIP Experience · Buy one, get one</span>
-            <div class="price">$795 <span>for two seats</span></div>
-            <p class="value"><s>$1,590</s> &nbsp;<b>You save $795</b></p>
+            <div class="price" data-ph="{&quot;t2&quot;: &quot;$895 &lt;span&gt;for two seats&lt;/span&gt;&quot;, &quot;reg&quot;: &quot;$995 &lt;span&gt;for two seats&lt;/span&gt;&quot;}">$795 <span>for two seats</span></div>
+            <p class="value" data-ph="{&quot;t2&quot;: &quot;&lt;s&gt;$1,790&lt;/s&gt; &amp;nbsp;&lt;b&gt;You save $895&lt;/b&gt;&quot;, &quot;reg&quot;: &quot;&lt;s&gt;$1,990&lt;/s&gt; &amp;nbsp;&lt;b&gt;You save $995&lt;/b&gt;&quot;}"><s>$1,590</s> &nbsp;<b>You save $795</b></p>
             <ul>
               <li>Everything in General Admission, for both of you</li>
               <li>Exclusive VIP Reception with ATHENA Award Recipients</li>
@@ -544,8 +544,21 @@
     </footer>
 
     <div class="sticky">
-      <div><b>2 seats from $545</b>Award Recipients only</div>
+      <div data-ph="{&quot;t2&quot;: &quot;&lt;b&gt;2 seats from $620&lt;/b&gt;Award Recipients only&quot;, &quot;reg&quot;: &quot;&lt;b&gt;2 seats from $695&lt;/b&gt;Award Recipients only&quot;}"><b>2 seats from $545</b>Award Recipients only</div>
       <a href="#offer" class="btn btn-gold">Claim offer</a>
     </div>
-  </body>
+  <script>
+(function () {
+  var T2 = Date.UTC(2026, 10, 16, 2, 0, 0);  // 15/11/2026 18:00 PST
+  var REG = Date.UTC(2027, 0, 1, 2, 0, 0);   // 31/12/2026 18:00 PST
+  var q = new URLSearchParams(location.search).get("fase");
+  var now = Date.now();
+  var fase = q === "tier2" ? "t2" : q === "regular" ? "reg" : now >= REG ? "reg" : now >= T2 ? "t2" : null;
+  if (!fase) return;
+  document.querySelectorAll("[data-ph]").forEach(function (el) {
+    el.innerHTML = JSON.parse(el.getAttribute("data-ph"))[fase];
+  });
+})();
+</script>
+</body>
 </html>
