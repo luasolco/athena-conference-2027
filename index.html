@@ -2454,7 +2454,12 @@
       .fit-card h3 { font-size: 1.45rem; }
       .fit-tag { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink); font-size: 0.95rem; }
       .fit-tag span { display: block; font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-      .fit-also { max-width: 820px; margin: 40px auto 0; text-align: center; color: var(--ink); }
+      .fit-also { margin: 56px 0 0; color: var(--ink); }
+      .fit-also-h { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-text); margin: 0 0 18px 32px; }
+      .fit-roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 16px; }
+      .fit ul.fit-roles li { font-size: 1rem; margin: 0 0 12px 32px; padding-left: 18px; }
+      @media (max-width: 1180px) { .fit-also-h { margin-left: 0; } .fit-roles { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } .fit ul.fit-roles li { margin: 0 0 12px; } }
+      @media (max-width: 720px) { .fit-also { margin-top: 44px; } .fit-roles { grid-template-columns: 1fr; } }
       .fit .fence { margin-top: 28px; text-align: center; font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--ink); }
 
       .takeaways { background: #fff; border-top: 1px solid var(--line); }
@@ -3547,7 +3552,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fit-tag"><span>You leave with</span>A clear next step and a circle that holds you to it.</p>
           </article>
         </div>
-        <p class="fit-also"><strong>Also in the room:</strong> executive corporate leaders, founders and small business owners, nonprofit and community leaders, educators, ATHENA Award Recipients, ATHENA Certified Facilitators, students from high school to college, and the allies who champion women's leadership.</p>
+        <div class="fit-also">
+          <p class="fit-also-h">Also in the room</p>
+          <ul class="b fit-roles">
+            <li>Directors and senior directors</li>
+            <li>VPs and C-suite executives</li>
+            <li>HR, people and culture leaders</li>
+            <li>Project, program & product managers</li>
+            <li>Founders and business owners</li>
+            <li>Sales and partnership leaders</li>
+            <li>Executive and leadership coaches</li>
+            <li>ERG and women's network leaders</li>
+            <li>Tech, data and AI professionals</li>
+            <li>Nonprofit and community leaders</li>
+            <li>Educators</li>
+            <li>ATHENA Award Recipients</li>
+            <li>ATHENA Certified Facilitators</li>
+            <li>Allies of women's leadership</li>
+            <li>Students, high school to college</li>
+          </ul>
+        </div>
         <p class="fence">You don't need a title to belong here. Join our community of human-centered leaders.</p>
         <p class="fit-cta"><a href="#labs" class="btn btn-dark">Find Your Micro-Labs</a></p>
       </div>
